@@ -1,5 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
+const { test } = require("./handlers/test")
+
 const PORT = 8000;
 
 express()
@@ -9,10 +11,8 @@ express()
 
 /* Endpoints */
 
-// homepage
-.get("/", (req, res) => {
-    return res.status(404).json({ status: 404, message: "Homepage." })
-    })
+// test
+.get("/", test)
 
 // catch-all
 .get("*", (req, res) => {

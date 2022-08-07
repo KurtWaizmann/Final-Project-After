@@ -4,9 +4,9 @@ import GlobalStyles from "./GlobalStyles";
 
 // import components
 import Homepage from "./Homepage";
-import CompanyDetails from "./nonfunctional/CompanyDetails";
-import ProductDetails from "./nonfunctional/ProductDetails";
-import FAQ from "./nonfunctional/FAQ";
+import CompanyDetails from "./mock-pages/CompanyDetails";
+import ProductDetails from "./mock-pages/ProductDetails";
+import FAQ from "./mock-pages/FAQ";
 
 
 const App = () => {

@@ -8,6 +8,8 @@ import HomeHeader from "./headers/HomeHeader"
 import imageBeach from "../assets/man-walking-on-beach.png"
 import imageCEO from "../assets/ceo-portrait.png"
 import imageMountains from "../assets/mountains.png"
+import imageSurfing from "../assets/surfing.png"
+import imageEmployees from "../assets/employees.png"
 
 const Homepage = () => {
   return (
@@ -25,7 +27,7 @@ const Homepage = () => {
 
       {/* second fold — man on beach image */}
       <FoldTwo>
-      <ImageOne src={imageBeach} />
+      <Image src={imageBeach} />
       </FoldTwo>
 
       {/* third fold — CEO */}
@@ -43,10 +45,9 @@ const Homepage = () => {
 
       {/* fourth fold — mountains */}
       <FoldFour>
-        <ImageOne src={imageMountains} />
-        <FeelGood>Why feel bad when you can feel good?</FeelGood>
+        <Image src={imageMountains} />
+        <Slogan>Why feel bad when you can feel good?</Slogan>
       </FoldFour>
-
 
       {/* fifth fold — three pillars */}
       <FoldFive>
@@ -66,6 +67,47 @@ const Homepage = () => {
       </WrapperPillars>
       </FoldFive>
 
+      {/* sixth fold — surfing */}
+      <FoldSix>
+        <Image src={imageSurfing} />
+        <Slogan>A world for you to reshape</Slogan>
+      </FoldSix>
+
+      {/* seven fold — two employees */}
+      <FoldSeven>
+        <ContainerMind>
+          <WrapperMind>
+            <TitleMind>Your mind is in the best of hands</TitleMind>
+            <DescriptionMind>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</DescriptionMind>
+            <More>Find out more</More>
+          </WrapperMind>
+          <ImageEmployees src={imageEmployees} />
+        </ContainerMind>
+      </FoldSeven>
+
+      {/* eigth fold — three more pillars */}
+      <FoldEight>
+      <WrapperPillars>
+        <Pillar>
+          <PillarName>Positivity</PillarName>
+          <PillarDescription>Structured to minimize negative emotion and instead promote positivity and happiness.</PillarDescription>
+        </Pillar>
+        <Pillar>
+          <PillarName>Meaning</PillarName>
+          <PillarDescription>Algoriths to monitor and impart insightful meaning to every piece of your new existance.</PillarDescription>
+        </Pillar>
+        <Pillar>
+          <PillarName>Freedom</PillarName>
+          <PillarDescription>Boundaries are broken with a world that’s yours to fully explore and reshape as you see fit.</PillarDescription>
+        </Pillar>
+      </WrapperPillars>
+      </FoldEight>
+
+      {/* ninth fold — customer going to sleep */}
+      <FoldNine></FoldNine>
+
+      {/* tenth fold — employee assisting customer */}
+      <FoldTen></FoldTen>
 
     </Body>
   )
@@ -134,7 +176,7 @@ const FoldTwo = styled.div`
   align-items: center;
   /* border: 2px solid blue; */
 `
-const ImageOne = styled.img`
+const Image = styled.img`
   width: 100%;
 `
 
@@ -219,7 +261,7 @@ const FoldFour = styled.div`
   align-items: center;
   border: 2px solid blue;
 `
-const FeelGood = styled.h1`
+const Slogan = styled.h1`
 font-size: 60px;
 font-weight: 400;
 line-height: 78px;
@@ -249,7 +291,7 @@ const WrapperPillars = styled.div`
   gap: 8%;
 `
 const Pillar = styled.div`
-  width: 271px;
+  width: 300px;
 `
 const PillarName = styled.div`
   font-size: 24px;
@@ -257,6 +299,7 @@ const PillarName = styled.div`
   line-height: 33px;
   letter-spacing: 0em;
   text-align: center;
+  margin-bottom: 12px;
 `
 const PillarDescription = styled.div`
   font-size: 16px;
@@ -264,4 +307,93 @@ const PillarDescription = styled.div`
   line-height: 28px;
   letter-spacing: 0em;
   text-align: center;
+`
+
+
+
+
+
+// sixth fold — two employees
+const FoldSix = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid blue;
+`
+const ContainerMind = styled.div`
+  width: 100%;
+  height: 463px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F1F0EA;
+  padding: 0 15% 0 7%;
+  gap: 20%;
+`
+const WrapperMind = styled.div`
+  width: 490px;
+`
+const TitleMind = styled.h1`
+font-size: 50px;
+font-weight: 400;
+line-height: 65px;
+letter-spacing: 0em;
+text-align: left;
+color: #837777;
+`
+const DescriptionMind = styled.div`
+font-size: 16px;
+font-weight: 400;
+line-height: 28px;
+letter-spacing: 0em;
+text-align: left;
+color: #6D6466;
+`
+const ImageEmployees = styled.img`
+`
+
+
+
+
+
+
+const FoldSeven = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid red;
+`
+const FoldEight = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid blue;
+`
+const FoldNine = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid red;
+`
+const FoldTen = styled.div`  width: 100%;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid blue;
 `

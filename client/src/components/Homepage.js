@@ -23,26 +23,38 @@ import imageBoy from "../assets/littleboy.png"
 
 
 const Homepage = () => {
+
+  const animateIntro = {
+    start:{
+      opacity: 0,
+    },
+    end: {
+      opacity: 1,
+      transition: {
+        duration:5
+      }
+    }
+  }
+
+
   return (
     <Body>
+      <motion.div
+        initial={"start"}
+        animate={"end"}
+        variants={animateIntro}
+      >
       <HomeHeader />
 
      {/* first fold — intro message */}
       <FoldOne>
-        <motion.IntroWrap
-        initial={{x:-1000}}
-        animate={{
-          x:1,
-          rotate:10,
-        }}
-        transition={{duration:2}}
-        >
+        <IntroWrap>
           <Title>Upload your troubles away</Title>
           <SubHeader>INTO A WORLD DESIGNED FOR YOU</SubHeader>
           <Description>Begin your journey towards a new life full of richness and beauty. Shed the toubles of the past and upload yourself into a world designed by the finest minds to be as enriching as ever experienced. Come join us today in our digital paradise.</Description>
-        </motion.IntroWrap>
+        </IntroWrap>
       </FoldOne>
-
+      </motion.div>
       {/* second fold — man on beach image */}
       <FoldTwo>
       <Image src={imageBeach} />

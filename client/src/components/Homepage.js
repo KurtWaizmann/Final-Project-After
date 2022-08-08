@@ -20,9 +20,22 @@ import imageTestimonail3 from "../assets/testimonial-3.png"
 import imageTestimonail4 from "../assets/testimonial-4.png"
 import imageBoy from "../assets/littleboy.png"
 
-
+// import icons
+import { AiOutlineDown } from "react-icons/ai";
 
 const Homepage = () => {
+
+  const animateHeader = {
+    start:{
+      opacity: 0,
+    },
+    end: {
+      opacity: 1,
+      transition: {
+        duration:4
+      }
+    }
+  }
 
   const animateIntro = {
     start:{
@@ -31,30 +44,55 @@ const Homepage = () => {
     end: {
       opacity: 1,
       transition: {
-        duration:5
+        duration:6
       }
     }
   }
 
 
+  const animateArrow = {
+    start:{
+      opacity: 0,
+    },
+    end: {
+      opacity: 1,
+      transition: {
+        duration:8
+      }
+    }
+  }
+
   return (
     <Body>
-      <motion.div
+
+    <motion.div       
+      initial={"start"}
+      animate={"end"}
+      variants={animateHeader}>
+      <HomeHeader/>
+    </motion.div>
+
+     {/* first fold — intro message */}
+      <FoldOne
+        as={motion.div}
         initial={"start"}
         animate={"end"}
         variants={animateIntro}
       >
-      <HomeHeader />
-
-     {/* first fold — intro message */}
-      <FoldOne>
         <IntroWrap>
           <Title>Upload your troubles away</Title>
           <SubHeader>INTO A WORLD DESIGNED FOR YOU</SubHeader>
           <Description>Begin your journey towards a new life full of richness and beauty. Shed the toubles of the past and upload yourself into a world designed by the finest minds to be as enriching as ever experienced. Come join us today in our digital paradise.</Description>
         </IntroWrap>
+        <motion.div       
+          initial={"start"}
+          animate={"end"}
+          variants={animateArrow}>
+          <StyledArrow />
+        </motion.div>
       </FoldOne>
-      </motion.div>
+
+
       {/* second fold — man on beach image */}
       <FoldTwo>
       <Image src={imageBeach} />
@@ -210,7 +248,7 @@ const FoldOne = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 `
 const IntroWrap = styled.div`
   display: flex;
@@ -245,6 +283,12 @@ line-height: 28px;
 letter-spacing: 0em;
 text-align: center;
 color: #6D6466;
+`
+const StyledArrow = styled(AiOutlineDown)`
+  font-size: 50px;
+  position: absolute;
+  bottom: 20px;
+  color: #6D6466;
 `
 
 

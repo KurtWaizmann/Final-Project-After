@@ -3,6 +3,7 @@ import styled from "styled-components"
 
 // component imports
 import HomeHeader from "./headers/HomeHeader"
+import HomeFooter from "./footers/HomeFooter"
 
 // image imports
 import imageBeach from "../assets/man-walking-on-beach.png"
@@ -10,6 +11,15 @@ import imageCEO from "../assets/ceo-portrait.png"
 import imageMountains from "../assets/mountains.png"
 import imageSurfing from "../assets/surfing.png"
 import imageEmployees from "../assets/employees.png"
+import imageSleeper from "../assets/sleeper.png"
+import imageSleepAssist from "../assets/sleeper-assist.png"
+import imageTestimonail1 from "../assets/testimonial-1.png"
+import imageTestimonail2 from "../assets/testimonial-2.png"
+import imageTestimonail3 from "../assets/testimonial-3.png"
+import imageTestimonail4 from "../assets/testimonial-4.png"
+import imageBoy from "../assets/littleboy.png"
+
+
 
 const Homepage = () => {
   return (
@@ -104,10 +114,60 @@ const Homepage = () => {
       </FoldEight>
 
       {/* ninth fold — customer going to sleep */}
-      <FoldNine></FoldNine>
+      <FoldNine>
+        <img src={imageSleeper} />
+        <SloganDream>Drift into a Lovely Dream</SloganDream>
+      </FoldNine>
 
       {/* tenth fold — employee assisting customer */}
-      <FoldTen></FoldTen>
+      <FoldTen>
+        <img src={imageSleepAssist} />
+      </FoldTen>
+
+      <FoldEleven>
+        <WrapTestimonial>
+        <div>★★★★★</div>
+          <Testimonial>At the age of 78, I signed up to After.  I was quite resistant at first. But my son wore me out. I guess I liked this option better than being sent into a retirement home. And thank god for my son’s insistance. Now I’m 50 years younger, verile, and full of energy. And after seeing all the fun I was having, my wife soon joined and she’s now in her 20s! What a georgeous thing.</Testimonial>
+          <div>Richie Guzman — Uploaded in 2021</div>
+        </WrapTestimonial>
+        <img src={imageTestimonail1} />
+      </FoldEleven>
+
+      <FoldTwelve>
+        <img src={imageTestimonail2} />
+        <WrapTestimonial>
+          <div>★★★★★</div> 
+          <Testimonial>I was dying from cancer with only a few months to live when I discovered After. What a miracle. I’ve left my diseased body behind for everlasting vitality. I only wish I could get my loved ones to join me. I guess they will someday :)</Testimonial>
+          <div>Jordan Hutchinson — Uploaded in 2020</div>
+        </WrapTestimonial>
+      </FoldTwelve>
+
+      <FoldThirteen>
+        <WrapTestimonial>
+          <div>★★★★★</div>
+          <Testimonial>Honestly, I was so fortunate to be able leave that so-called “real” world. Let me remind you, a world ravaged by global warming, economic crises, endless wars, and so much more hurt. I remember struggling for simple things like finding fresh fruit when all the groceries stores were empty, or hiding indoors from the yearly pandemic. In the After, it’s been nothing but beautiful weather and happy moments. Truly a paradise! </Testimonial>
+          <div> Suzette Aguilar — Uploaded in 2022</div>
+        </WrapTestimonial>
+        <img src={imageTestimonail3} />
+      </FoldThirteen>
+
+      <FoldFourteen>
+        <img src={imageTestimonail4} /> 
+        <WrapTestimonial>
+          <div>★★★★★</div>
+          <Testimonial>After getting married, me and my wife moved into After. Sadly, we divorced within the year as my wife had trouble adapting. But there’s love all around! I was even able to make the woman of my dreams, with all the best features  and a wonderful personality. And let me tell you, Kiri is as real as any woman! We just connect on such a level that me and my ex-wife (rip) never could. I thank every day that I got on the path that led me to my precious Kiri...</Testimonial>
+          <div>Caleb Pierce — Uploaded in 2020</div>
+        </WrapTestimonial>
+      </FoldFourteen>
+
+
+      <FoldFifteen>
+        <Image src={imageBoy} />
+      </FoldFifteen>
+
+      <FoldSixteen>
+        <HomeFooter />
+      </FoldSixteen>
 
     </Body>
   )
@@ -117,7 +177,7 @@ export default Homepage
 
 const Body = styled.div`
   width: 100%;
-  height:10438px;
+  /* height:10438px; */
 `
 
 // Fist Fold CSS 
@@ -313,7 +373,7 @@ const PillarDescription = styled.div`
 
 
 
-// sixth fold — two employees
+// sixth fold — surfing
 const FoldSix = styled.div`
   width: 100%;
   height: 100vh;
@@ -322,6 +382,18 @@ const FoldSix = styled.div`
   justify-content: center;
   align-items: center;
   border: 2px solid blue;
+`
+
+
+// seventh fold — two employees
+const FoldSeven = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid red;
 `
 const ContainerMind = styled.div`
   width: 100%;
@@ -336,6 +408,9 @@ const ContainerMind = styled.div`
 `
 const WrapperMind = styled.div`
   width: 490px;
+  display: flex;
+  flex-direction: column;
+  gap:30px;
 `
 const TitleMind = styled.h1`
 font-size: 50px;
@@ -356,20 +431,7 @@ color: #6D6466;
 const ImageEmployees = styled.img`
 `
 
-
-
-
-
-
-const FoldSeven = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid red;
-`
+// eigth fold — 3 more pillars
 const FoldEight = styled.div`
   width: 100%;
   height: 100vh;
@@ -379,21 +441,114 @@ const FoldEight = styled.div`
   align-items: center;
   border: 2px solid blue;
 `
+
+// ninth fold — sleeper
 const FoldNine = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
   align-items: center;
   border: 2px solid red;
+  gap: 7%;
 `
+const SloganDream = styled.h1`
+  font-size: 92px;
+  border-radius: nullpx;
+  color: #9F9F92;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 78px;
+  letter-spacing: 0em;
+  text-align: left;
+  width:27%;
+`
+
+// ninth fold — sleeper assist
 const FoldTen = styled.div`  width: 100%;
   width: 100%;
   height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
   align-items: center;
+  border: 2px solid blue;
+`
+
+// eleventh fold 
+const FoldEleven = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid red;
+  gap: 40px;
+`
+const WrapTestimonial = styled.div`
+  width: 510px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+`
+const Testimonial = styled.div`
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+`
+
+// twelfth fold
+const FoldTwelve = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid blue;
+  gap: 40px;
+`
+// thirteenth fold
+const FoldThirteen = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid red;
+  gap: 40px;
+`
+// fourteenth fold
+const FoldFourteen = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid blue;
+  gap: 40px;
+`
+// fifteenth fold
+const FoldFifteen = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid red;
+`
+// sixteenth fold
+const FoldSixteen = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   border: 2px solid blue;
 `

@@ -55,4 +55,5 @@ const Subtitle = styled.div`
     font-size: 15px;
     font-weight: 200;
     text-transform: capitalize;
+    cursor: pointer;
 `

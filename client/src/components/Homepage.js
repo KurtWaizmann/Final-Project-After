@@ -1,5 +1,6 @@
 // package imports
 import styled from "styled-components"
+import { motion, Variants } from "framer-motion";
 
 // component imports
 import HomeHeader from "./headers/HomeHeader"
@@ -28,11 +29,18 @@ const Homepage = () => {
 
      {/* first fold — intro message */}
       <FoldOne>
-        <IntroWrap>
+        <motion.IntroWrap
+        initial={{x:-1000}}
+        animate={{
+          x:1,
+          rotate:10,
+        }}
+        transition={{duration:2}}
+        >
           <Title>Upload your troubles away</Title>
           <SubHeader>INTO A WORLD DESIGNED FOR YOU</SubHeader>
           <Description>Begin your journey towards a new life full of richness and beauty. Shed the toubles of the past and upload yourself into a world designed by the finest minds to be as enriching as ever experienced. Come join us today in our digital paradise.</Description>
-        </IntroWrap>
+        </motion.IntroWrap>
       </FoldOne>
 
       {/* second fold — man on beach image */}
@@ -72,7 +80,7 @@ const Homepage = () => {
         </Pillar>
         <Pillar>
           <PillarName>Freedom</PillarName>
-          <PillarDescription>Boundaries are broken with a world that’s yours to fully explore and reshape as you see fit.</PillarDescription>
+          <PillarDescription>Boundaries are broken with a world that’s yours to fully explore and create.</PillarDescription>
         </Pillar>
       </WrapperPillars>
       </FoldFive>
@@ -88,7 +96,7 @@ const Homepage = () => {
         <ContainerMind>
           <WrapperMind>
             <TitleMind>Your mind is in the best of hands</TitleMind>
-            <DescriptionMind>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</DescriptionMind>
+            <DescriptionMind>Let us be your guide through the transition into a new life. Our employees, who we consider family, will be with you every step of the process. They will help you settled into the right spiritual mindset before initializing the upload.</DescriptionMind>
             <More>Find out more</More>
           </WrapperMind>
           <ImageEmployees src={imageEmployees} />
@@ -99,16 +107,16 @@ const Homepage = () => {
       <FoldEight>
       <WrapperPillars>
         <Pillar>
-          <PillarName>Positivity</PillarName>
-          <PillarDescription>Structured to minimize negative emotion and instead promote positivity and happiness.</PillarDescription>
+          <PillarName>Belonging</PillarName>
+          <PillarDescription>Develop profound relationships with other avatars who will value you for you.</PillarDescription>
         </Pillar>
         <Pillar>
-          <PillarName>Meaning</PillarName>
-          <PillarDescription>Algoriths to monitor and impart insightful meaning to every piece of your new existance.</PillarDescription>
+          <PillarName>Transcendence</PillarName>
+          <PillarDescription>Break apart the old paradigms of what it means to live a life, and follow ever life paths without fear or regret.</PillarDescription>
         </Pillar>
         <Pillar>
-          <PillarName>Freedom</PillarName>
-          <PillarDescription>Boundaries are broken with a world that’s yours to fully explore and reshape as you see fit.</PillarDescription>
+          <PillarName>Storytelling</PillarName>
+          <PillarDescription>We are the authors of our lives, so create the narrative that brings clarity and reenforces your purpose.</PillarDescription>
         </Pillar>
       </WrapperPillars>
       </FoldEight>
@@ -126,9 +134,9 @@ const Homepage = () => {
 
       <FoldEleven>
         <WrapTestimonial>
-        <div>★★★★★</div>
+        <Stars>★★★★★</Stars>
           <Testimonial>At the age of 78, I signed up to After.  I was quite resistant at first. But my son wore me out. I guess I liked this option better than being sent into a retirement home. And thank god for my son’s insistance. Now I’m 50 years younger, verile, and full of energy. And after seeing all the fun I was having, my wife soon joined and she’s now in her 20s! What a georgeous thing.</Testimonial>
-          <div>Richie Guzman — Uploaded in 2021</div>
+          <Signed>Richie Guzman — Uploaded in 2021</Signed>
         </WrapTestimonial>
         <img src={imageTestimonail1} />
       </FoldEleven>
@@ -136,17 +144,17 @@ const Homepage = () => {
       <FoldTwelve>
         <img src={imageTestimonail2} />
         <WrapTestimonial>
-          <div>★★★★★</div> 
+        <Stars>★★★★★</Stars>
           <Testimonial>I was dying from cancer with only a few months to live when I discovered After. What a miracle. I’ve left my diseased body behind for everlasting vitality. I only wish I could get my loved ones to join me. I guess they will someday :)</Testimonial>
-          <div>Jordan Hutchinson — Uploaded in 2020</div>
+          <Signed>Jordan Hutchinson — Uploaded in 2020</Signed>
         </WrapTestimonial>
       </FoldTwelve>
 
       <FoldThirteen>
         <WrapTestimonial>
-          <div>★★★★★</div>
+        <Stars>★★★★★</Stars>
           <Testimonial>Honestly, I was so fortunate to be able leave that so-called “real” world. Let me remind you, a world ravaged by global warming, economic crises, endless wars, and so much more hurt. I remember struggling for simple things like finding fresh fruit when all the groceries stores were empty, or hiding indoors from the yearly pandemic. In the After, it’s been nothing but beautiful weather and happy moments. Truly a paradise! </Testimonial>
-          <div> Suzette Aguilar — Uploaded in 2022</div>
+          <Signed> Suzette Aguilar — Uploaded in 2022</Signed>
         </WrapTestimonial>
         <img src={imageTestimonail3} />
       </FoldThirteen>
@@ -154,15 +162,17 @@ const Homepage = () => {
       <FoldFourteen>
         <img src={imageTestimonail4} /> 
         <WrapTestimonial>
-          <div>★★★★★</div>
+          <Stars>★★★★★</Stars>
           <Testimonial>After getting married, me and my wife moved into After. Sadly, we divorced within the year as my wife had trouble adapting. But there’s love all around! I was even able to make the woman of my dreams, with all the best features  and a wonderful personality. And let me tell you, Kiri is as real as any woman! We just connect on such a level that me and my ex-wife (rip) never could. I thank every day that I got on the path that led me to my precious Kiri...</Testimonial>
-          <div>Caleb Pierce — Uploaded in 2020</div>
+          <Signed>Caleb Pierce — Uploaded in 2020</Signed>
         </WrapTestimonial>
       </FoldFourteen>
 
 
       <FoldFifteen>
-        <Image src={imageBoy} />
+        <ImageBoy style ={ { backgroundImage: `url(${imageBoy})` } }/>
+        <Forever>Preserve the people that are dearest to you, forever</Forever>
+        <Button>UPLOAD NOW</Button>
       </FoldFifteen>
 
       <FoldSixteen>
@@ -498,6 +508,12 @@ const Testimonial = styled.div`
   letter-spacing: 0em;
   text-align: left;
 `
+const Stars = styled.div`
+  font-size: 20px;
+`
+const Signed = styled.div`
+  color: #9F9F92
+`
 
 // twelfth fold
 const FoldTwelve = styled.div`
@@ -541,6 +557,43 @@ const FoldFifteen = styled.div`
   align-items: center;
   justify-content: center;
   border: 2px solid red;
+  position: relative;
+`
+const ImageBoy = styled.div`
+  background-size: stretch;
+  height: 637px;
+  width: 100%;
+  border: 2px solid red;
+`
+const Forever = styled.div`
+  position: absolute;
+  width: 389px;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 54px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #545F75;
+  left: 70px;
+`
+const Button = styled.div`
+  height: 61px;
+  width: 249px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 30px;
+  text-align: center;
+  font-variant: small-caps;
+  color: #FFFFFF;
+  background-color: #545F75;
+  position: absolute;
+  left: 70px;
+  top: 500px;
 `
 // sixteenth fold
 const FoldSixteen = styled.div`

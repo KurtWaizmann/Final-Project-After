@@ -25,14 +25,15 @@ import { AiOutlineDown } from "react-icons/ai";
 
 const Homepage = () => {
 
-  const animateHeader = {
+  const animateIntro2 = {
     start:{
       opacity: 0,
     },
     end: {
       opacity: 1,
       transition: {
-        duration:4
+        delay: 2,
+        duration:3
       }
     }
   }
@@ -44,31 +45,19 @@ const Homepage = () => {
     end: {
       opacity: 1,
       transition: {
-        duration:6
-      }
-    }
-  }
-
-
-  const animateArrow = {
-    start:{
-      opacity: 0,
-    },
-    end: {
-      opacity: 1,
-      transition: {
-        duration:8
+        duration:3
       }
     }
   }
 
   return (
     <Body>
-
+    
+    {/* nav */}
     <motion.div       
       initial={"start"}
       animate={"end"}
-      variants={animateHeader}>
+      variants={animateIntro2}>
       <HomeHeader/>
     </motion.div>
 
@@ -84,12 +73,13 @@ const Homepage = () => {
           <SubHeader>INTO A WORLD DESIGNED FOR YOU</SubHeader>
           <Description>Begin your journey towards a new life full of richness and beauty. Shed the toubles of the past and upload yourself into a world designed by the finest minds to be as enriching as ever experienced. Come join us today in our digital paradise.</Description>
         </IntroWrap>
-        <motion.div       
+        <DivArrow     
+          as={motion.div}  
           initial={"start"}
           animate={"end"}
-          variants={animateArrow}>
+          variants={animateIntro2}>
           <StyledArrow />
-        </motion.div>
+        </DivArrow>
       </FoldOne>
 
 
@@ -248,7 +238,7 @@ const FoldOne = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* border: 2px solid red; */
+  border: 2px solid red;
 `
 const IntroWrap = styled.div`
   display: flex;
@@ -284,11 +274,18 @@ letter-spacing: 0em;
 text-align: center;
 color: #6D6466;
 `
+const DivArrow = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 1px;
+`
 const StyledArrow = styled(AiOutlineDown)`
   font-size: 50px;
-  position: absolute;
   bottom: 20px;
-  color: #6D6466;
+  color: #9F9F92;
 `
 
 

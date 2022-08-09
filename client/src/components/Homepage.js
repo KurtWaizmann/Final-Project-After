@@ -50,6 +50,20 @@ const Homepage = () => {
     }
   }
 
+  const animateCEO = {
+    start:{
+      x: 400,
+      opacity:0
+    },
+    end: {
+      x: 0,
+      opacity:1,
+      transition: {
+        duration:1
+      }
+    }
+  }
+
   return (
     <Body>
     
@@ -82,7 +96,6 @@ const Homepage = () => {
         </DivArrow>
       </FoldOne>
 
-
       {/* second fold — man on beach image */}
       <FoldTwo>
       <Image src={imageBeach} />
@@ -97,7 +110,13 @@ const Homepage = () => {
           <DecriptionTwo>From humble beginnings, TrueNeural CEO Alan Rowe gathered the best people in the industry to build a new revolutionary technology. Others had deemed it impossible, but he chose to invest his own life to create a new and better one for others to enjoy. As luck would have it, he succeeded.</DecriptionTwo>
           <More>Find out more</More>
         </InnerWrapCEO>
-        <ImageTwo src={imageCEO} />
+        <ImageTwo src={imageCEO}
+          as={motion.img}  
+          initial={"start"}
+          whileInView={"end"}
+          viewport={{once:false, amount:0.1}}
+          variants={animateCEO}
+        />
         </WrapperCeo>
       </FoldThree>
 

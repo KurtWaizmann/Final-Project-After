@@ -9,6 +9,7 @@ import { BsInstagram } from "react-icons/bs";
 
 const HomeFooter = () => {
   return (
+    <FoldSixteen>
     <Wrapper>
         <Box />
         <InnerWrap>
@@ -69,11 +70,21 @@ const HomeFooter = () => {
           </Copyright>
         </FinePrint>
     </Wrapper>
+    </FoldSixteen>
   )
 }
 
 export default HomeFooter
 
+const FoldSixteen = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* border: 2px solid blue; */
+`
 
 const Wrapper = styled.div`
   display: flex;

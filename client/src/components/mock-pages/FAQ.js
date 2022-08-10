@@ -1,5 +1,4 @@
-import styled from "styled-components"
-import BasicHeader from "../headers/BasicHeader";
+import BasicHeader from "../BasicHeader";
 
 
 const FAQ = () => {

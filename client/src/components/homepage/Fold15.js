@@ -1,6 +1,7 @@
 // package imports
 import styled from "styled-components"
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 // image imports
 import imageBoy from "../../assets/littleboy.png"
@@ -14,13 +15,14 @@ const Fold15 = () => {
     <FoldFifteen>
     <ImageBoy style={{ backgroundImage: `url(${imageBoy})` }}>
       <Forever>Preserve the people that are dearest to you, forever</Forever>
-      <Button
-        as={motion.button}
-        initial={"start"}
-        whileInView={"end"}
-        viewport={{ once: true, amount: 1 }}
-        variants={animateText}
-      >UPLOAD NOW</Button>
+        <Button
+          to="/signin"
+          as={motion(Link)}
+          initial={"start"}
+          whileInView={"end"}
+          viewport={{ once: true, amount: 1 }}
+          variants={animateText}
+        >UPLOAD NOW</Button>
     </ImageBoy>
   </FoldFifteen>  )
 }
@@ -59,7 +61,7 @@ const Forever = styled.div`
   text-align: left;
   color: #545F75;
 `
-const Button = styled.div`
+const Button = styled(Link)`
   height: 61px;
   width: 249px;
   display: flex;
@@ -74,4 +76,5 @@ const Button = styled.div`
   font-variant: small-caps;
   color: #FFFFFF;
   background-color: #545F75;
+  text-decoration:none;
 `

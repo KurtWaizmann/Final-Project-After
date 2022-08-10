@@ -2,7 +2,6 @@
 import styled from "styled-components"
 
 // component imports
-import HomeFooter from "./HomeFooter"
 import Fold1 from "./Fold1";
 import Fold2 from "./Fold2";
 import Fold3 from "./Fold3";
@@ -18,6 +17,7 @@ import Fold12 from "./Fold12";
 import Fold13 from "./Fold13";
 import Fold14 from "./Fold14";
 import Fold15 from "./Fold15";
+import HomeFooter from "./HomeFooter"
 
 const Homepage = () => {
   return (

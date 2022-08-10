@@ -7,6 +7,7 @@ import Homepage from "./homepage/Homepage";
 import CompanyDetails from "./mock-pages/CompanyDetails";
 import ProductDetails from "./mock-pages/ProductDetails";
 import FAQ from "./mock-pages/FAQ";
+import SignIn from "./SignIn";
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
         <Route exact path="/companydetails" element={<CompanyDetails />} />
         <Route exact path="/productdetails" element={<ProductDetails />} />
         <Route exact path="/faq" element={<FAQ />} />
+        <Route exact path="/signin" element={<SignIn />} />
       </Routes>
     </Router>
     );

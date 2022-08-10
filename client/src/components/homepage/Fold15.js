@@ -16,7 +16,7 @@ const Fold15 = () => {
     <ImageBoy style={{ backgroundImage: `url(${imageBoy})` }}>
       <Forever>Preserve the people that are dearest to you, forever</Forever>
         <Button
-          to="/signin"
+          to="/register"
           as={motion(Link)}
           initial={"start"}
           whileInView={"end"}

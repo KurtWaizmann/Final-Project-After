@@ -11,7 +11,7 @@ useUnifiedTopology: true,
 };
 
 
-const test = async (req, res) => {
+const postRegistration = async (req, res) => {
     // creates a new client
     const client = new MongoClient(MONGO_URI, options);
 
@@ -24,7 +24,7 @@ const test = async (req, res) => {
         console.log("connected!");
 
         // grabbing from the collection
-        const result = (await db.collection("test").find().toArray());
+        const result = (await db.collection("Registrations").insertOne(req.body));
         
         // send result
         result 
@@ -43,4 +43,4 @@ const test = async (req, res) => {
     }
 };
 
-module.exports = { test };
+module.exports = { postRegistration };

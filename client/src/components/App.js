@@ -7,7 +7,8 @@ import Homepage from "./homepage/Homepage";
 import CompanyDetails from "./mock-pages/CompanyDetails";
 import ProductDetails from "./mock-pages/ProductDetails";
 import FAQ from "./mock-pages/FAQ";
-import SignIn from "./SignIn";
+import Register from "./Register";
+import RegConfirm from "./RegConfirm";
 
 
 const App = () => {
@@ -19,7 +20,9 @@ const App = () => {
         <Route exact path="/companydetails" element={<CompanyDetails />} />
         <Route exact path="/productdetails" element={<ProductDetails />} />
         <Route exact path="/faq" element={<FAQ />} />
-        <Route exact path="/signin" element={<SignIn />} />
+        <Route exact path="/register" element={<Register />} />
+        <Route exact path="/registration-confirmed" element={<RegConfirm />} />
+
       </Routes>
     </Router>
     );

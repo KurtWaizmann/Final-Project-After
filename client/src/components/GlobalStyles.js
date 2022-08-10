@@ -69,4 +69,8 @@ div {
   /* #root{
     height: 100vh;
   } */
+  /* ::placeholder {
+  color: red;
+  opacity: 1;} */
+  
 `;

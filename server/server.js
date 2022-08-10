@@ -12,7 +12,7 @@ express()
     /* Endpoints */
 
     // POST
-    .post("/", postRegistration)
+    .post("/registration", postRegistration)
 
     // catch-all
     .get("*", (req, res) => {

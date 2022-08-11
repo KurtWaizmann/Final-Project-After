@@ -7,7 +7,7 @@ import Homepage from "./homepage/Homepage";
 import CompanyDetails from "./mock-pages/CompanyDetails";
 import ProductDetails from "./mock-pages/ProductDetails";
 import FAQ from "./mock-pages/FAQ";
-import Register from "./Register";
+import Registration from "./Registration";
 import RegConfirm from "./RegConfirm";
 
 
@@ -20,7 +20,7 @@ const App = () => {
         <Route exact path="/companydetails" element={<CompanyDetails />} />
         <Route exact path="/productdetails" element={<ProductDetails />} />
         <Route exact path="/faq" element={<FAQ />} />
-        <Route exact path="/register" element={<Register />} />
+        <Route exact path="/registration" element={<Registration />} />
         <Route exact path="/registration-confirmed" element={<RegConfirm />} />
 
       </Routes>

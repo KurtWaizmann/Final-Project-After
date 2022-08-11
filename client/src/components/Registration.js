@@ -7,15 +7,23 @@ import { v4 as uuid } from 'uuid';
 // component imports
 import BasicHeader from "./BasicHeader";
 
-const Register = () => {
+// image imports
+import imageFamily from "../assets/family.png"
+
+const Registration = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm({
-        defaultValues: { firstName: "", lastName: "", dateOfBirth: "", sex: "", email: "" }
+        defaultValues: {
+            firstName: "", lastName: "", dateOfBirth: "", gender: "", email: "", phoneNumber: "", address: "",
+            city: "", stateProvince: "", zipCode: "", profession: "", maritalStatus: "", weight: "",
+            height: "", emergContact: "", relationship: "", contactNum: ""
+        }
     })
 
     const navigate = useNavigate();
 
     const submitFunc = (data) => {
+        console.log(data)
         sessionStorage.setItem("name", `${data.firstName}`)
 
         fetch("/registration", {
@@ -25,8 +33,20 @@ const Register = () => {
                 firstName: data.firstName,
                 lastName: data.lastName,
                 dateOfBirth: data.dateOfBirth,
-                sex: data.sex,
+                gender: data.gender,
                 phoneNumber: data.phoneNumber,
+                email: data.email,
+                address: data.address,
+                city: data.city,
+                stateProvince: data.stateProvince,
+                zipCode: data.zipCode,
+                profession: data.profession,
+                maritalStatus: data.maritalStatus,
+                weight: data.weight,
+                height: data.height,
+                emergContact: data.emergContact,
+                relationship: data.relationship,
+                contactNum: data.contactNum
             }),
             headers: { "Content-Type": "application/json" },
         })
@@ -43,10 +63,11 @@ const Register = () => {
             <BasicHeader />
             <Wrapper>
                 <Container>
+                    <Image src={imageFamily} />
                     <Form onSubmit={handleSubmit((data) => submitFunc(data))}>
 
                         <InnerWrap>
-                            <Title>Identity</Title>
+                            {/* <Title>Registration</Title> */}
                             <Section>
                                 <StyledInput
                                     style={errors.firstName && errorStyle}
@@ -62,6 +83,10 @@ const Register = () => {
                                     {...register("dateOfBirth", { required: true })} placeholder="Date of Birth"
                                 />
                                 <StyledInput
+                                    style={errors.gender && errorStyle}
+                                    {...register("gender", { required: true })} placeholder="Gender"
+                                />
+                                <StyledInput
                                     type="email"
                                     style={errors.email && errorStyle}
                                     {...register("email", { required: true })} placeholder="Email"
@@ -74,9 +99,7 @@ const Register = () => {
                             </Section>
                         </InnerWrap>
 
-
                         <InnerWrap>
-                            <Title>Location</Title>
                             <Section>
                                 <StyledInput
                                     style={errors.address && errorStyle}
@@ -97,18 +120,13 @@ const Register = () => {
                             </Section>
                         </InnerWrap>
 
-
                         <InnerWrap>
-                            <Title>Life Achievements</Title>
                             <Section>
                                 <StyledInput
                                     style={errors.profession && errorStyle}
                                     {...register("profession", { required: true })} placeholder="Profession"
                                 />
-                                <StyledInput
-                                    style={errors.earnings && errorStyle}
-                                    {...register("earnings", { required: true })} placeholder="Yearly Earning (estimate)"
-                                />
+
                                 <StyledInput
                                     style={errors.maritalStatus && errorStyle}
                                     {...register("maritalStatus", { required: true })} placeholder="Marital Status"
@@ -118,7 +136,6 @@ const Register = () => {
                         </InnerWrap>
 
                         <InnerWrap>
-                            <Title>Health</Title>
                             <Section>
                                 <StyledInput
                                     style={errors.weight && errorStyle}
@@ -128,31 +145,10 @@ const Register = () => {
                                     style={errors.height && errorStyle}
                                     {...register("height", { required: true })} placeholder="Height (inches)"
                                 />
-                                <StyledInput
-                                    style={errors.bloodType && errorStyle}
-                                    {...register("bloodType", { required: true })} placeholder="Blood Type"
-                                />
-
-                                <select id="blood" name="blood">
-                                    <option value="A">A</option>
-                                    <option value="B">B</option>
-                                    <option value="AB">AB</option>
-                                    <option value="O">O</option>
-                                </select>
-
-                                <StyledInput
-                                    style={errors.meds && errorStyle}
-                                    {...register("meds", { required: true })} placeholder="Taking any medications, currently?"
-                                />
-                                <StyledInput
-                                    style={errors.meds && errorStyle}
-                                    {...register("meds", { required: true })} placeholder="If so, list here"
-                                />
                             </Section>
                         </InnerWrap>
 
                         <InnerWrap>
-                            <Title>In Case of Emergency</Title>
                             <Section>
                                 <StyledInput
                                     style={errors.emergContact && errorStyle}
@@ -163,6 +159,7 @@ const Register = () => {
                                     {...register("relationship", { required: true })} placeholder="Relationship"
                                 />
                                 <StyledInput
+                                    type="tel"
                                     style={errors.contactNum && errorStyle}
                                     {...register("contactNum", { required: true })} placeholder="Contact Number"
                                 />
@@ -170,20 +167,23 @@ const Register = () => {
                         </InnerWrap>
 
                         <InnerWrap>
-                            <Title>Personal</Title>
                             <Section>
-                                <StyledInput
-                                    style={errors.zipCode && errorStyle}
-                                    {...register("rules", { required: true })} placeholder="Membership Rules"
-                                />
-                                <StyledInput
-                                    style={errors.zipCode && errorStyle}
-                                    {...register("policy", { required: true })} placeholder="Privacy Policy"
-                                />
+                                <Terms>
+                                    <input
+                                        type="checkbox"
+                                        id="termsOfService"
+                                        style={errors.agreeToPolicy && errorStyle}
+                                        {...register("agreeToPolicy", { required: true })} placeholder="Privacy Policy"
+                                    />
+                                    <label htmlFor="termsOfService">Agree with our Terms of Service</label>
+                                </Terms>
                             </Section>
                         </InnerWrap>
 
-                        <StyledButton type="submit" />
+                        <ButtonWrap>
+                            <StyledButton type="submit">Continue</StyledButton>
+                            <FinePrint>I have read, understood, and accepted the rules for membership into After(tm). Also, you decree that you are 18 years of age or older, of sound body and mind, and have chosen to upload your conscious of your own free will. Further, by agreeing to our terms, you grant TrueNeural and its subsidiaries a non-transferable option to claim your physical representation ("body") while you are uploaded and do as we wish with said body. Should We wish to exercise this option, and we do, you agree to surrender your "body", and any claim you may have on it, within 5 (five) working days of receiving written notification from TrueNeural.</FinePrint>
+                        </ButtonWrap>
                     </Form>
                 </Container>
             </Wrapper>
@@ -191,14 +191,7 @@ const Register = () => {
     )
 }
 
-// 1. Membership is available to anyone 18 years of age or older.
-// 2. You promise NOT to use to conduct any fraudulent or business activity or have more than one Member Account at any time.
-// i have read, understood, and accepted the rules for membership
-// Please reach out and read our Privacy Policy in order to understand how your information is used and shared, and check below if you accept the policy.
-// Once you submit your application, we will contact you shortly to complete your membership application. 
-// Thank you!
-
-export default Register
+export default Registration
 
 const Wrapper = styled.div`
     display: flex;
@@ -212,9 +205,15 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    height: 95%;
+    height: 670px;
+    width: 90%;
+    max-width: 950px;
     background-color: #A4BDBA;
-;
+`
+const Image = styled.img`
+    height: 100%;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
 `
 const Form = styled.form`
     width: 100%;
@@ -223,7 +222,7 @@ const Form = styled.form`
     justify-content: center;
     align-items: center;
     gap: 30px;
-    padding: 30px;
+    padding: 25px 25px 10px 25px;
     flex-wrap: wrap;
 `
 const Title = styled.h1`
@@ -232,7 +231,6 @@ const Title = styled.h1`
     width: 100%;
     border-bottom: 2px solid black;
     opacity: 0.5;
-
 `
 const Section = styled.div`
     width: 100%;
@@ -248,28 +246,36 @@ const InnerWrap = styled.div`
     gap: 20px;
 `
 const StyledInput = styled.input`
+    width: 40%;
     border: none;
     border-bottom: 1px solid black;
     border-radius: 0%;
     background-color: inherit;
     background: inherit;
-    color: white;
+    color: black;
     &:-webkit-autofill {
-        box-shadow: 0 0 0 30px red inset !important;
+        box-shadow: 0 0 0 30px #A4BDBA inset !important;
     }
     &:-webkit-autofill:hover {
-        box-shadow: 0 0 0 30px red inset !important;
+        box-shadow: 0 0 0 30px #A4BDBA inset !important;
     }
     &:-webkit-autofill:focus {
-        box-shadow: 0 0 0 30px red inset !important;
+        box-shadow: 0 0 0 30px #A4BDBA inset !important;
     }
     ::placeholder {
-       color: white;
-   }
+        color: black;
+    }
 `
-const StyledButton = styled.input`
-    background-color: white;
-    border: none;
+const Terms = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+`
+const StyledButton = styled.button`
+    background-color: inherit;
+    border: 2px solid white;
     height: 61px;
     width: 249px;
     display: flex;
@@ -282,10 +288,20 @@ const StyledButton = styled.input`
     line-height: 30px;
     text-align: center;
     font-variant: small-caps;
-    color: black;
+    color: white;
     text-decoration:none;
     &:active{
         transform: translateY(4px);
     }
 `
-
+const FinePrint = styled.div`
+    font-size: 5px;
+    opacity: 0.2;
+`
+const ButtonWrap = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+`

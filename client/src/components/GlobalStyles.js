@@ -50,9 +50,7 @@ export default createGlobalStyle`
 
 h1,
 h2,
-h3,
-label,
-button {
+h3 {
   color: black;
   font-family: 'Baskervville', serif;
   text-align: center;

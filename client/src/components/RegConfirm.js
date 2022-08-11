@@ -1,5 +1,6 @@
 // package imports
 import styled from "styled-components"
+import { Link } from "react-router-dom";
 
 // component imports
 import BasicHeader from "./BasicHeader";
@@ -12,7 +13,8 @@ const RegConfirm = () => {
             <BasicHeader />
             <Wrapper>
                 <Title>Thank you {name}.</Title>
-                <Message>You have just begun your journey to a new and better life. Before we can continue, you must complete the following assessment.</Message>
+                <Message>You have just taken your very first step towards something better. Now begins your journey to a new and more fulfilling life. For your next step, you must complete the following assessment. It will evaluate just where you fit within our very large family. Take your time and be as honest as possible. Your next life will be shaped according to the results.</Message>
+                <Continue to="/question-one">Continue</Continue>
             </Wrapper>
         </>
     )
@@ -34,6 +36,20 @@ const Title = styled.h1`
 `
 const Message = styled.div`
     font-size: 16px;
-    width: 50%;
+    width: 60%;
     line-height: 24px;
+    font-weight: 200;
 `
+const Continue = styled(Link)`
+width: 60%;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: right;
+  text-decoration-line: underline;
+  text-transform: capitalize;
+  color: #6d6466;
+  cursor: pointer;
+  opacity: 0.7;
+`;

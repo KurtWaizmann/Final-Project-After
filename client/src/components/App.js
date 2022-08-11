@@ -9,7 +9,9 @@ import ProductDetails from "./mock-pages/ProductDetails";
 import FAQ from "./mock-pages/FAQ";
 import Registration from "./Registration";
 import RegConfirm from "./RegConfirm";
-
+import Question1 from "./questionnaire/Question1";
+import Question2 from "./questionnaire/Question2";
+import Question3 from "./questionnaire/Question3";
 
 const App = () => {
   return (
@@ -22,6 +24,9 @@ const App = () => {
         <Route exact path="/faq" element={<FAQ />} />
         <Route exact path="/registration" element={<Registration />} />
         <Route exact path="/registration-confirmed" element={<RegConfirm />} />
+        <Route exact path="/question-one" element={<Question1/>} />
+        <Route exact path="/question-two" element={<Question2/>} />
+        <Route exact path="/question-three" element={<Question3/>} />
 
       </Routes>
     </Router>

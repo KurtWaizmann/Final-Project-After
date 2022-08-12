@@ -13,11 +13,11 @@ import { animateContinue } from "../AnimationHandlers";
 import { BsArrowRight } from "react-icons/bs";
 
 
-const Question2 = () => {
+const Question5 = () => {
     const { answers, setAnswers } = useContext(QuestionContext);
     const [isChosen, setIsChosen] = useState(false);
     console.log(answers)
-    
+
     return (
         <>
             <BasicHeader />
@@ -29,26 +29,26 @@ const Question2 = () => {
                             <QuestionBox />
                             <ChoiceTitle>Select an Option</ChoiceTitle>
                             <Choices onClick={() => setIsChosen(true)}>
-                                <Button onClick={() => setAnswers({ ...answers, q2: "defeated" })}><Letter>A. </Letter> Give the man your wallet.</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q2: "well-to-do" })}><Letter>B. </Letter> Fight the man and risking your own life.</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q2: "well-to-do" })}><Letter>C. </Letter> Attempt to run away, screaming for help.</Button>
-                                <Button style={{ width: "550px" }} onClick={() => setAnswers({ ...answers, q2: "brawny" })}><Letter>D. </Letter> Refuse! Instead submit yourself to the man’s violence in a desperate wish for a swift and sweet release from this cruel world you’ve come to hate</Button>
+                                    <Button onClick={() =>  setAnswers({ ...answers, q5: "defeated" })}><Letter>A. </Letter> Give the man your wallet.</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q5: "well-to-do" })}><Letter>B. </Letter> Fight the man and risking your own life.</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q5: "well-to-do" })}><Letter>C. </Letter> Attempt to run away, screaming for help.</Button>
+                                    <Button style={{width:"550px"}} onClick={() => setAnswers({ ...answers, q5: "brawny" })}><Letter>D. </Letter> Refuse! Instead submit yourself to the man’s violence in a desperate wish for a swift and sweet release from this cruel world you’ve come to hate</Button>
                             </Choices>
                         </QuestionWrap>
                         <ContinueWrap>
-                            {isChosen && <>
-                                <StyledLink to="/question/3">
-                                    <Continue
-                                        as={motion.div}
-                                        initial={"start"}
-                                        animate={"end"}
-                                        variants={animateContinue}
-                                        onClick={() => localStorage.setItem("answers",JSON.stringify(answers))}
-                                    >Continue
-                                        <ArrowWrap>
-                                            <BsArrowRight />
-                                        </ArrowWrap>
-                                    </Continue>
+                        {isChosen && <>
+                                <StyledLink to="/results">
+                                <Continue
+                                    as={motion.div}
+                                    initial={"start"}
+                                    animate={"end"}
+                                    variants={animateContinue}
+                                    onClick={() => localStorage.setItem("answers",JSON.stringify(answers))}
+                                >Continue
+                                    <ArrowWrap>
+                                        <BsArrowRight />
+                                    </ArrowWrap>
+                                </Continue>
                                 </StyledLink>
                             </>}
 
@@ -60,7 +60,7 @@ const Question2 = () => {
     )
 }
 
-export default Question2
+export default Question5
 
 const Wrapper = styled.div`
     display: flex;

@@ -1,7 +1,7 @@
 // package imports
 import styled from "styled-components"
-import { Link } from "react-router-dom";
-import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useContext, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 // component imports
@@ -48,20 +48,22 @@ const Question3 = () => {
                                     initial={"start"}
                                     animate={"end"}
                                     variants={animateText}
+                                    onClick={() => localStorage.setItem("answers",JSON.stringify(answers))}
                                 />
                             </ImageContainer>
                             {isChosen && <>
-                                <Continue
-                                    to="/question-four"
-                                    as={motion(Link)}
-                                    initial={"start"}
-                                    animate={"end"}
-                                    variants={animateContinue}
-                                >Continue
-                                    <ArrowWrap>
-                                        <BsArrowRight />
-                                    </ArrowWrap>
-                                </Continue>
+                                <StyledLink to="/question/4">
+                                    <Continue
+                                        as={motion.div}
+                                        initial={"start"}
+                                        animate={"end"}
+                                        variants={animateContinue}
+                                    >Continue
+                                        <ArrowWrap>
+                                            <BsArrowRight />
+                                        </ArrowWrap>
+                                    </Continue>
+                                </StyledLink>
                             </>}
                         </ContinueWrap>
                     </InnerWrap>
@@ -209,4 +211,7 @@ const ArrowWrap = styled.div`
     position: relative;
     top: 3px;
     margin-left: 5px;
+`
+const StyledLink = styled(Link)`
+    text-decoration: none;
 `

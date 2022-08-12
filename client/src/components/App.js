@@ -13,6 +13,7 @@ import Question1 from "./questionnaire/Question1";
 import Question2 from "./questionnaire/Question2";
 import Question3 from "./questionnaire/Question3";
 import Question4 from "./questionnaire/Question4";
+import Question5 from "./questionnaire/Question5";
 import Results from "./Results";
 
 const App = () => {
@@ -26,10 +27,11 @@ const App = () => {
         <Route exact path="/faq" element={<FAQ />} />
         <Route exact path="/registration" element={<Registration />} />
         <Route exact path="/registration-confirmed" element={<RegConfirm />} />
-        <Route exact path="/question-one" element={<Question1/>} />
-        <Route exact path="/question-two" element={<Question2/>} />
-        <Route exact path="/question-three" element={<Question3/>} />
-        <Route exact path="/question-four" element={<Question4/>} />
+        <Route exact path="/question/1" element={<Question1/>} />
+        <Route exact path="/question/2" element={<Question2/>} />
+        <Route exact path="/question/3" element={<Question3/>} />
+        <Route exact path="/question/4" element={<Question4/>} />
+        <Route exact path="/question/5" element={<Question5/>} />
         <Route exact path="/results" element={<Results/>} />
       </Routes>
     </Router>

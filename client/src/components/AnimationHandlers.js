@@ -73,7 +73,8 @@ export const animateContinue = {
     end: {
     opacity: 1,
     transition: {
-        duration:1
+        duration:2,
+        repeat: false,
     }
     }
 }

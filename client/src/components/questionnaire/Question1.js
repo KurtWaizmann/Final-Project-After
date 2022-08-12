@@ -1,19 +1,23 @@
 // package imports
 import styled from "styled-components"
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import { motion } from "framer-motion";
 
 // component imports
 import BasicHeader from "../BasicHeader";
 import { QuestionContext } from "./QuestionContext";
+import { animateContinue } from "../AnimationHandlers";
 
 // import icon
 import { BsArrowRight } from "react-icons/bs";
 
 
 const Question1 = () => {
-    const {answers, setAnswers} = useContext(QuestionContext);
-    console.log(answers)
+    const { answers, setAnswers } = useContext(QuestionContext);
+    const [isChosen, setIsChosen] = useState(false);
+
+    
     return (
         <>
             <BasicHeader />
@@ -21,29 +25,33 @@ const Question1 = () => {
                 <Container>
                     <InnerWrap>
                         <QuestionWrap>
-                            <Question>How do you really feel about grapefruit?</Question>
+                            <Question>On your way home from work, a man with a knife confronts you and orders you to hand him your wallet...</Question>
+                            <QuestionBox />
                             <ChoiceTitle>Select an Option</ChoiceTitle>
-                            <Choices>
-                                <ChoiceRow>
-                                    <Button onClick={() => setAnswers({...answers, q1: "smelly"})}>disillusioned</Button>
-                                    <Button onClick={() => setAnswers({...answers, q1: "ugly"})}>lovesick</Button>
-                                    <Button onClick={() => setAnswers({...answers, q1: "ugly"})}>lovesick</Button>
-
-                                </ChoiceRow>
-                                <ChoiceRow>
-                                    <Button onClick={() => setAnswers({...answers, q1: "loving"})}>disrespected</Button>
-                                    <Button onClick={() => setAnswers({...answers, q1: "beautiful"})}>manipulated</Button>
-                                    <Button onClick={() => setAnswers({...answers, q1: "ugly"})}>lovesick</Button>
-
-                                </ChoiceRow>
+                            <Choices onClick={() => setIsChosen(true)}>
+                                <Button onClick={() => setAnswers({ ...answers, q1: "defeated" })}><Letter>A. </Letter> Give the man your wallet.</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q1: "well-to-do" })}><Letter>B. </Letter> Fight the man and risking your own life.</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q1: "well-to-do" })}><Letter>C. </Letter> Attempt to run away, screaming for help.</Button>
+                                <Button style={{ width: "550px" }} onClick={() => setAnswers({ ...answers, q1: "brawny" })}><Letter>D. </Letter> Refuse! Instead submit yourself to the man’s violence in a desperate wish for a swift and sweet release from this cruel world you’ve come to hate</Button>
                             </Choices>
                         </QuestionWrap>
                         <ContinueWrap>
-                            <Continue to="/question-two">Continue
-                                <ArrowWrap>
-                                    <BsArrowRight />
-                                </ArrowWrap>
-                            </Continue>
+                            {isChosen && <>
+                                <StyledLink to="/question/2">
+                                    <Continue
+                                        as={motion.div}
+                                        initial={"start"}
+                                        animate={"end"}
+                                        variants={animateContinue}
+                                        onClick={() => localStorage.setItem("answers", JSON.stringify(answers))}
+                                    >Continue
+                                        <ArrowWrap>
+                                            <BsArrowRight />
+                                        </ArrowWrap>
+                                    </Continue>
+                                </StyledLink>
+                            </>}
+
                         </ContinueWrap>
                     </InnerWrap>
                 </Container>
@@ -88,7 +96,7 @@ const QuestionWrap = styled.div`
     flex: 2;
 `
 const Question = styled.h1`
-    width: 100%;
+    width: 900px;
     font-size: 50px;
     font-weight: 400;
     line-height: 65px;
@@ -96,6 +104,12 @@ const Question = styled.h1`
     text-align: left;
     color: #9F9F92;
     flex:1;
+    position: absolute;
+`
+const QuestionBox = styled.div`
+    width: 100%;
+    flex:1;
+
 `
 const ChoiceTitle = styled.div`
     font-size: 18px;
@@ -109,40 +123,37 @@ const ChoiceTitle = styled.div`
 `
 const Choices = styled.div`
     height: 100%;
+    width: 700px;
     flex:1;
-`
-const ChoiceRow = styled.div`
-    width: 100%;
-    height: 50%;
+    top: 30px;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px 0px 0 0px;
-    gap: 60px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 10px;
+`
+const Letter = styled.h1`
+    margin-right: 10px;
+    color: #9F9F92;
+
 `
 const Button = styled.button`
-    height: 56px;
-    width: 171px;
-    border-radius: 30px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 38px;
     border: none;
-    font-size: 16px;
+    border-radius: 3px;
+    font-size: 15px;
     font-weight: 300;
-    line-height: 30px;
+    line-height: 19px;
     letter-spacing: 0em;
     text-align: left;
-    color: #7D7D7D;
-    text-transform: uppercase;
-    position: relative;
-    left: -25px;
     cursor: pointer;
-    &:hover{
-        border: 2px solid #c7c7c7;
-    }
+    color: #9F9F92;
     &:focus{
-        border: 2px solid #7D7D7D;
+        color: #414141;
     }
 `
 const ContinueWrap = styled.div`
@@ -153,6 +164,7 @@ const ContinueWrap = styled.div`
     justify-content: flex-end;
     align-items: flex-end;
     flex: 1;
+    position: relative;
 `
 const Continue = styled(Link)`
     font-size: 22px;
@@ -164,6 +176,7 @@ const Continue = styled(Link)`
     color: #7D7D7D;
     border-bottom: 1px solid #7D7D7D;
     display: flex;
+    opacity: 0;
 `
 const ArrowWrap = styled.div`
     font-size: 22px;
@@ -175,4 +188,7 @@ const ArrowWrap = styled.div`
     position: relative;
     top: 3px;
     margin-left: 5px;
+`
+const StyledLink = styled(Link)`
+    text-decoration: none;
 `

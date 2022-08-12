@@ -25,17 +25,17 @@ const Question3 = () => {
                             <ChoiceTitle>Select an Option</ChoiceTitle>
                             <Choices>
                                 <ChoiceRow>
-                                    <Button onClick={() => setAnswers({...answers, question3: "smelly"})}>disillusioned</Button>
-                                    <Button onClick={() => setAnswers({...answers, question3: "ugly"})}>lovesick</Button>
+                                    <Button onClick={() => setAnswers({...answers, q3: "defeated"})}>disillusioned</Button>
+                                    <Button onClick={() => setAnswers({...answers, q3: "well-to-do"})}>lovesick</Button>
                                 </ChoiceRow>
                                 <ChoiceRow>
-                                    <Button onClick={() => setAnswers({...answers, question3: "loving"})}>disrespected</Button>
-                                    <Button onClick={() => setAnswers({...answers, question3: "beautiful"})}>manipulated</Button>
+                                    <Button onClick={() => setAnswers({...answers, q3: "brawny"})}>disrespected</Button>
+                                    <Button onClick={() => setAnswers({...answers, q3: "majestic"})}>manipulated</Button>
                                 </ChoiceRow>
                             </Choices>
                         </QuestionWrap>
                         <ContinueWrap>
-                            <Continue to="/question-two">Continue
+                            <Continue to="/results">Continue
                                 <ArrowWrap>
                                     <BsArrowRight />
                                 </ArrowWrap>

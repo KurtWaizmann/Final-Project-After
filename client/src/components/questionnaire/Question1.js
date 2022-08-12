@@ -25,12 +25,16 @@ const Question1 = () => {
                             <ChoiceTitle>Select an Option</ChoiceTitle>
                             <Choices>
                                 <ChoiceRow>
-                                    <Button onClick={() => setAnswers({...answers, question1: "smelly"})}>disillusioned</Button>
-                                    <Button onClick={() => setAnswers({...answers, question1: "ugly"})}>lovesick</Button>
+                                    <Button onClick={() => setAnswers({...answers, q1: "smelly"})}>disillusioned</Button>
+                                    <Button onClick={() => setAnswers({...answers, q1: "ugly"})}>lovesick</Button>
+                                    <Button onClick={() => setAnswers({...answers, q1: "ugly"})}>lovesick</Button>
+
                                 </ChoiceRow>
                                 <ChoiceRow>
-                                    <Button onClick={() => setAnswers({...answers, question1: "loving"})}>disrespected</Button>
-                                    <Button onClick={() => setAnswers({...answers, question1: "beautiful"})}>manipulated</Button>
+                                    <Button onClick={() => setAnswers({...answers, q1: "loving"})}>disrespected</Button>
+                                    <Button onClick={() => setAnswers({...answers, q1: "beautiful"})}>manipulated</Button>
+                                    <Button onClick={() => setAnswers({...answers, q1: "ugly"})}>lovesick</Button>
+
                                 </ChoiceRow>
                             </Choices>
                         </QuestionWrap>
@@ -131,6 +135,9 @@ const Button = styled.button`
     text-align: left;
     color: #7D7D7D;
     text-transform: uppercase;
+    position: relative;
+    left: -25px;
+    cursor: pointer;
     &:hover{
         border: 2px solid #c7c7c7;
     }

@@ -25,12 +25,12 @@ const Question2 = () => {
                             <ChoiceTitle>Select an Option</ChoiceTitle>
                             <Choices>
                                 <ChoiceRow>
-                                    <Button onClick={() => setAnswers({...answers, question2: "smelly"})}>disillusioned</Button>
-                                    <Button onClick={() => setAnswers({...answers, question2: "ugly"})}>lovesick</Button>
+                                    <Button onClick={() => setAnswers({...answers, q2: "grumpy"})}>disillusioned</Button>
+                                    <Button onClick={() => setAnswers({...answers, q2: "hellish"})}>lovesick</Button>
                                 </ChoiceRow>
                                 <ChoiceRow>
-                                    <Button onClick={() => setAnswers({...answers, question2: "loving"})}>disrespected</Button>
-                                    <Button onClick={() => setAnswers({...answers, question2: "beautiful"})}>manipulated</Button>
+                                    <Button onClick={() => setAnswers({...answers, q2: "fuzzy"})}>disrespected</Button>
+                                    <Button onClick={() => setAnswers({...answers, q2: "snotty"})}>manipulated</Button>
                                 </ChoiceRow>
                             </Choices>
                         </QuestionWrap>

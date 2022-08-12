@@ -12,6 +12,7 @@ import RegConfirm from "./RegConfirm";
 import Question1 from "./questionnaire/Question1";
 import Question2 from "./questionnaire/Question2";
 import Question3 from "./questionnaire/Question3";
+import Results from "./Results";
 
 const App = () => {
   return (
@@ -27,7 +28,7 @@ const App = () => {
         <Route exact path="/question-one" element={<Question1/>} />
         <Route exact path="/question-two" element={<Question2/>} />
         <Route exact path="/question-three" element={<Question3/>} />
-
+        <Route exact path="/results" element={<Results/>} />
       </Routes>
     </Router>
     );

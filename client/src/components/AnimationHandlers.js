@@ -65,3 +65,15 @@ export const animateImageLeft = {
     }
     }
 }
+
+export const animateContinue = {
+    start:{
+    opacity: 0,
+    },
+    end: {
+    opacity: 1,
+    transition: {
+        duration:1
+    }
+    }
+}

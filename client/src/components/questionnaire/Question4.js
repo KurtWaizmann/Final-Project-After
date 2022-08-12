@@ -13,7 +13,7 @@ import { animateText, animateContinue } from "../AnimationHandlers";
 import { BsArrowRight } from "react-icons/bs";
 
 
-const Question3 = () => {
+const Question4 = () => {
     const { answers, setAnswers } = useContext(QuestionContext);
     const [isChosen, setIsChosen] = useState(false);
     console.log(answers)
@@ -29,14 +29,14 @@ const Question3 = () => {
                             <ChoiceTitle>Select an Option</ChoiceTitle>
                             <Choices onClick={() => setIsChosen(true)}>
                                 <ChoiceRow>
-                                    <Button onClick={() => setAnswers({ ...answers, q3: "defeated" })}>person</Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q3: "well-to-do" })}>death</Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q3: "well-to-do" })}>landscape</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q4: "defeated" })}>person</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q4: "well-to-do" })}>death</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q4: "well-to-do" })}>landscape</Button>
                                 </ChoiceRow>
                                 <ChoiceRow>
-                                    <Button onClick={() => setAnswers({ ...answers, q3: "brawny" })}>building</Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q3: "majestic" })}>animal</Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q3: "majestic" })}>machine</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q4: "brawny" })}>building</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q4: "majestic" })}>animal</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q4: "majestic" })}>machine</Button>
                                 </ChoiceRow>
                             </Choices>
                         </QuestionWrap>
@@ -52,8 +52,8 @@ const Question3 = () => {
                             </ImageContainer>
                             {isChosen && <>
                                 <Continue
-                                    to="/question-four"
-                                    as={motion(Link)}
+                                    to="/results"
+                                    as={motion.div}
                                     initial={"start"}
                                     animate={"end"}
                                     variants={animateContinue}
@@ -71,7 +71,7 @@ const Question3 = () => {
     )
 }
 
-export default Question3
+export default Question4
 
 const Wrapper = styled.div`
     display: flex;

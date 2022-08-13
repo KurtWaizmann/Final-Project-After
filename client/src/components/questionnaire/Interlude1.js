@@ -4,26 +4,26 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 // component imports
-import BasicHeader from "./BasicHeader";
+import BasicHeader from "../BasicHeader";
 
-// animation import
-import { pageTransition } from "./AnimationHandlers";
+// animation imports
+import { animateContinue, pageTransition } from "../AnimationHandlers";
 
-const RegConfirm = () => {
-    const name = sessionStorage.getItem("name")
-
+const Interlude1 = () => {
     return (
         <>
             <BasicHeader />
             <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={pageTransition} style={{textDecoration:"none", padding:"none", margin:"none"}}>
-                <Title>Thank you {name}.</Title>
-                <Message>You have just taken your very first step towards something better. Now begins your journey to a new and more fulfilling life. For your next step, you must complete the following assessment. It will evaluate just where you fit within our very large family. Take your time and be as honest as possible. Your next life will be shaped according to the results.</Message>
-                <Continue to="/question/1">Continue</Continue>
+                <Message>Good job on completing the first three questions.</Message>
+                <Message>On another note — we apologies for any bugs that you might find in this assessment. Words and letters may appear out of place. Rest assured that we are working on resolving these issues.</Message>
+
+                <Continue to="/question/4">Continue</Continue>
             </Wrapper>
-            </>    )
+        </>
+    )
 }
 
-export default RegConfirm
+export default Interlude1
 
 const Wrapper = styled.div`
     display: flex;
@@ -34,9 +34,7 @@ const Wrapper = styled.div`
     height: 91vh;
     gap: 20px;
     `
-const Title = styled.h1`
-    font-size: 30px;
-`
+
 const Message = styled.div`
     font-size: 16px;
     width: 60%;

@@ -25,10 +25,13 @@ const Wrapper = styled.div`
 const TitleWrap = styled(Link)`
     display: flex;
     text-decoration: none;
+
 `
 const Title = styled.h1`
     font-size: 40px;
     font-weight: 100;
+    color: #232323;
+
 `
 const Trademark = styled.div`
     font-size: 8px;

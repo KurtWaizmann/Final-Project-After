@@ -14,11 +14,12 @@ import { BsArrowRight } from "react-icons/bs";
 // animation imports
 import { animateContinue, quizTransition } from "../AnimationHandlers";
 
-const Question1 = () => {
+
+const Question9 = () => {
     const { answers, setAnswers } = useContext(QuestionContext);
     const [isChosen, setIsChosen] = useState(false);
 
-
+    
     return (
         <>
             <BasicHeader />
@@ -26,19 +27,19 @@ const Question1 = () => {
                 <Container>
                     <InnerWrap>
                         <QuestionWrap>
-                            <Question>On a scale 1 to 10, how spiritual would you consider yourself?</Question>
+                            <Question>Your father was a civil engineer who, while drunk, demeaned you by calling you a "weakling" and "mongoloid". Knowing this — what color would you dye your hair?</Question>
                             <QuestionBox />
                             <ChoiceTitle>Select an Option</ChoiceTitle>
                             <Choices onClick={() => setIsChosen(true)}>
-                                <Button onClick={() => setAnswers({ ...answers, q1: "defeated" })}><Letter>A. </Letter> Give the man your wallet.</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q1: "well-to-do" })}><Letter>B. </Letter> Fight the man and risking your own life.</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q1: "well-to-do" })}><Letter>C. </Letter> Attempt to run away, screaming for help.</Button>
-                                <Button style={{ width: "550px" }} onClick={() => setAnswers({ ...answers, q1: "brawny" })}><Letter>D. </Letter> Refuse! Instead submit yourself to the man’s violence in a desperate wish for a swift and sweet release from this cruel world you’ve come to hate</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q9: "defeated" })}><Letter>A. </Letter> Give the man your wallet.</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q9: "well-to-do" })}><Letter>B. </Letter> Fight the man and risking your own life.</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q9: "well-to-do" })}><Letter>C. </Letter> Attempt to run away, screaming for help.</Button>
+                                <Button style={{ width: "550px" }} onClick={() => setAnswers({ ...answers, q9: "brawny" })}><Letter>D. </Letter> Refuse! Instead submit yourself to the man’s violence in a desperate wish for a swift and sweet release from this cruel world you’ve come to hate</Button>
                             </Choices>
                         </QuestionWrap>
                         <ContinueWrap>
                             {isChosen && <>
-                                <StyledLink to="/question/2">
+                                <StyledLink to="/question/10">
                                     <Continue
                                         as={motion.div}
                                         initial={"start"}
@@ -57,10 +58,11 @@ const Question1 = () => {
                     </InnerWrap>
                 </Container>
             </Wrapper>
-        </>)
+        </>
+    )
 }
 
-export default Question1
+export default Question9
 
 const Wrapper = styled.div`
     display: flex;

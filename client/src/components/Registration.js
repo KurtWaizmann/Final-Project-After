@@ -3,12 +3,16 @@ import styled from "styled-components"
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuid } from 'uuid';
+import { motion } from "framer-motion";
 
 // component imports
 import BasicHeader from "./BasicHeader";
 
 // image imports
 import imageFamily from "../assets/family.png"
+
+// animation import
+import { pageTransition } from "./AnimationHandlers";
 
 const Registration = () => {
 
@@ -61,7 +65,7 @@ const Registration = () => {
     return (
         <>
             <BasicHeader />
-            <Wrapper>
+            <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={pageTransition}>
                 <Container>
                     <Image src={imageFamily} />
                     <Form onSubmit={handleSubmit((data) => submitFunc(data))}>

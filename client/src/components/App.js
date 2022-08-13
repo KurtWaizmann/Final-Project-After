@@ -1,6 +1,8 @@
-
+// package imports
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import GlobalStyles from "./GlobalStyles";
+import { AnimatePresence, motion } from "framer-motion";
 
 // import components
 import Homepage from "./homepage/Homepage";
@@ -14,28 +16,49 @@ import Question2 from "./questionnaire/Question2";
 import Question3 from "./questionnaire/Question3";
 import Question4 from "./questionnaire/Question4";
 import Question5 from "./questionnaire/Question5";
+import Question6 from "./questionnaire/Question6";
+import Question7 from "./questionnaire/Question7";
+import Question8 from "./questionnaire/Question8";
+import Question9 from "./questionnaire/Question9";
+import Question10 from "./questionnaire/Question10";
+import Interlude1 from "./questionnaire/Interlude1";
+import Interlude2 from "./questionnaire/Interlude2";
+import QComplete from "./questionnaire/QComplete";
 import Results from "./Results";
 
 const App = () => {
+  const location = useLocation();
+
   return (
-    <Router>
-      <GlobalStyles />
-      <Routes>
-        <Route exact path="/" element={<Homepage />} />
-        <Route exact path="/companydetails" element={<CompanyDetails />} />
-        <Route exact path="/productdetails" element={<ProductDetails />} />
-        <Route exact path="/faq" element={<FAQ />} />
-        <Route exact path="/registration" element={<Registration />} />
-        <Route exact path="/registration-confirmed" element={<RegConfirm />} />
-        <Route exact path="/question/1" element={<Question1/>} />
-        <Route exact path="/question/2" element={<Question2/>} />
-        <Route exact path="/question/3" element={<Question3/>} />
-        <Route exact path="/question/4" element={<Question4/>} />
-        <Route exact path="/question/5" element={<Question5/>} />
-        <Route exact path="/results" element={<Results/>} />
-      </Routes>
-    </Router>
-    );
+    <>
+          <GlobalStyles />
+    <AnimatePresence exitBeforeEnter>
+        <Routes location={location} key={location.pathname}>
+          <Route exact path="/" element={<Homepage />} />
+          <Route exact path="/companydetails" element={<CompanyDetails />} />
+          <Route exact path="/productdetails" element={<ProductDetails />} />
+          <Route exact path="/faq" element={<FAQ />} />
+          <Route exact path="/registration" element={<Registration />} />
+          <Route exact path="/registration-confirmed" element={<RegConfirm />} />
+          <Route exact path="/question/1" element={<Question1 />} />
+          <Route exact path="/question/2" element={<Question2 />} />
+          <Route exact path="/question/3" element={<Question3 />} />
+          <Route exact path="/question/4" element={<Question4 />} />
+          <Route exact path="/question/5" element={<Question5 />} />
+          <Route exact path="/question/6" element={<Question6 />} />
+          <Route exact path="/question/7" element={<Question7 />} />
+          <Route exact path="/question/8" element={<Question8 />} />
+          <Route exact path="/question/9" element={<Question9 />} />
+          <Route exact path="/question/10" element={<Question10 />} />
+          <Route exact path="/question/10" element={<Question10 />} />
+          <Route exact path="/interlude/1" element={<Interlude1 />} />
+          <Route exact path="/interlude/2" element={<Interlude2 />} />
+          <Route exact path="/question/complete" element={<QComplete />} />
+          <Route exact path="/results" element={<Results />} />
+        </Routes>
+    </AnimatePresence>
+    </>
+  );
 }
 
 export default App;

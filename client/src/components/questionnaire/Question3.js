@@ -7,10 +7,13 @@ import { motion } from "framer-motion";
 // component imports
 import BasicHeader from "../BasicHeader";
 import { QuestionContext } from "./QuestionContext";
-import { animateText, animateContinue } from "../AnimationHandlers";
 
 // import icon
 import { BsArrowRight } from "react-icons/bs";
+
+// animation imports
+import { animateText, animateContinue, quizTransition } from "../AnimationHandlers";
+
 
 
 const Question3 = () => {
@@ -21,7 +24,7 @@ const Question3 = () => {
     return (
         <>
             <BasicHeader />
-            <Wrapper>
+            <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={quizTransition} style={{textDecoration:"none", padding:"none", margin:"none"}}>
                 <Container>
                     <InnerWrap>
                         <QuestionWrap>
@@ -52,7 +55,7 @@ const Question3 = () => {
                                 />
                             </ImageContainer>
                             {isChosen && <>
-                                <StyledLink to="/question/4">
+                                <StyledLink to="/interlude/1">
                                     <Continue
                                         as={motion.div}
                                         initial={"start"}

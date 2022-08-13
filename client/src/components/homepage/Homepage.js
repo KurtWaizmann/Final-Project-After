@@ -1,5 +1,6 @@
 // package imports
 import styled from "styled-components"
+import { motion } from "framer-motion";
 
 // component imports
 import Fold1 from "./Fold1";
@@ -19,9 +20,21 @@ import Fold14 from "./Fold14";
 import Fold15 from "./Fold15";
 import HomeFooter from "./HomeFooter"
 
+// animation import
+import { pageTransition } from "../AnimationHandlers";
+
+
 const Homepage = () => {
+
+
   return (
-    <Body>
+    <Body
+      as={motion.div}
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={pageTransition}
+    >
       <Fold1 />
       <Fold2 />
       <Fold3 />

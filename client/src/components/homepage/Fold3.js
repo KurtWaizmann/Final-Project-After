@@ -52,7 +52,7 @@ export default Fold3;
 // Third Fold
 const FoldThree = styled.div`
   width: 100%;
-  height: 95vh;
+  height: 665px;
   display: flex;
   justify-content: center;
   align-items: center;

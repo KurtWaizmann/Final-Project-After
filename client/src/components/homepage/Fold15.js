@@ -32,7 +32,7 @@ export default Fold15
 // fifteenth fold
 const FoldFifteen = styled.div`
   width: 100%;
-  height: 85vh;
+  height: 595px;
   display: flex;
   flex-direction: row;
   align-items: flex-end;

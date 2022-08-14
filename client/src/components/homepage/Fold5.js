@@ -46,7 +46,7 @@ export default Fold5
 // fifth fold
 const FoldFive = styled.div`
   width: 100%;
-  height: 70vh;
+  height: 490px;
   display: flex;
   flex-direction: column;
   justify-content: center;

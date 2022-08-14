@@ -38,7 +38,7 @@ export default Fold12
 // twelfth fold
 const FoldTwelve = styled.div`
   width: 100%;
-  height: 75vh;
+  height: 525px;
   display: flex;
   flex-direction: row;
   align-items: center;

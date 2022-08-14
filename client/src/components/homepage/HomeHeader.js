@@ -1,6 +1,7 @@
 // package imports
 import styled from "styled-components"
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 // animation import
 import { pageTransition } from "../AnimationHandlers";
@@ -9,16 +10,16 @@ const HomeHeader = () => {
     return (
     <Wrapper>
         <InnerWrap as={motion.div} initial="out" animate="in" exit="out" variants={pageTransition}>
-            <Subtitle>product</Subtitle>
-            <Subtitle>who we are</Subtitle>
+            <Subtitle to="/productdetails">product</Subtitle>
+            <Subtitle to="/companydetails">who we are</Subtitle>
         </InnerWrap>
         <TitleWrap>
             <Title>After.</Title>
             <Trademark>TM</Trademark>
         </TitleWrap> 
         <InnerWrap as={motion.div} initial="out" animate="in" exit="out" variants={pageTransition}>
-            <Subtitle>F.A.Q.</Subtitle>
-            <Subtitle>sign up</Subtitle>
+            <Subtitle to="/faq">F.A.Q.</Subtitle>
+            <Subtitle to="/registration">sign up</Subtitle>
         </InnerWrap>
     </Wrapper>
     )
@@ -60,9 +61,11 @@ const InnerWrap = styled.div`
     justify-content: center;
     gap: 15%;
 `
-const Subtitle = styled.div`
+const Subtitle = styled(Link)`
     font-size: 15px;
     font-weight: 200;
     text-transform: capitalize;
     cursor: pointer;
+    text-decoration: none;
+    color: #232323;
 `

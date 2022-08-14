@@ -25,7 +25,7 @@ export default Fold10
 // tenth fold — sleeper assist
 const FoldTen = styled.div`  width: 100%;
   width: 100%;
-  height: 100vh;
+  height: 700px;
   display: flex;
   flex-direction: row;
   align-items: center;

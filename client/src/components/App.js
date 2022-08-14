@@ -33,14 +33,17 @@ import { pageTransition } from "./AnimationHandlers";
 
 const App = () => {
   const location = useLocation();
-
+  let navInvisible = location.pathname === "/registration";
+  console.log(navInvisible)
   return (
     <>
-    <motion.div initial="out" animate="in" variants={pageTransition}>
-      <BasicHeader />
-    </motion.div>
-          <GlobalStyles />
-    <AnimatePresence exitBeforeEnter>
+      <motion.div initial="out" animate="in" variants={pageTransition}>
+        {!navInvisible && <>
+          <BasicHeader />
+        </>}
+      </motion.div>
+      <GlobalStyles />
+      <AnimatePresence exitBeforeEnter>
         <Routes location={location} key={location.pathname}>
           <Route exact path="/" element={<Intro />} />
           <Route exact path="/home" element={<Homepage />} />
@@ -65,7 +68,7 @@ const App = () => {
           <Route exact path="/question/complete" element={<QComplete />} />
           <Route exact path="/results" element={<Results />} />
         </Routes>
-    </AnimatePresence>
+      </AnimatePresence>
     </>
   );
 }

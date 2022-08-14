@@ -37,7 +37,7 @@ export default Fold13
 // thirteenth fold
 const FoldThirteen = styled.div`
   width: 100%;
-  height: 75vh;
+  height: 525px;
   display: flex;
   flex-direction: row;
   align-items: center;

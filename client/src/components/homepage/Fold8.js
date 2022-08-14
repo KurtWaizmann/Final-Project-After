@@ -46,7 +46,7 @@ export default Fold8
 // eigth fold — 3 more pillars
 const FoldEight = styled.div`
   width: 100%;
-  height: 50vh;
+  height: 350px;
   display: flex;
   flex-direction: column;
   justify-content: center;

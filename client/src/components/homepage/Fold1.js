@@ -50,7 +50,7 @@ export default Fold1
 // Fist Fold CSS 
 const FoldOne = styled.div`
   width: 100%;
-  height: 600px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -99,7 +99,7 @@ const StyledArrow = styled(AiOutlineDown)`
 `
 const ArrowWrap = styled.div`
   width: 100%;
-  height: 600px;
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: flex-end;

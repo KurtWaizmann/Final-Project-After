@@ -78,7 +78,7 @@ export default HomeFooter
 
 const FoldSixteen = styled.div`
   width: 100%;
-  height: 700px;
+  height: 100vh;
   display: flex;
   flex-direction: row;
   align-items: center;

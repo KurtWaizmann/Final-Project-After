@@ -17,7 +17,7 @@ export default Fold2;
 // Second Fold 
 const FoldTwo = styled.div`
   width: 100%;
-  height: 630px;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;

@@ -14,7 +14,7 @@ const Fold10 = () => {
         <motion.img src={imageSleepAssist}
           initial={"start"}
           whileInView={"end"}
-          viewport={{ once: true, amount: 0.9 }}
+          viewport={{ once: true, amount: 0.8 }}
           variants={animateImageLeft}
         />
       </FoldTen>  )
@@ -25,7 +25,7 @@ export default Fold10
 // tenth fold — sleeper assist
 const FoldTen = styled.div`  width: 100%;
   width: 100%;
-  height: 700px;
+  height: 100vh;
   display: flex;
   flex-direction: row;
   align-items: center;

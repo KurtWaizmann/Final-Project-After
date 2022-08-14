@@ -1,9 +1,14 @@
+// package imports
 import styled from "styled-components"
+import { motion } from "framer-motion";
+
+// animation import
+import { pageTransition } from "../AnimationHandlers";
 
 const HomeHeader = () => {
     return (
     <Wrapper>
-        <InnerWrap>
+        <InnerWrap as={motion.div} initial="out" animate="in" exit="out" variants={pageTransition}>
             <Subtitle>product</Subtitle>
             <Subtitle>who we are</Subtitle>
         </InnerWrap>
@@ -11,7 +16,7 @@ const HomeHeader = () => {
             <Title>After.</Title>
             <Trademark>TM</Trademark>
         </TitleWrap> 
-        <InnerWrap>
+        <InnerWrap as={motion.div} initial="out" animate="in" exit="out" variants={pageTransition}>
             <Subtitle>F.A.Q.</Subtitle>
             <Subtitle>sign up</Subtitle>
         </InnerWrap>
@@ -28,9 +33,12 @@ const Wrapper = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    top: 0;
 `
 const TitleWrap = styled.div`
     display: flex;
+    opacity:0;
 `
 const Title = styled.h1`
     font-size: 40px;

@@ -18,22 +18,25 @@ const Question2 = () => {
     const { answers, setAnswers } = useContext(QuestionContext);
     const [isChosen, setIsChosen] = useState(false);
     console.log(answers)
-    
+
     return (
         <>
-            <BasicHeader />
-            <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={quizTransition} style={{textDecoration:"none", padding:"none", margin:"none"}}>
+            <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={quizTransition} style={{ textDecoration: "none", padding: "none", margin: "none" }}>
                 <Container>
                     <InnerWrap>
                         <QuestionWrap>
-                            <Question>What type of life do you aspire to have?</Question>
+                            <Question>Which of the following animals would describe you best?</Question>
                             <QuestionBox />
                             <ChoiceTitle>Select an Option</ChoiceTitle>
                             <Choices onClick={() => setIsChosen(true)}>
-                                <Button onClick={() => setAnswers({ ...answers, q2: "defeated" })}><Letter>A. </Letter> Give the man your wallet.</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q2: "well-to-do" })}><Letter>B. </Letter> Fight the man and risking your own life.</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q2: "well-to-do" })}><Letter>C. </Letter> Attempt to run away, screaming for help.</Button>
-                                <Button style={{ width: "550px" }} onClick={() => setAnswers({ ...answers, q2: "brawny" })}><Letter>D. </Letter> Refuse! Instead submit yourself to the man’s violence in a desperate wish for a swift and sweet release from this cruel world you’ve come to hate</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q2: "defeated" })}><Letter>A. </Letter> Barn Owl</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q2: "well-to-do" })}><Letter>B. </Letter> Bison</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q2: "well-to-do" })}><Letter>C. </Letter> Fire-Bellied Toad</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q2: "brawny" })}><Letter>D. </Letter> Shrew</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q2: "ugly" })}><Letter>D. </Letter> Northern Stargazer</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q2: "brawny" })}><Letter>D. </Letter> Aardvark</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q2: "ugly" })}><Letter>D. </Letter> Hermit Crab</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q2: "brawny" })}><Letter>D. </Letter> Gecko</Button>
                             </Choices>
                         </QuestionWrap>
                         <ContinueWrap>
@@ -44,7 +47,7 @@ const Question2 = () => {
                                         initial={"start"}
                                         animate={"end"}
                                         variants={animateContinue}
-                                        onClick={() => localStorage.setItem("answers",JSON.stringify(answers))}
+                                        onClick={() => localStorage.setItem("answers", JSON.stringify(answers))}
                                     >Continue
                                         <ArrowWrap>
                                             <BsArrowRight />
@@ -128,9 +131,9 @@ const Choices = styled.div`
     flex:1;
     top: 30px;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 10px;
     line-height: 10px;
 `

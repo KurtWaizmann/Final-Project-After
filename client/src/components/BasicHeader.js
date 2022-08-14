@@ -1,10 +1,11 @@
+// package imports
 import styled from "styled-components"
 import { Link } from "react-router-dom";
 
 const BasicHeader = () => {
     return (
     <Wrapper>
-        <TitleWrap to={"/"}>
+        <TitleWrap to={"/home"}>
             <Title>After.</Title>
             <Trademark>TM</Trademark>
         </TitleWrap> 

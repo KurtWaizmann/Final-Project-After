@@ -12,7 +12,6 @@ import { animateContinue, pageTransition } from "../AnimationHandlers";
 const Interlude2 = () => {
     return (
         <>
-            <BasicHeader />
             <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={pageTransition} style={{textDecoration:"none", padding:"none", margin:"none"}}>
                 <Message>You have just taken your very first step towards something better. Now begins your journey to a new and more fulfilling life. For your next step, you must complete the following assessment. It will evaluate just where you fit within our very large family. Take your time and be as honest as possible. Your next life will be shaped according to the results.</Message>
                 <Continue to="/question/7">Continue</Continue>

@@ -5,6 +5,8 @@ import GlobalStyles from "./GlobalStyles";
 import { AnimatePresence, motion } from "framer-motion";
 
 // import components
+import BasicHeader from "./BasicHeader";
+import Intro from "./Intro";
 import Homepage from "./homepage/Homepage";
 import CompanyDetails from "./mock-pages/CompanyDetails";
 import ProductDetails from "./mock-pages/ProductDetails";
@@ -26,15 +28,22 @@ import Interlude2 from "./questionnaire/Interlude2";
 import QComplete from "./questionnaire/QComplete";
 import Results from "./Results";
 
+// animation import
+import { pageTransition } from "./AnimationHandlers";
+
 const App = () => {
   const location = useLocation();
 
   return (
     <>
+    <motion.div initial="out" animate="in" variants={pageTransition}>
+      <BasicHeader />
+    </motion.div>
           <GlobalStyles />
     <AnimatePresence exitBeforeEnter>
         <Routes location={location} key={location.pathname}>
-          <Route exact path="/" element={<Homepage />} />
+          <Route exact path="/" element={<Intro />} />
+          <Route exact path="/home" element={<Homepage />} />
           <Route exact path="/companydetails" element={<CompanyDetails />} />
           <Route exact path="/productdetails" element={<ProductDetails />} />
           <Route exact path="/faq" element={<FAQ />} />

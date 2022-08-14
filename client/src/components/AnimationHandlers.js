@@ -82,7 +82,7 @@ export const animateContinue = {
 export const quizTransition = {
     in: {
         opacity: 1,
-        x:0,
+        x: 0,
         transition: {
             duration: 2,
             type: "tween",
@@ -112,6 +112,21 @@ export const pageTransition = {
         transition: {
             duration: 3,
 
+        }
+    }
+}
+
+export const buttonHover = {
+    start: {
+        y: "0px",
+    },
+    end: {
+        y: "-10px",
+        transition: {
+            type: "spring",
+            stiffness: 1000,
+            damping: 10,
+            ease: "easeInOut",
         }
     }
 }

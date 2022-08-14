@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { motion } from "framer-motion";
+import { v4 as uuid } from 'uuid';
 
 // component imports
 import BasicHeader from "../BasicHeader";
@@ -12,29 +13,29 @@ import { QuestionContext } from "./QuestionContext";
 import { BsArrowRight } from "react-icons/bs";
 
 // animation imports
-import { animateContinue, quizTransition } from "../AnimationHandlers";
+import { animateContinue, quizTransition, buttonHover } from "../AnimationHandlers";
 
 const Question1 = () => {
     const { answers, setAnswers } = useContext(QuestionContext);
     const [isChosen, setIsChosen] = useState(false);
+    console.log(answers)
+
+    const buttons = [];
+    for (let i = 1; i < 11; i++) {
+        buttons.push(<Button key={uuid()} as={motion.button} initial={"start"} whileHover={"end"} variants={buttonHover} onClick={() => setAnswers({ ...answers, q1: i })}>{i}</Button>)
+    }
 
 
     return (
         <>
-            <BasicHeader />
-            <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={quizTransition} style={{textDecoration:"none", padding:"none", margin:"none"}}>
+            <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={quizTransition} style={{ textDecoration: "none", padding: "none", margin: "none" }}>
                 <Container>
                     <InnerWrap>
                         <QuestionWrap>
                             <Question>On a scale 1 to 10, how spiritual would you consider yourself?</Question>
                             <QuestionBox />
                             <ChoiceTitle>Select an Option</ChoiceTitle>
-                            <Choices onClick={() => setIsChosen(true)}>
-                                <Button onClick={() => setAnswers({ ...answers, q1: "defeated" })}><Letter>A. </Letter> Give the man your wallet.</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q1: "well-to-do" })}><Letter>B. </Letter> Fight the man and risking your own life.</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q1: "well-to-do" })}><Letter>C. </Letter> Attempt to run away, screaming for help.</Button>
-                                <Button style={{ width: "550px" }} onClick={() => setAnswers({ ...answers, q1: "brawny" })}><Letter>D. </Letter> Refuse! Instead submit yourself to the man’s violence in a desperate wish for a swift and sweet release from this cruel world you’ve come to hate</Button>
-                            </Choices>
+                            <Choices onClick={() => setIsChosen(true)}>{buttons}</Choices>
                         </QuestionWrap>
                         <ContinueWrap>
                             {isChosen && <>
@@ -109,7 +110,6 @@ const Question = styled.h1`
 const QuestionBox = styled.div`
     width: 100%;
     flex:1;
-
 `
 const ChoiceTitle = styled.div`
     font-size: 18px;
@@ -127,33 +127,36 @@ const Choices = styled.div`
     flex:1;
     top: 30px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-start;
-    align-items: flex-start;
-    gap: 10px;
+    align-items: center;
+    gap: 5px;
     line-height: 10px;
-`
-const Letter = styled.h1`
-    margin-right: 10px;
-    color: #9F9F92;
-
+    
 `
 const Button = styled.button`
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    height: 38px;
-    border: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 60px;
     border-radius: 3px;
-    font-size: 15px;
+    border: 3px solid #7D7D7D;
+    font-size: 40px;
     font-weight: 300;
     line-height: 19px;
     letter-spacing: 0em;
     text-align: left;
     cursor: pointer;
-    color: #9F9F92;
+    color:#7D7D7D;
     &:focus{
-        color: #414141;
+        border-color: green;
+        color: black;
+    }
+    &:hover{
+        color: black;    
+        font-weight: 500;
     }
 `
 const ContinueWrap = styled.div`

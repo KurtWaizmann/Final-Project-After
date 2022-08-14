@@ -23,7 +23,6 @@ const QComplete = () => {
         <>{redirect
             ? <Navigate to="/results" />
             : <>
-                <BasicHeader />
                 <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={pageTransition} style={{ textDecoration: "none", padding: "none", margin: "none" }}>
                     <Loader><Loader /></Loader>
                     <Message>Please wait a moment as our system avaluates your answers. It is important that it goes through your responses with accurate precision to determine just who you will become in the next life.</Message>

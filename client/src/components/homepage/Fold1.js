@@ -99,7 +99,7 @@ const StyledArrow = styled(AiOutlineDown)`
 `
 const ArrowWrap = styled.div`
   width: 100%;
-  height: 900px;
+  height: 670px;
   display: flex;
   justify-content: center;
   align-items: flex-end;

@@ -9,7 +9,7 @@ const Fold6 = () => {
     return (
         <FoldSix>
             <Image src={imageSurfing} />
-            <Slogan speed={-10}>A world for you to reshape</Slogan>
+            <Slogan speed={20}>A world for you to reshape</Slogan>
         </FoldSix>)
 }
 

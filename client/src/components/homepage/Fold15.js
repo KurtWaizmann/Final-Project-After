@@ -32,19 +32,17 @@ export default Fold15
 // fifteenth fold
 const FoldFifteen = styled.div`
   width: 100%;
-  height: 75vh;
+  height: 85vh;
   display: flex;
   flex-direction: row;
   align-items: flex-end;
   justify-content: center;
-  /* border: 2px solid red; */
   position: relative;
 `
 const ImageBoy = styled.div`
   background-size: cover;
   height: 637px;
   width: 100%;
-  /* border: 2px solid red; */
   display: flex;
   flex-direction: column;
   justify-content: center;

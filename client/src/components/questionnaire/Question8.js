@@ -22,19 +22,18 @@ const Question8 = () => {
     
     return (
         <>
-            <BasicHeader />
             <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={quizTransition} style={{textDecoration:"none", padding:"none", margin:"none"}}>
                 <Container>
                     <InnerWrap>
                         <QuestionWrap>
-                            <Question>On your way home from work, a man with a knife confronts you and orders you to hand him your wallet...</Question>
+                            <Question>If you had an extra hour a day that had to be allocated to one specific purpose, how would you use it?</Question>
                             <QuestionBox />
                             <ChoiceTitle>Select an Option</ChoiceTitle>
                             <Choices onClick={() => setIsChosen(true)}>
-                                <Button onClick={() => setAnswers({ ...answers, q8: "defeated" })}><Letter>A. </Letter> Give the man your wallet.</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q8: "well-to-do" })}><Letter>B. </Letter> Fight the man and risking your own life.</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q8: "well-to-do" })}><Letter>C. </Letter> Attempt to run away, screaming for help.</Button>
-                                <Button style={{ width: "550px" }} onClick={() => setAnswers({ ...answers, q8: "brawny" })}><Letter>D. </Letter> Refuse! Instead submit yourself to the man’s violence in a desperate wish for a swift and sweet release from this cruel world you’ve come to hate</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q8: "defeated" })}><Letter>A. </Letter> Spending time with family or friends.</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q8: "well-to-do" })}><Letter>B. </Letter> Catching up on sleep.</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q8: "well-to-do" })}><Letter>C. </Letter> Learn something new.</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q8: "brawny" })}><Letter>D. </Letter> Doing an activity you love.</Button>
                             </Choices>
                         </QuestionWrap>
                         <ContinueWrap>

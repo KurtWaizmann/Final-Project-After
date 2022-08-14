@@ -22,19 +22,20 @@ const Question9 = () => {
     
     return (
         <>
-            <BasicHeader />
             <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={quizTransition} style={{textDecoration:"none", padding:"none", margin:"none"}}>
                 <Container>
                     <InnerWrap>
                         <QuestionWrap>
-                            <Question>Your father was a civil engineer who, while drunk, demeaned you by calling you a "weakling" and "mongoloid". Knowing this — what color would you dye your hair?</Question>
+                            <Question>What part of the human face do you look at when you talk to someone?</Question>
                             <QuestionBox />
                             <ChoiceTitle>Select an Option</ChoiceTitle>
                             <Choices onClick={() => setIsChosen(true)}>
-                                <Button onClick={() => setAnswers({ ...answers, q9: "defeated" })}><Letter>A. </Letter> Give the man your wallet.</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q9: "well-to-do" })}><Letter>B. </Letter> Fight the man and risking your own life.</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q9: "well-to-do" })}><Letter>C. </Letter> Attempt to run away, screaming for help.</Button>
-                                <Button style={{ width: "550px" }} onClick={() => setAnswers({ ...answers, q9: "brawny" })}><Letter>D. </Letter> Refuse! Instead submit yourself to the man’s violence in a desperate wish for a swift and sweet release from this cruel world you’ve come to hate</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q9: "defeated" })}><Letter>A. </Letter> Eyes.</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q9: "well-to-do" })}><Letter>B. </Letter> Lips.</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q9: "well-to-do" })}><Letter>C. </Letter> Cheek.</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q9: "brawny" })}><Letter>D. </Letter>Nose.</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q9: "brawny" })}><Letter>D. </Letter>Chin.</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q9: "brawny" })}><Letter>D. </Letter>Forehead.</Button>
                             </Choices>
                         </QuestionWrap>
                         <ContinueWrap>
@@ -129,9 +130,9 @@ const Choices = styled.div`
     flex:1;
     top: 30px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-start;
-    align-items: flex-start;
+    flex-wrap: wrap;
     gap: 10px;
     line-height: 10px;
 `

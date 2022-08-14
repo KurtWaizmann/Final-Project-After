@@ -12,7 +12,6 @@ import { animateContinue, pageTransition } from "../AnimationHandlers";
 const Interlude1 = () => {
     return (
         <>
-            <BasicHeader />
             <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={pageTransition} style={{textDecoration:"none", padding:"none", margin:"none"}}>
                 <Message>Good job on completing the first three questions.</Message>
                 <Message>On another note — we apologies for any bugs that you might find in this assessment. Words and letters may appear out of place. Rest assured that we are working on resolving these issues.</Message>

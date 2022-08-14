@@ -15,7 +15,6 @@ const Results = () => {
 
     return (
         <>
-            <BasicHeader />
             <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={pageTransition} style={{textDecoration:"none", padding:"none", margin:"none"}}>
                 <Text>
                     {/* You are a {answers.q1} and {answers.q2} man. But fortunetaly, you are also {answers.q3}. */}

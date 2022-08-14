@@ -11,7 +11,7 @@ import { animateText, animateImageRight } from "../AnimationHandlers";
 const Fold11 = () => {
   return (
     <>
-      <SectionTitle>Satisfied Clients</SectionTitle>
+      <SectionTitle>Satisfied Customers</SectionTitle>
     <FoldEleven>
       <WrapTestimonial
         as={motion.div}
@@ -42,12 +42,14 @@ const SectionTitle = styled.h1`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100px;
+  height: 500px;
   text-align: left;
   padding-left: 40px;
-  font-size: 40px;
-    font-weight: 100;
-    color: #232323;
+  font-size: 92px;
+  border-radius: nullpx;
+  color: #9F9F92;
+  font-size: 60px;
+  font-weight: 400;
 `
 const FoldEleven = styled.div`
   width: 100%;
@@ -56,7 +58,6 @@ const FoldEleven = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  /* border: 2px solid red; */
   gap: 40px;
 `
 const WrapTestimonial = styled.div`

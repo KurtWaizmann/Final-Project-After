@@ -16,42 +16,42 @@ const HomeFooter = () => {
           <SiteMap>
             <About>
               <Title>About TrueNeuro</Title>
-              <div>Alan Rowe Foundation</div>
-              <div>TrueNeuro Beliefs</div>
-              <div>Backgrounds and Origins</div>
-              <div>Ethics and Compliance</div>
-              <div>Codes and Creeds</div>
-              <div>Inside the Institutions</div>
-              <div>Carreer Oppertunities</div>
-              <div>Products</div>
+              <Link>Alan Rowe Foundation</Link>
+              <Link>TrueNeuro Beliefs</Link>
+              <Link>Backgrounds and Origins</Link>
+              <Link>Ethics and Compliance</Link>
+              <Link>Codes and Creeds</Link>
+              <Link>Inside the Institutions</Link>
+              <Link>Carreer Oppertunities</Link>
+              <Link>Products</Link>
             </About>
             <Services>
                 <Title>Beginner Services</Title>
-              <div>Transition Seminars</div>
-              <div>The Way to Happiness</div>
-              <div>Adjusting to Coming Changes</div>
-              <div>Personal Efficiency</div>
-              <div>Successful Communication</div>
-              <div>Tools for a Life Uploaded</div>
-              <div>Prepare your Loved Ones</div>
-              <div>Fundamentals of Thought</div>
+              <Link>Transition Seminars</Link>
+              <Link>The Way to Happiness</Link>
+              <Link>Adjusting to Coming Changes</Link>
+              <Link>Personal Efficiency</Link>
+              <Link>Successful Communication</Link>
+              <Link>Tools for a Life Uploaded</Link>
+              <Link>Prepare your Loved Ones</Link>
+              <Link>Fundamentals of Thought</Link>
             </Services>
             <Assistance>
               <Title>Assistance</Title >
-              <div>Financial Assistance</div>
-              <div>Emotional Support</div>
-              <div>After Buddy-System</div>
-              <div>Drug Interventions</div>
-              <div>Holistic Synergetics</div>
-              <div>Guidance for Dissociation</div>
-              <div>Mental Health Checklist</div>
+              <Link>Financial Assistance</Link>
+              <Link>Emotional Support</Link>
+              <Link>After Buddy-System</Link>
+              <Link>Drug Interventions</Link>
+              <Link>Holistic Synergetics</Link>
+              <Link>Guidance for Dissociation</Link>
+              <Link>Mental Health Checklist</Link>
             </Assistance>
             <Contact>
               <Title>Contact Us</Title>
-              <div>Customer Support</div>
-              <div>Legal Offices</div>
-              <div>Finacial Center</div>
-              <div>Locate an Institution</div>
+              <Link>Customer Support</Link>
+              <Link>Legal Offices</Link>
+              <Link>Finacial Center</Link>
+              <Link>Locate an Institution</Link>
               <SocialMedia>
                 <BsTwitter />
                 <BsLinkedin />
@@ -150,6 +150,7 @@ const SocialMedia = styled.div`
   font-size: 25px;
   position: relative;
   top: 40px;
+  cursor: pointer;
 `
 const FinePrint = styled.div`
   display: flex;
@@ -169,4 +170,8 @@ const Copyright = styled.div`
   flex-direction: row;
   justify-content: space-between;
   font-size: 1px;
+  cursor: pointer;
+`
+const Link = styled.div`
+  cursor: pointer;
 `

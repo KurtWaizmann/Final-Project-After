@@ -23,19 +23,23 @@ const Question5 = () => {
 
     return (
         <>
-            <BasicHeader />
             <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={quizTransition} style={{textDecoration:"none", padding:"none", margin:"none"}}>
                 <Container>
                     <InnerWrap>
                         <QuestionWrap>
-                            <Question>Do you ever feel like there is a higher power?</Question>
+                            <Question>Which of these smells is most interesting to you?</Question>
                             <QuestionBox />
                             <ChoiceTitle>Select an Option</ChoiceTitle>
                             <Choices onClick={() => setIsChosen(true)}>
-                                    <Button onClick={() =>  setAnswers({ ...answers, q5: "defeated" })}><Letter>A. </Letter> Give the man your wallet.</Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q5: "well-to-do" })}><Letter>B. </Letter> Fight the man and risking your own life.</Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q5: "well-to-do" })}><Letter>C. </Letter> Attempt to run away, screaming for help.</Button>
-                                    <Button style={{width:"550px"}} onClick={() => setAnswers({ ...answers, q5: "brawny" })}><Letter>D. </Letter> Refuse! Instead submit yourself to the man’s violence in a desperate wish for a swift and sweet release from this cruel world you’ve come to hate</Button>
+                                    <Button onClick={() =>  setAnswers({ ...answers, q5: "defeated" })}><Letter>A. </Letter> Christmas Trees </Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q5: "well-to-do" })}><Letter>B. </Letter> Sharpies </Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q5: "well-to-do" })}><Letter>C. </Letter> Baby </Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q5: "brawny" })}><Letter>D. </Letter> Gasoline</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q5: "brawny" })}><Letter>D. </Letter> New Car</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q5: "brawny" })}><Letter>D. </Letter> Fresh paint</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q5: "brawny" })}><Letter>D. </Letter> Wine</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q5: "brawny" })}><Letter>D. </Letter> Bacon</Button>
+
                             </Choices>
                         </QuestionWrap>
                         <ContinueWrap>
@@ -130,9 +134,9 @@ const Choices = styled.div`
     flex:1;
     top: 30px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-start;
-    align-items: flex-start;
+    flex-wrap: wrap;
     gap: 10px;
     line-height: 10px;
 `

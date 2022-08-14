@@ -9,7 +9,7 @@ const Fold4 = () => {
     return (
         <FoldFour>
             <Image src={imageMountains} />
-            <Slogan speed={-5}>Why feel bad when you can feel good?</Slogan>
+            <Slogan speed={20}>Why feel bad when you can feel good?</Slogan>
         </FoldFour>)
 }
 
@@ -18,7 +18,7 @@ export default Fold4
 // Fourth Fold 
 const FoldFour = styled.div`
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   flex-direction: column;
   justify-content: center;

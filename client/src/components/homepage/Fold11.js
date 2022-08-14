@@ -10,12 +10,14 @@ import { animateText, animateImageRight } from "../AnimationHandlers";
 
 const Fold11 = () => {
   return (
+    <>
+      <SectionTitle>Satisfied Clients</SectionTitle>
     <FoldEleven>
       <WrapTestimonial
         as={motion.div}
         initial={"start"}
         whileInView={"end"}
-        viewport={{ once: true, amount: 0.8 }}
+        viewport={{ once: true, amount: 0.9 }}
         variants={animateText}
       >
         <Stars>★★★★★</Stars>
@@ -25,19 +27,31 @@ const Fold11 = () => {
       <motion.img src={imageTestimonail1}
         initial={"start"}
         whileInView={"end"}
-        viewport={{ once: true, amount: 0.8 }}
+        viewport={{ once: true, amount: 0.9 }}
         variants={animateImageRight}
       />
     </FoldEleven>
+    </>
   )
 }
 
 export default Fold11
 
 // eleventh fold 
+const SectionTitle = styled.h1`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  text-align: left;
+  padding-left: 40px;
+  font-size: 40px;
+    font-weight: 100;
+    color: #232323;
+`
 const FoldEleven = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 75vh;
   display: flex;
   flex-direction: row;
   align-items: center;

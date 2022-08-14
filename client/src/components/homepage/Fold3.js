@@ -52,7 +52,7 @@ export default Fold3;
 // Third Fold
 const FoldThree = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 75vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,6 +71,7 @@ const CEOText = styled.div`
   gap: 8%;
 `;
 const Leader = styled.div`
+  padding-top: 12px;
   font-size: 24px;
   font-weight: 600;
   line-height: 33px;

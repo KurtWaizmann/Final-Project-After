@@ -9,7 +9,7 @@ const Fold6 = () => {
     return (
         <FoldSix>
             <Image src={imageSurfing} />
-            <Slogan speed={-5}>A world for you to reshape</Slogan>
+            <Slogan speed={-10}>A world for you to reshape</Slogan>
         </FoldSix>)
 }
 
@@ -18,7 +18,7 @@ export default Fold6
 // sixth fold — surfing
 const FoldSix = styled.div`
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   flex-direction: column;
   justify-content: center;

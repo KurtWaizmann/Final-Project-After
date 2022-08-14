@@ -15,14 +15,14 @@ const Fold14 = () => {
       <motion.img src={imageTestimonail4}
         initial={"start"}
         whileInView={"end"}
-        viewport={{ once: true, amount: 0.8 }}
+        viewport={{ once: true, amount: 0.9 }}
         variants={animateImageLeft}
       />
       <WrapTestimonial
         as={motion.div}
         initial={"start"}
         whileInView={"end"}
-        viewport={{ once: true, amount: 0.8 }}
+        viewport={{ once: true, amount: 0.9 }}
         variants={animateText}
       >
         <Stars>★★★★★</Stars>
@@ -38,7 +38,7 @@ export default Fold14
 // fourteenth fold
 const FoldFourteen = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 75vh;
   display: flex;
   flex-direction: row;
   align-items: center;

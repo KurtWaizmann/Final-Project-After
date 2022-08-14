@@ -33,7 +33,7 @@ export default Fold9
 // ninth fold — sleeper
 const FoldNine = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 75vh;
   display: flex;
   flex-direction: row;
   align-items: center;

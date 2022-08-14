@@ -17,10 +17,10 @@ export default Fold2;
 // Second Fold 
 const FoldTwo = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 75vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 `
 const Image = styled.img`

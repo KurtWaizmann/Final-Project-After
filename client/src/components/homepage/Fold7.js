@@ -40,7 +40,7 @@ export default Fold7
 // seventh fold — two employees
 const FoldSeven = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 75vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

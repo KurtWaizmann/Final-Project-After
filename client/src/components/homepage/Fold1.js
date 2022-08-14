@@ -4,23 +4,22 @@ import { motion } from "framer-motion";
 
 // component imports
 import HomeHeader from "./HomeHeader"
-import { animateIntro, animateIntro2 } from "../AnimationHandlers";
+import { animateIntro, animateIntro2, animateText } from "../AnimationHandlers";
 
 // import icons
 import { AiOutlineDown } from "react-icons/ai";
 
 const Fold1 = () => {
-
   return (
     <>
-    <motion.div       
-      initial={"start"}
-      animate={"end"}
-      variants={animateIntro2}>
-      <HomeHeader/>
-    </motion.div>
+      <motion.div
+        initial={"start"}
+        animate={"end"}
+        variants={animateIntro2}>
+        <HomeHeader />
+      </motion.div>
 
-     {/* first fold — intro message */}
+      {/* first fold — intro message */}
       <FoldOne
         as={motion.div}
         initial={"start"}
@@ -32,16 +31,18 @@ const Fold1 = () => {
           <SubHeader>INTO A WORLD DESIGNED FOR YOU</SubHeader>
           <Description>Begin your journey towards a new life full of richness and beauty. Shed the toubles of the past and upload yourself into a world designed by the finest minds to be as enriching as ever experienced. Come join us today in our digital paradise.</Description>
         </IntroWrap>
-        <DivArrow     
-          as={motion.div}  
-          initial={"start"}
-          animate={"end"}
-          variants={animateIntro2}>
-          <StyledArrow />
-        </DivArrow>
       </FoldOne>
+      <ArrowWrap 
+        as={motion.div}
+        initial={"start"}
+        whileInView={"end"}
+        viewport={{ once: false, amount: 0.4 }}
+        variants={animateText}
+      >
+        <StyledArrow />
+      </ArrowWrap>
     </>
-    )
+  )
 }
 
 export default Fold1
@@ -54,7 +55,6 @@ const FoldOne = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* border: 2px solid red; */
 `
 const IntroWrap = styled.div`
   display: flex;
@@ -90,16 +90,19 @@ letter-spacing: 0em;
 text-align: center;
 color: #6D6466;
 `
-const DivArrow = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  bottom: 1px;
-`
+
 const StyledArrow = styled(AiOutlineDown)`
   font-size: 50px;
   bottom: 20px;
   color: #9F9F92;
+
+`
+const ArrowWrap = styled.div`
+  width: 100%;
+  height: 900px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: absolute;
+  top: 60px
 `

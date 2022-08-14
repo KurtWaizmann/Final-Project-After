@@ -1,24 +1,34 @@
 // package imports
 import styled from "styled-components"
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 // component imports
 import BasicHeader from "../BasicHeader";
 import Loader from "../Loader";
 
 // animation imports
-import { animateContinue, pageTransition } from "../AnimationHandlers";
+import { pageTransition } from "../AnimationHandlers";
 
 const QComplete = () => {
+    const [redirect, setRedirected] = useState(false)
+
+    useEffect(() => {
+        setTimeout(() => setRedirected(true), 15000)
+    }, [])
+
+    console.log(redirect)
     return (
-        <>
-            <BasicHeader />
-            <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={pageTransition} style={{textDecoration:"none", padding:"none", margin:"none"}}>
-                <Loader><Loader /></Loader>
-                <Message>You have just taken your very first step towards something better. Now begins your journey to a new and more fulfilling life. For your next step, you must complete the following assessment. It will evaluate just where you fit within our very large family. Take your time and be as honest as possible. Your next life will be shaped according to the results.</Message>
-                <Continue to="/results">Continue</Continue>
-            </Wrapper>
+        <>{redirect
+            ? <Navigate to="/results" />
+            : <>
+                <BasicHeader />
+                <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={pageTransition} style={{ textDecoration: "none", padding: "none", margin: "none" }}>
+                    <Loader><Loader /></Loader>
+                    <Message>Please wait a moment as our system avaluates your answers. It is important that it goes through your responses with accurate precision to determine just who you will become in the next life.</Message>
+                </Wrapper>
+            </>}
         </>
     )
 }
@@ -43,14 +53,14 @@ const Message = styled.div`
 `
 const Continue = styled(Link)`
 width: 60%;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 22px;
-  letter-spacing: 0em;
-  text-align: right;
-  text-decoration-line: underline;
-  text-transform: capitalize;
-  color: #6d6466;
-  cursor: pointer;
-  opacity: 0.7;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: right;
+    text-decoration-line: underline;
+    text-transform: capitalize;
+    color: #6d6466;
+    cursor: pointer;
+    opacity: 0.7;
 `;

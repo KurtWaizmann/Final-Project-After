@@ -50,7 +50,7 @@ export default Fold1
 // Fist Fold CSS 
 const FoldOne = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 91vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

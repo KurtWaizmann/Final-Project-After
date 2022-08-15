@@ -28,7 +28,8 @@ const Question1 = () => {
 
     return (
         <>
-            <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={quizTransition} style={{ textDecoration: "none", padding: "none", margin: "none" }}>
+            
+            <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={quizTransition}>
                 <Container>
                     <InnerWrap>
                         <QuestionWrap>

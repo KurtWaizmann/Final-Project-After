@@ -64,9 +64,6 @@ const Registration = () => {
 
     return (
         <>
-            <motion.div initial="out" animate="in" variants={pageTransition}>
-                <BasicHeader />
-            </motion.div>
             <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={pageTransition}>
                 <Container>
                     <Image src={imageFamily} />

@@ -38,9 +38,7 @@ const App = () => {
   return (
     <>
       <motion.div initial="out" animate="in" variants={pageTransition}>
-        {!navInvisible && <>
           <BasicHeader />
-        </>}
       </motion.div>
       <GlobalStyles />
       <AnimatePresence exitBeforeEnter>

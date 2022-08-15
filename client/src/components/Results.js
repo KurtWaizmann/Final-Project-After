@@ -4,24 +4,22 @@ import { useContext } from "react";
 import { motion } from "framer-motion";
 
 // component imports
-import BasicHeader from "./BasicHeader";
 import { QuestionContext } from "./questionnaire/QuestionContext";
+import Summary from "./Summary";
 
 // animation imports
-import { animateContinue, pageTransition } from "./AnimationHandlers";
+import { pageTransition } from "./AnimationHandlers";
 
 const Results = () => {
     const { answers } = useContext(QuestionContext);
 
     return (
-        <>
-            <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={pageTransition} style={{textDecoration:"none", padding:"none", margin:"none"}}>
-                <Text>
-                    {/* You are a {answers.q1} and {answers.q2} man. But fortunetaly, you are also {answers.q3}. */}
-                    Poopie Pants
-                </Text>
-            </Wrapper>
-        </>
+        <Wrapper>
+            <Profile as={motion.div} initial="out" animate="in" exit="out" variants={pageTransition} style={{ textDecoration: "none", padding: "none", margin: "none" }}>
+                <Photo></Photo>
+                <Summary />
+            </Profile>
+        </Wrapper>
     )
 }
 
@@ -34,9 +32,17 @@ const Wrapper = styled.div`
     align-items: center;
     width: 100%;
     height: 91vh;
+`
+const Profile = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     gap: 20px;
     `
-const Text = styled.div`
-    width: 50%;
-    word-wrap: normal;
+const Photo = styled.div`
+    width: 300px;
+    height: 300px;
+    border: 2px solid green;
 `

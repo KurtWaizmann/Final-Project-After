@@ -26,15 +26,14 @@ import Question10 from "./questionnaire/Question10";
 import Interlude1 from "./questionnaire/Interlude1";
 import Interlude2 from "./questionnaire/Interlude2";
 import QComplete from "./questionnaire/QComplete";
-import Results from "./Results";
+import ResultsPage from "./resultspage/ResultsPage";
 
 // animation import
 import { pageTransition } from "./AnimationHandlers";
 
 const App = () => {
   const location = useLocation();
-  let navInvisible = location.pathname === "/registration";
-  console.log(navInvisible)
+
   return (
     <>
       <GlobalStyles />
@@ -64,7 +63,7 @@ const App = () => {
           <Route exact path="/interlude/1" element={<Interlude1 />} />
           <Route exact path="/interlude/2" element={<Interlude2 />} />
           <Route exact path="/question/complete" element={<QComplete />} />
-          <Route exact path="/results" element={<Results />} />
+          <Route exact path="/results" element={<ResultsPage />} />
         </Routes>
       </AnimatePresence>
     </>

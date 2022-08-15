@@ -1,6 +1,8 @@
 const express = require("express");
 const morgan = require("morgan");
 const { postRegistration } = require("./handlers/postRegistration")
+const { postProfile } = require("./handlers/postProfile")
+
 
 const PORT = 8000;
 
@@ -13,6 +15,7 @@ express()
 
     // POST
     .post("/registration", postRegistration)
+    .post("/profile", postProfile)
 
     // catch-all
     .get("*", (req, res) => {

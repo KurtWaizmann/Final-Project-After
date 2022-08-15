@@ -1,11 +1,10 @@
 // package imports
 import styled from "styled-components"
-import { Link, useNavigate } from "react-router-dom";
-import { useContext, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
 import { motion } from "framer-motion";
 
 // component imports
-import BasicHeader from "../BasicHeader";
 import { QuestionContext } from "./QuestionContext";
 
 // import icon
@@ -31,14 +30,14 @@ const Question4 = () => {
                             <ChoiceTitle>Select an Option</ChoiceTitle>
                             <Choices onClick={() => setIsChosen(true)}>
                                 <ChoiceRow>
-                                    <Button onClick={() => setAnswers({ ...answers, q4: "defeated" })}>person</Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q4: "well-to-do" })}>death</Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q4: "well-to-do" })}>landscape</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q4: "a speach impediment" })}>clothing</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q4: "an odd patch of hair growing on the back of your hand" })}>birth</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q4: "a bad habit of biting your nails" })}>statue</Button>
                                 </ChoiceRow>
                                 <ChoiceRow>
-                                    <Button onClick={() => setAnswers({ ...answers, q4: "brawny" })}>building</Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q4: "majestic" })}>animal</Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q4: "majestic" })}>machine</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q4: "a pretty intense eye twitch" })}>hole</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q4: "a somewhat bulbous belly (you aren't pregnant)" })}>food</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q4: "terrible breath that you cannot get rid of" })}>bathtub</Button>
                                 </ChoiceRow>
                             </Choices>
                         </QuestionWrap>

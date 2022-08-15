@@ -5,7 +5,6 @@ import { useContext, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 // component imports
-import BasicHeader from "../BasicHeader";
 import { QuestionContext } from "./QuestionContext";
 
 // import icon
@@ -30,14 +29,14 @@ const Question7 = () => {
                             <ChoiceTitle>Select an Option</ChoiceTitle>
                             <Choices onClick={() => setIsChosen(true)}>
                                 <ChoiceRow>
-                                    <Button onClick={() => setAnswers({ ...answers, q7: "defeated" })}>apparant</Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q7: "well-to-do" })}>aparent</Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q7: "well-to-do" })}>apparrent</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q7: "Big Papa" })}>apparant</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q7: "Ghosty" })}>aparent</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q7: "Snakes" })}>apparrent</Button>
                                 </ChoiceRow>
                                 <ChoiceRow>
-                                    <Button onClick={() => setAnswers({ ...answers, q7: "brawny" })}>apparent</Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q7: "majestic" })}>aparrent</Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q7: "majestic" })}>apperent</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q7: "Bookworm" })}>apparent</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q7: "Thightanic" })}>aparrent</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q7: "Angel Face" })}>apperent</Button>
                                 </ChoiceRow>
                             </Choices>
                         </QuestionWrap>

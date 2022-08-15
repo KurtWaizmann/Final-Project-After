@@ -5,8 +5,8 @@ import { useContext, useState } from "react";
 import { motion } from "framer-motion";
 
 // component imports
-import BasicHeader from "../BasicHeader";
 import { QuestionContext } from "./QuestionContext";
+import { names } from "../data";
 
 // import icon
 import { BsArrowRight } from "react-icons/bs";
@@ -19,10 +19,11 @@ const Question10 = () => {
     const { answers, setAnswers } = useContext(QuestionContext);
     const [isChosen, setIsChosen] = useState(false);
 
-    
+    console.log(answers)
+
     return (
         <>
-            <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={quizTransition} style={{textDecoration:"none", padding:"none", margin:"none"}}>
+            <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={quizTransition} style={{ textDecoration: "none", padding: "none", margin: "none" }}>
                 <Container>
                     <InnerWrap>
                         <QuestionWrap>
@@ -30,8 +31,8 @@ const Question10 = () => {
                             <QuestionBox />
                             <ChoiceTitle>Select an Option</ChoiceTitle>
                             <Choices onClick={() => setIsChosen(true)}>
-                                <Button onClick={() => setAnswers({ ...answers, q10: "defeated" })}><Letter>A. </Letter> Love.</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q10: "well-to-do" })}><Letter>B. </Letter> Money.</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q10: `${names[Math.floor(Math.random() * 20)]}` })}><Letter>A. </Letter> Love.</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q10: `${names[Math.floor(Math.random() * 40)]}` })}><Letter>B. </Letter> Money.</Button>
                             </Choices>
                         </QuestionWrap>
                         <ContinueWrap>

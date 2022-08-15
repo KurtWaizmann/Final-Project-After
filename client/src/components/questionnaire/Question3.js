@@ -1,11 +1,10 @@
 // package imports
 import styled from "styled-components"
-import { Link, useNavigate } from "react-router-dom";
-import { useContext, useState, useEffect } from "react";
+import { Link  } from "react-router-dom";
+import { useContext, useState } from "react";
 import { motion } from "framer-motion";
 
 // component imports
-import BasicHeader from "../BasicHeader";
 import { QuestionContext } from "./QuestionContext";
 
 // import icon
@@ -31,14 +30,14 @@ const Question3 = () => {
                             <ChoiceTitle>Select an Option</ChoiceTitle>
                             <Choices onClick={() => setIsChosen(true)}>
                                 <ChoiceRow>
-                                    <Button onClick={() => setAnswers({ ...answers, q3: "defeated" })}>person</Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q3: "well-to-do" })}>death</Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q3: "well-to-do" })}>landscape</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q3: "quite the pushover" })}>person</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q3: "the most beautiful person" })}>death</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q3: "an extremely wealthy individual" })}>landscape</Button>
                                 </ChoiceRow>
                                 <ChoiceRow>
-                                    <Button onClick={() => setAnswers({ ...answers, q3: "brawny" })}>building</Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q3: "majestic" })}>animal</Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q3: "majestic" })}>machine</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q3: "brawny, so much so, you often get looks on the street" })}>building</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q3: "seen as having a majestic quality about you" })}>animal</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q3: "a bland person, but there's something comforting in that" })}>machine</Button>
                                 </ChoiceRow>
                             </Choices>
                         </QuestionWrap>

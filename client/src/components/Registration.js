@@ -3,10 +3,12 @@ import styled from "styled-components"
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuid } from 'uuid';
+import { useContext } from "react";
 import { motion } from "framer-motion";
 
 // component imports
-import BasicHeader from "./BasicHeader";
+import { QuestionContext } from "./questionnaire/QuestionContext";
+import { names } from "./data";
 
 // image imports
 import imageFamily from "../assets/family.png"
@@ -15,6 +17,7 @@ import imageFamily from "../assets/family.png"
 import { pageTransition } from "./AnimationHandlers";
 
 const Registration = () => {
+    const { answers, setAnswers } = useContext(QuestionContext);
 
     const { register, handleSubmit, formState: { errors } } = useForm({
         defaultValues: {
@@ -27,13 +30,13 @@ const Registration = () => {
     const navigate = useNavigate();
 
     const submitFunc = (data) => {
-        console.log(data)
+        const userId = uuid()
         sessionStorage.setItem("name", `${data.firstName}`)
 
         fetch("/registration", {
             method: "POST",
             body: JSON.stringify({
-                _id: uuid(),
+                _id: userId,
                 firstName: data.firstName,
                 lastName: data.lastName,
                 dateOfBirth: data.dateOfBirth,
@@ -56,6 +59,7 @@ const Registration = () => {
         })
             .then((res) => res.json())
             .then(() => {
+                setAnswers({ ...answers, userId: userId, name: `${names[Math.floor(Math.random() * 60)]}` })
                 navigate("/registration-confirmed");
             });
     }
@@ -70,7 +74,6 @@ const Registration = () => {
                     <Form onSubmit={handleSubmit((data) => submitFunc(data))}>
 
                         <InnerWrap>
-                            {/* <Title>Registration</Title> */}
                             <Section>
                                 <StyledInput
                                     style={errors.firstName && errorStyle}

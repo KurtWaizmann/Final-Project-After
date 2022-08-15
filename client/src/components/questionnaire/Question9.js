@@ -5,7 +5,6 @@ import { useContext, useState } from "react";
 import { motion } from "framer-motion";
 
 // component imports
-import BasicHeader from "../BasicHeader";
 import { QuestionContext } from "./QuestionContext";
 
 // import icon
@@ -19,7 +18,8 @@ const Question9 = () => {
     const { answers, setAnswers } = useContext(QuestionContext);
     const [isChosen, setIsChosen] = useState(false);
 
-    
+    console.log(answers)
+
     return (
         <>
             <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={quizTransition} style={{textDecoration:"none", padding:"none", margin:"none"}}>
@@ -30,12 +30,12 @@ const Question9 = () => {
                             <QuestionBox />
                             <ChoiceTitle>Select an Option</ChoiceTitle>
                             <Choices onClick={() => setIsChosen(true)}>
-                                <Button onClick={() => setAnswers({ ...answers, q9: "defeated" })}><Letter>A. </Letter> Eyes.</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q9: "well-to-do" })}><Letter>B. </Letter> Lips.</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q9: "well-to-do" })}><Letter>C. </Letter> Cheek.</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q9: "brawny" })}><Letter>D. </Letter>Nose.</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q9: "brawny" })}><Letter>D. </Letter>Chin.</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q9: "brawny" })}><Letter>D. </Letter>Forehead.</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q9: "an unfortunatley dumb dog" })}><Letter>A. </Letter> Eyes.</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q9: "a lazy and kinda mean siamese cat" })}><Letter>B. </Letter> Lips.</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q9: "a beautiful love bird" })}><Letter>C. </Letter> Cheek.</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q9: "a robot that looks like a deceased relative" })}><Letter>D. </Letter>Nose.</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q9: "a miniature version of yourself" })}><Letter>D. </Letter>Chin.</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q9: "ghost of a dead confederate solider" })}><Letter>D. </Letter>Forehead.</Button>
                             </Choices>
                         </QuestionWrap>
                         <ContinueWrap>

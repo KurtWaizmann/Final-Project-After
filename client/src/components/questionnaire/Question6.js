@@ -1,11 +1,10 @@
 // package imports
 import styled from "styled-components"
-import { Link, useNavigate } from "react-router-dom";
-import { useContext, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
 import { motion } from "framer-motion";
 
 // component imports
-import BasicHeader from "../BasicHeader";
 import { QuestionContext } from "./QuestionContext";
 
 // import icon
@@ -29,10 +28,10 @@ const Question6 = () => {
                             <QuestionBox />
                             <ChoiceTitle>Select an Option</ChoiceTitle>
                             <Choices onClick={() => setIsChosen(true)}>
-                                    <Button onClick={() =>  setAnswers({ ...answers, q6: "defeated" })}><Letter>A. </Letter> Give the man your wallet.</Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q6: "well-to-do" })}><Letter>B. </Letter> Fight the man and risk your own life.</Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q6: "well-to-do" })}><Letter>C. </Letter> Attempt to run away, screaming for help.</Button>
-                                    <Button style={{width:"550px"}} onClick={() => setAnswers({ ...answers, q6: "brawny" })}><Letter>D. </Letter> Submit yourself to the man’s violence in a desperate wish to be released from this cruel world</Button>
+                                    <Button onClick={() =>  setAnswers({ ...answers, q6: "painting your nails" })}><Letter>A. </Letter> Give the man your wallet.</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q6: "a good game of poker" })}><Letter>B. </Letter> Fight the man and risk your own life.</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q6: "table-tennis" })}><Letter>C. </Letter> Attempt to run away, screaming for help.</Button>
+                                    <Button style={{width:"550px"}} onClick={() => setAnswers({ ...answers, q6: "travelling the world" })}><Letter>D. </Letter> Submit yourself to the man’s violence in a desperate wish to be released from this cruel world</Button>
                             </Choices>
                         </QuestionWrap>
                         <ContinueWrap>

@@ -29,37 +29,37 @@ const Question2 = () => {
                             <QuestionBox />
                             <ChoiceTitle>Select an Option</ChoiceTitle>
                             <Choices onClick={() => setIsChosen(true)}>
-                                <Button onClick={() => setAnswers({ ...answers, q2: "defeated" })}><Letter>A. </Letter> Barn Owl</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q2: "well-to-do" })}><Letter>B. </Letter> Bison</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q2: "well-to-do" })}><Letter>C. </Letter> Fire-Bellied Toad</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q2: "brawny" })}><Letter>D. </Letter> Shrew</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q2: "ugly" })}><Letter>D. </Letter> Northern Stargazer</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q2: "brawny" })}><Letter>D. </Letter> Aardvark</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q2: "ugly" })}><Letter>D. </Letter> Hermit Crab</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q2: "brawny" })}><Letter>D. </Letter> Gecko</Button>
-                            </Choices>
-                        </QuestionWrap>
-                        <ContinueWrap>
-                            {isChosen && <>
-                                <StyledLink to="/question/3">
-                                    <Continue
-                                        as={motion.div}
-                                        initial={"start"}
-                                        animate={"end"}
-                                        variants={animateContinue}
-                                        onClick={() => localStorage.setItem("answers", JSON.stringify(answers))}
-                                    >Continue
-                                        <ArrowWrap>
-                                            <BsArrowRight />
-                                        </ArrowWrap>
-                                    </Continue>
-                                </StyledLink>
-                            </>}
+                                <Button onClick={() => setAnswers({ ...answers, q2: "film director" })}><Letter>A. </Letter> Barn Owl</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q2: "fashion designer" })}><Letter>B. </Letter> Bison</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q2: "jingle writer" })}><Letter>C. </Letter> Fire-Bellied Toad</Button>
+                                        <Button onClick = { () => setAnswers({ ...answers, q2: "horticulturalist" }) }>< Letter > D. </Letter> Shrew</Button>
+                        <Button onClick={() => setAnswers({ ...answers, q2: "dermatologist" })}><Letter>D. </Letter> Northern Stargazer</Button>
+                        <Button onClick={() => setAnswers({ ...answers, q2: "psychiatrist" })}><Letter>D. </Letter> Aardvark</Button>
+                        <Button onClick={() => setAnswers({ ...answers, q2: "front-end web developer" })}><Letter>D. </Letter> Hermit Crab</Button>
+                        <Button onClick={() => setAnswers({ ...answers, q2: "real estate agent" })}><Letter>D. </Letter> Gecko</Button>
+                    </Choices>
+                </QuestionWrap>
+                <ContinueWrap>
+                    {isChosen && <>
+                        <StyledLink to="/question/3">
+                            <Continue
+                                as={motion.div}
+                                initial={"start"}
+                                animate={"end"}
+                                variants={animateContinue}
+                                onClick={() => localStorage.setItem("answers", JSON.stringify(answers))}
+                            >Continue
+                                <ArrowWrap>
+                                    <BsArrowRight />
+                                </ArrowWrap>
+                            </Continue>
+                        </StyledLink>
+                    </>}
 
-                        </ContinueWrap>
-                    </InnerWrap>
-                </Container>
-            </Wrapper>
+                </ContinueWrap>
+            </InnerWrap>
+        </Container>
+            </Wrapper >
         </>
     )
 }

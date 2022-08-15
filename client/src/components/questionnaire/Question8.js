@@ -19,7 +19,7 @@ const Question8 = () => {
     const { answers, setAnswers } = useContext(QuestionContext);
     const [isChosen, setIsChosen] = useState(false);
 
-    
+    console.log(answers)
     return (
         <>
             <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={quizTransition} style={{textDecoration:"none", padding:"none", margin:"none"}}>
@@ -30,10 +30,10 @@ const Question8 = () => {
                             <QuestionBox />
                             <ChoiceTitle>Select an Option</ChoiceTitle>
                             <Choices onClick={() => setIsChosen(true)}>
-                                <Button onClick={() => setAnswers({ ...answers, q8: "defeated" })}><Letter>A. </Letter> Spending time with family or friends.</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q8: "well-to-do" })}><Letter>B. </Letter> Catching up on sleep.</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q8: "well-to-do" })}><Letter>C. </Letter> Learn something new.</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q8: "brawny" })}><Letter>D. </Letter> Doing an activity you love.</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q8: "taking cruises in the Caribbean" })}><Letter>A. </Letter> Spending time with family or friends.</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q8: "being lazy at home" })}><Letter>B. </Letter> Catching up on sleep.</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q8: "playing music in your jam band" })}><Letter>C. </Letter> Learn something new.</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q8: "shopping for new clothes" })}><Letter>D. </Letter> Doing an activity you love.</Button>
                             </Choices>
                         </QuestionWrap>
                         <ContinueWrap>

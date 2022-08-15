@@ -6,8 +6,8 @@ import { motion } from "framer-motion";
 import { v4 as uuid } from 'uuid';
 
 // component imports
-import BasicHeader from "../BasicHeader";
 import { QuestionContext } from "./QuestionContext";
+import { names } from "../data";
 
 // import icon
 import { BsArrowRight } from "react-icons/bs";
@@ -22,7 +22,7 @@ const Question1 = () => {
 
     const buttons = [];
     for (let i = 1; i < 11; i++) {
-        buttons.push(<Button key={uuid()} as={motion.button} initial={"start"} whileHover={"end"} variants={buttonHover} onClick={() => setAnswers({ ...answers, q1: i })}>{i}</Button>)
+        buttons.push(<Button key={uuid()} as={motion.button} initial={"start"} whileHover={"end"} variants={buttonHover} onClick={() => setAnswers({ ...answers, q1: i+20 })}>{i}</Button>)
     }
 
 
@@ -46,7 +46,6 @@ const Question1 = () => {
                                         initial={"start"}
                                         animate={"end"}
                                         variants={animateContinue}
-                                        onClick={() => localStorage.setItem("answers", JSON.stringify(answers))}
                                     >Continue
                                         <ArrowWrap>
                                             <BsArrowRight />

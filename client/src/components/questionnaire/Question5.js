@@ -1,11 +1,10 @@
 // package imports
 import styled from "styled-components"
-import { Link, useNavigate } from "react-router-dom";
-import { useContext, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
 import { motion } from "framer-motion";
 
 // component imports
-import BasicHeader from "../BasicHeader";
 import { QuestionContext } from "./QuestionContext";
 
 // import icon
@@ -31,14 +30,14 @@ const Question5 = () => {
                             <QuestionBox />
                             <ChoiceTitle>Select an Option</ChoiceTitle>
                             <Choices onClick={() => setIsChosen(true)}>
-                                    <Button onClick={() =>  setAnswers({ ...answers, q5: "defeated" })}><Letter>A. </Letter> Christmas Trees </Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q5: "well-to-do" })}><Letter>B. </Letter> Sharpies </Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q5: "well-to-do" })}><Letter>C. </Letter> Baby </Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q5: "brawny" })}><Letter>D. </Letter> Gasoline</Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q5: "brawny" })}><Letter>D. </Letter> New Car</Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q5: "brawny" })}><Letter>D. </Letter> Fresh paint</Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q5: "brawny" })}><Letter>D. </Letter> Wine</Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q5: "brawny" })}><Letter>D. </Letter> Bacon</Button>
+                                    <Button onClick={() =>  setAnswers({ ...answers, q5: "socializing with friends" })}><Letter>A. </Letter> Christmas Trees </Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q5: "making charicatures of deceased actors" })}><Letter>B. </Letter> Sharpies </Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q5: "spending time with family" })}><Letter>C. </Letter> Baby </Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q5: "going on road trips across the country" })}><Letter>D. </Letter> Gasoline</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q5: "going to raves and staying up late" })}><Letter>D. </Letter> New Car</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q5: "staying-in and watching tv-shows" })}><Letter>D. </Letter> Fresh paint</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q5: "going to wineries on weekends" })}><Letter>D. </Letter> Wine</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q5: "going on hiking expeditions" })}><Letter>D. </Letter> Bacon</Button>
 
                             </Choices>
                         </QuestionWrap>

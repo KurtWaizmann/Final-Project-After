@@ -27,7 +27,8 @@ const Loader = () => {
 
     const circleTransition = {
         duration: 0.4,
-        yoyo: Infinity,
+        repeat: Infinity,
+        repeatType: "reverse",
         ease: "easeInOut"
     }
 

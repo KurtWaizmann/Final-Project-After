@@ -37,7 +37,8 @@ const Title = styled.h1`
 const Trademark = styled.div`
     font-size: 8px;
     position: relative;
-    top: 25px;
+    top: 45px;
+    height: 15px;
     font-weight: 500;
     color: #a7a5a5;
 `

@@ -37,10 +37,10 @@ const App = () => {
   console.log(navInvisible)
   return (
     <>
+      <GlobalStyles />
       <motion.div initial="out" animate="in" variants={pageTransition}>
           <BasicHeader />
       </motion.div>
-      <GlobalStyles />
       <AnimatePresence exitBeforeEnter>
         <Routes location={location} key={location.pathname}>
           <Route exact path="/" element={<Intro />} />

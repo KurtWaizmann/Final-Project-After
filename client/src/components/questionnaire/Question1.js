@@ -29,7 +29,7 @@ const Question1 = () => {
     return (
         <>
             
-            <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={quizTransition}>
+            <Wrapper className="WHEREAREYOU" as={motion.div} initial="out" animate="in" exit="out" variants={quizTransition}>
                 <Container>
                     <InnerWrap>
                         <QuestionWrap>
@@ -70,7 +70,7 @@ const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 91vh;
+    height: 88vh;
     gap: 20px;
     `
 const Container = styled.div`

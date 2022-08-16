@@ -5,11 +5,11 @@ import styled from "styled-components"
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export const data = {
-  labels: ['Lover', 'Outlaw', 'Leader', 'Outsider', 'Caregiver', 'Mentor', 'Jester'],
+  labels: ['Lover', 'Leader', 'Outsider', 'Caregiver'],
   datasets: [
     {
       label: '# of Votes',
-      data: [12, 19, 3, 5, 2, 2, 2],
+      data: [12, 19, 3, 5],
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
         'rgba(54, 162, 235, 0.2)',

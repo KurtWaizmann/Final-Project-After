@@ -15,7 +15,7 @@ express()
     /* Endpoints */
 
     // GET
-    .get("/profile", getProfile)
+    .get("/profile/:userId", getProfile)
 
 
     // POST

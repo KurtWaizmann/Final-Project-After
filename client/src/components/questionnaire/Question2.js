@@ -47,7 +47,6 @@ const Question2 = () => {
                                 initial={"start"}
                                 animate={"end"}
                                 variants={animateContinue}
-                                onClick={() => localStorage.setItem("answers", JSON.stringify(answers))}
                             >Continue
                                 <ArrowWrap>
                                     <BsArrowRight />

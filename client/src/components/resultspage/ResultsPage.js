@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { QuestionContext } from "../questionnaire/QuestionContext";
 import Summary from "./Summary";
 import { DoNNut } from "./chartdata";
+import Countdown from "./Countdown";
 
 // animation imports
 import { pageTransition, animateText } from "../AnimationHandlers";
@@ -16,69 +17,62 @@ import { pageTransition, animateText } from "../AnimationHandlers";
 
 const ResultsPage = () => {
     const { answers, setAnswers } = useContext(QuestionContext);
+    const userId = localStorage.getItem("After-userId")
 
-    // Date until upload
-    const now = new Date().getTime();
-    const countdown = new Date("Sep 22, 2022 12:00:00").getTime();
-    const timeleft = countdown - now;
-    const days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-
-
-    const addUser = (data) => {
-        setAnswers({
-            userId: data._id,
-            imageSrc: data.profilePic,
-            name: data.name,
-            q1: data.age,
-            q2: data.job,
-            q3: data.quality,
-            q4: data.quirk,
-            q5: data.passion1,
-            q6: data.passion2,
-            q8: data.passion3,
-            q7: data.nickname,
-            q9: data.companion,
-            q10: data.companionName
-        })
-    }
 
     useEffect(() => {
-        fetch("/profile")
+        console.log(userId)
+        fetch(`/profile/${userId}`)
             .then((res) => res.json())
             .then((data) => {
-                addUser(data)
+                setAnswers({
+                    userId: data.data._id,
+                    profilePic: data.data.profilePic,
+                    name: data.data.name,
+                    q1: data.data.age,
+                    q2: data.data.job,
+                    q3: data.data.quality,
+                    q4: data.data.quirk,
+                    q5: data.data.passion1,
+                    q6: data.data.passion2,
+                    q8: data.data.passion3,
+                    q7: data.data.nickname,
+                    q9: data.data.companion,
+                    q10: data.data.companionName
+                })
             })
     }, [])
 
     console.log(answers)
     return (
-        <Wrapper>
-            {!answers ? <div>ERROR</div> : <>
-                <Profile as={motion.div} initial="out" animate="in" exit="out" variants={pageTransition} style={{ textDecoration: "none", padding: "none", margin: "none" }}>
-                    <PhotoBox>
-                        <Photo
-                            src={answers.profilePic}
-                            as={motion.img}
-                            initial={"start"}
-                            animate={"end"}
-                            variants={animateText} />
-                        <Circle />
-                        <Name>Henry</Name>
-                        <UploadDate><UploadSpan1>Upload in</UploadSpan1> <UploadSpan2>{days} days</UploadSpan2><UploadSpan3> {hours} hours</UploadSpan3></UploadDate>
-                    </PhotoBox>
-                    <Summary />
-                </Profile>
-            </>}
-            <Stats>
-                <DoNNut/>
-            </Stats>
-        </Wrapper>
+        <>
+            {!answers
+                ? <Blank></Blank>
+                : <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={pageTransition} style={{ textDecoration: "none", padding: "none", margin: "none" }}>
+                    <Profile>
+                        <PhotoBox>
+                            <Photo src={answers.profilePic} as={motion.img} initial={"start"} animate={"end"} variants={animateText} />
+                            <Circle />
+                            <Name>{answers.name}</Name>
+                                <Countdown />
+                            </PhotoBox>
+                        <Summary />
+                    </Profile>
+                    <Stats>
+                        <div>Instructions: saddsdasdsdadasdsa</div>
+                        <DoNNut />
+                    </Stats>
+                </Wrapper>}
+        </>
     )
 }
 
 export default ResultsPage
 
+const Blank = styled.div`
+    width: 100%;
+    height: 88vh;
+`
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
@@ -86,17 +80,14 @@ const Wrapper = styled.div`
     align-items: center;
     width: 100%;
     height: 88vh;
-    border: 2px solid blue;
-
 `
-const Profile = styled.img`
+const Profile = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 100%;
     gap: 50px;
-    border: 2px solid green;
     height: 500px;
     flex: 1;
     `
@@ -104,7 +95,7 @@ const Photo = styled.img`
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    background-color: azure;
+    background-color: black;
 `
 const PhotoBox = styled.div`
     position: relative;
@@ -122,23 +113,6 @@ const Circle = styled.div`
 const Name = styled.h1`
     padding-top: 20px;
     font-size: 50px;
-`
-const UploadDate = styled.div`
-    width: 100%;
-    text-align: center;
-    position: relative;
-    bottom: 15px;
-`
-const UploadSpan1 = styled.span`
-    font-weight: 800;
-`
-const UploadSpan2 = styled.span`
-    font-weight: 800;
-    color: green;
-`
-const UploadSpan3 = styled.span`
-    font-weight: 800;
-    color: blue;
 `
 const Stats = styled.div`
     border: 2px solid red;

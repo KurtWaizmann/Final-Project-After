@@ -17,8 +17,7 @@ const QComplete = () => {
     const { answers, setAnswers } = useContext(QuestionContext);
 
     const postProfileInfo = (imageSrc) =>{
-        console.log("FUNC getting image?", imageSrc)
-        console.log("INSIDE FUNCTION")
+        localStorage.setItem("After-userId", JSON.stringify(answers.userId))
             fetch("/profile", {
                 method: "POST",
                 body: JSON.stringify({

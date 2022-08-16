@@ -49,7 +49,6 @@ const Question4 = () => {
                                     initial={"start"}
                                     animate={"end"}
                                     variants={animateText}
-                                    onClick={() => localStorage.setItem("answers",JSON.stringify(answers))}
                                 />
                             </ImageContainer>
                             {isChosen && <>

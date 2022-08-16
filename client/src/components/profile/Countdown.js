@@ -40,5 +40,5 @@ const UploadSpan3 = styled.span`
 `
 const StyledTbWorldUpload = styled(TbWorldUpload)`
     transform: scale(1.8);
-    margin-right: 5px;
+    margin-right: 10px;
 `

@@ -47,18 +47,14 @@ const QComplete = () => {
 
     useEffect(() => {
         if (answers && (Object.keys(answers).length >= 12)) {
-            console.log("INSIDE")
             fetch(`https://fakeface.rest/face/json?minimum_age=${answers.q1}&maximum_age=${answers.q1 + 10}`)
                 .then((res) => res.json())
                 .then((data) => {
-                    console.log("pictureinfo", data.image_url)
-                    // setProfilePic(data.image_url)
                     postProfileInfo(data.image_url)
                 }).then(()=> {
                     setIsCompleted(true)
                 })
         } else {
-            console.log("creating false?")
             setIsCompleted(false)
         }
     }, [])

@@ -41,7 +41,6 @@ const Title = styled.h1`
 `
 const Trademark = styled.div`
     font-size: 8px;
-    /* position: relative; */
     top: 45px;
     height: 15px;
     font-weight: 500;

@@ -17,8 +17,6 @@ import { animateContinue, quizTransition } from "../AnimationHandlers";
 const Question8 = () => {
     const { answers, setAnswers } = useContext(QuestionContext);
     const [isChosen, setIsChosen] = useState(false);
-
-    console.log(answers)
     return (
         <>
             <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={quizTransition} style={{textDecoration:"none", padding:"none", margin:"none"}}>

@@ -56,7 +56,6 @@ const FoldThree = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding: 2%; */
 `;
 const WrapperCeo = styled.div`
   display: flex;

@@ -17,11 +17,9 @@ export default createGlobalStyle`
   time, mark, audio, video {
       padding: 0;
       border: 0;
-      /* margin:0; */
       box-sizing: border-box;
       font-size: 100%;
       vertical-align: baseline;
-      /* border: 2px solid red; */
   }
   html {
     overflow-y: overlay;
@@ -30,13 +28,10 @@ export default createGlobalStyle`
   /* HTML5 display-role reset for older browsers */
   article, aside, details, figcaption, figure,
   footer, header, hgroup, menu, nav, section {
-      /* display: block; */
   }
 
   body {
       line-height: 1;
-      /* height: 100vh; */
-      /* overflow: auto; */
   }
 
   ol, ul {
@@ -68,13 +63,6 @@ input,
 div {
   font-family: 'Noto Sans', sans-serif;
   font-size: 14px;
-  /* border: 2px solid red; */
 }
-  /* #root{
-    height: 100vh;
-  } */
-  /* ::placeholder {
-  color: red;
-  opacity: 1;} */
-  
+
 `;

@@ -19,7 +19,6 @@ const Question10 = () => {
     const { answers, setAnswers } = useContext(QuestionContext);
     const [isChosen, setIsChosen] = useState(false);
 
-    console.log(answers)
 
     return (
         <>

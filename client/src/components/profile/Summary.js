@@ -1,10 +1,6 @@
 // package imports
 import styled from "styled-components"
-import { motion } from "framer-motion";
 import { useContext } from "react";
-
-// animation imports
-import { sentenceAnimation, letterAnimation } from "../AnimationHandlers";
 
 // component imports
 import { QuestionContext } from "../questionnaire/QuestionContext";
@@ -22,9 +18,11 @@ const Summary = () => {
 export default Summary
 
 const Text = styled.div`
-    width: 50%;
+    width: 32%;
     word-wrap: normal;
     font-size: 20px;
-    font-weight: 100;
+    font-weight: 300;
     line-height: 32px;
+    color: #9F9F92;
+    padding-top: 5px;
 `

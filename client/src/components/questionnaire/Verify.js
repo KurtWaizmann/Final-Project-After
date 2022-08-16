@@ -16,11 +16,9 @@ const Verify = () => {
 
     useEffect(() => {
         if (answers) {
-            console.log("poopie")
             if (Object.keys(answers).length === 5) {
                 navigate(`/question/results`)
             } else if (Object.keys(answers).length >= 1) {
-                console.log(Object.keys(answers).length + 1)
                 navigate(`/question/${Object.keys(answers).length + 1}`)
             }
         }
@@ -34,7 +32,6 @@ useEffect(() => {
 }, [])
 
 useEffect(() => {
-    console.log(answers)
     if (!answers) {
         navigate(`/question/1`)
     }  else if ( Object.keys(answers).length === 5) {

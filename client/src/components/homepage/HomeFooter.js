@@ -83,7 +83,6 @@ const FoldSixteen = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  /* border: 2px solid blue; */
 `
 
 const Wrapper = styled.div`

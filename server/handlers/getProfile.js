@@ -16,7 +16,6 @@ const getProfile = async (req, res) => {
     const client = new MongoClient(MONGO_URI, options);
     // grab id from params
     const _id = req.params.userId;
-    console.log("_id", _id)
 
     try {
         // connect to the client
@@ -24,11 +23,10 @@ const getProfile = async (req, res) => {
 
         // connect to the database 
         const db = client.db("After");
-        console.log("connected!");
 
         // grabbing from the collection
         const result = await db.collection("Profile").findOne({_id:_id});
-        console.log("results", result)
+
         // send result
         result
             ? res.status(200).json({ status: 200, message: "Success!", data: result })
@@ -36,13 +34,13 @@ const getProfile = async (req, res) => {
 
         // catch any errors and return info/message
     } catch (err) {
-        console.log(err.stack);
+
         res.status(500).json({ status: 500, data: req.body, message: err.message });
 
         // close the connection to the database server
     } finally {
         client.close();
-        console.log("disconnected!");
+
     }
 };
 

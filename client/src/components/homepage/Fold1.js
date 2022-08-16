@@ -19,7 +19,6 @@ const Fold1 = () => {
         <HomeNav />
       </motion.div>
 
-      {/* first fold — intro message */}
       <FoldOne
         as={motion.div}
         initial={"start"}
@@ -47,14 +46,12 @@ const Fold1 = () => {
 
 export default Fold1
 
-// Fist Fold CSS 
 const FoldOne = styled.div`
   height: 91vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* border: 2px solid green; */
 `
 const IntroWrap = styled.div`
   display: flex;
@@ -98,7 +95,6 @@ const StyledArrow = styled(AiOutlineDown)`
 
 `
 const ArrowWrap = styled.div`
-  /* width: 100%; */
   height: 90vh;
   display: flex;
   justify-content: center;

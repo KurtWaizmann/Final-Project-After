@@ -43,7 +43,6 @@ const FoldTwelve = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  /* border: 2px solid blue; */
   gap: 40px;
 `
 const WrapTestimonial = styled.div`

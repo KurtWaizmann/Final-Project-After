@@ -15,10 +15,7 @@ const HomeNav = () => {
                 <Subtitle to="/productdetails">product</Subtitle>
                 <Subtitle to="/companydetails">who we are</Subtitle>
             </InnerWrap>
-            <TitleWrap>
-                {/* <Title>After.</Title>
-                <Trademark>TM</Trademark> */}
-            </TitleWrap>
+       
             <InnerWrap as={motion.div} initial="out" animate="in" exit="out" variants={pageTransition}>
                 <Subtitle to="/faq">F.A.Q.</Subtitle>
                 {userId
@@ -41,22 +38,6 @@ const Wrapper = styled.div`
     justify-content: center;
     position: absolute;
     top: 0;
-`
-const TitleWrap = styled.div`
-    display: flex;
-    opacity:0;
-`
-const Title = styled.h1`
-    font-size: 40px;
-    font-weight: 100;
-    color: #232323;
-`
-const Trademark = styled.div`
-    font-size: 8px;
-    position: relative;
-    top: 205px;
-    font-weight: 300;
-    color: #a7a5a5;
 `
 const InnerWrap = styled.div`
     width: 100%;

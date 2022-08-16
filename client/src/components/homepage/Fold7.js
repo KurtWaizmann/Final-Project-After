@@ -54,7 +54,6 @@ const ContainerMind = styled.div`
   justify-content: space-between;
   align-items: center;
   background-color: #F1F0EA;
-  /* padding: 0 15% 0 15%; */
 `
 const WrapperMind = styled.div`
   width: 490px;

@@ -1,4 +1,3 @@
-// HOMEPAGE
 
 export const animateIntro = {
     start: {
@@ -116,20 +115,6 @@ export const pageTransition = {
     }
 }
 
-export const buttonHover = {
-    start: {
-        // y: "0px",
-    },
-    end: {
-        // y: "-10px",
-        transition: {
-            // type: "spring",
-            // stiffness: 1000,
-            // damping: 10,
-            // ease: "easeInOut",
-        }
-    }
-}
 
 export const sentenceAnimation = {
     hidden: { opacity: 1 },

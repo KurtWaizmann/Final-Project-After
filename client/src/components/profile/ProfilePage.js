@@ -16,11 +16,10 @@ import { pageTransition, animateText } from "../AnimationHandlers";
 
 const ProfilePage = () => {
     const { answers, setAnswers } = useContext(QuestionContext);
-    const userId = JSON.parse(localStorage.getItem("After-userId")) 
+    const userId = JSON.parse(localStorage.getItem("After-userId"))
 
 
     useEffect(() => {
-        console.log(userId)
         fetch(`/profile/${userId}`)
             .then((res) => res.json())
             .then((data) => {
@@ -42,24 +41,25 @@ const ProfilePage = () => {
             })
     }, [])
 
-    console.log(answers)
     return (
         <>
             {!answers
                 ? <Blank></Blank>
                 : <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={pageTransition} style={{ textDecoration: "none", padding: "none", margin: "none" }}>
-                    <Profile>
-                        <PhotoBox>
-                            <Photo src={answers.profilePic} as={motion.img} initial={"start"} animate={"end"} variants={animateText} />
-                            <Circle />
-                            <Name>{answers.name}</Name>
+                    <InnerWrap>
+                        <Profile>
+                            <PhotoBox>
+                                <Photo src={answers.profilePic} as={motion.img} initial={"start"} animate={"end"} variants={animateText} />
+                                <Circle />
+                                <Name>{answers.name}</Name>
                                 <Countdown />
                             </PhotoBox>
-                        <Summary />
-                    </Profile>
-                    <Stats>
-                        <div>Instructions: saddsdasdsdadasdsa</div>
-                    </Stats>
+                            <Summary />
+                        </Profile>
+                        <InstructionsBox>
+                            <Instructions>You will receive further intructions in both your mail and email for preparing yourself for the transition period.</Instructions>
+                        </InstructionsBox>
+                    </InnerWrap>
                 </Wrapper>}
         </>
     )
@@ -74,7 +74,7 @@ const Blank = styled.div`
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     width: 100%;
     height: 88vh;
@@ -83,11 +83,10 @@ const Profile = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
-    gap: 50px;
+    gap: 100px;
     height: 500px;
-    flex: 1;
     `
 const Photo = styled.img`
     width: 250px;
@@ -112,14 +111,29 @@ const Name = styled.h1`
     padding-top: 20px;
     font-size: 50px;
 `
-const Stats = styled.div`
-    width: 81%;
-    flex: 1;
+const InstructionsBox = styled.div`
+    width: 60%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     background-color: #F1F1F1;
     border-radius: 5px;
     padding: 30px;
 `
+const Instructions = styled.div`
+    font-size: 20px;
+    font-weight: 200;
+    letter-spacing: 0em;
+    color: #9F9F92;
+`
+
+const InnerWrap = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 30px;
+    height: 50vh;
+`
+

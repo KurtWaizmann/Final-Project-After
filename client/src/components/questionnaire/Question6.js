@@ -16,7 +16,6 @@ import { animateContinue, quizTransition } from "../AnimationHandlers";
 const Question6 = () => {
     const { answers, setAnswers } = useContext(QuestionContext);
     const [isChosen, setIsChosen] = useState(false);
-    console.log(answers)
 
     return (
         <>

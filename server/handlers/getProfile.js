@@ -11,7 +11,7 @@ const options = {
 };
 
 
-const postProfile = async (req, res) => {
+const getProfile = async (req, res) => {
     // creates a new client
     const client = new MongoClient(MONGO_URI, options);
 
@@ -23,8 +23,8 @@ const postProfile = async (req, res) => {
         const db = client.db("After");
         console.log("connected!");
 
-        // posting to the collection
-        const result = (await db.collection("Profile").insertOne(req.body));
+        // grabbing from the collection
+        const result = (await db.collection("Profile").findOne( {}, { sort: { $natural : -1 }}));
 
         // send result
         result
@@ -43,4 +43,4 @@ const postProfile = async (req, res) => {
     }
 };
 
-module.exports = { postProfile };
+module.exports = { getProfile };

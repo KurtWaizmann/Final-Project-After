@@ -23,7 +23,7 @@ const postRegistration = async (req, res) => {
         const db = client.db("After");
         console.log("connected!");
 
-        // grabbing from the collection
+        // posting to the collection
         const result = (await db.collection("Registrations").insertOne(req.body));
         
         // send result

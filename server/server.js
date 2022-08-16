@@ -2,6 +2,7 @@ const express = require("express");
 const morgan = require("morgan");
 const { postRegistration } = require("./handlers/postRegistration")
 const { postProfile } = require("./handlers/postProfile")
+const { getProfile } = require("./handlers/getProfile")
 
 
 const PORT = 8000;
@@ -12,6 +13,10 @@ express()
 
 
     /* Endpoints */
+
+    // GET
+    .get("/profile", getProfile)
+
 
     // POST
     .post("/registration", postRegistration)

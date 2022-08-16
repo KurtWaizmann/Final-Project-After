@@ -31,8 +31,8 @@ const Question10 = () => {
                             <QuestionBox />
                             <ChoiceTitle>Select an Option</ChoiceTitle>
                             <Choices onClick={() => setIsChosen(true)}>
-                                <Button onClick={() => setAnswers({ ...answers, q10: `${names[Math.floor(Math.random() * 20)]}` })}><Letter>A. </Letter> Love.</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q10: `${names[Math.floor(Math.random() * 40)]}` })}><Letter>B. </Letter> Money.</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q10: `${names[Math.floor(Math.random() * 20)]}` })}>Love.</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q10: `${names[Math.floor(Math.random() * 40)]}` })}>Money.</Button>
                             </Choices>
                         </QuestionWrap>
                         <ContinueWrap>
@@ -126,33 +126,33 @@ const Choices = styled.div`
     flex:1;
     top: 30px;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 10px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
     line-height: 10px;
 `
-const Letter = styled.h1`
-    margin-right: 10px;
-    color: #9F9F92;
 
-`
 const Button = styled.button`
+    height: 56px;
+    width: 171px;
+    border-radius: 30px;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    height: 38px;
+    justify-content: center;
+    align-items: center;
     border: none;
-    border-radius: 3px;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 300;
-    line-height: 19px;
+    line-height: 30px;
     letter-spacing: 0em;
     text-align: left;
-    cursor: pointer;
-    color: #9F9F92;
+    color: #7D7D7D;
+    text-transform: uppercase;
+    &:hover{
+        border: 2px solid #c7c7c7;
+    }
     &:focus{
-        color: #414141;
+        border: 2px solid #7D7D7D;
     }
 `
 const ContinueWrap = styled.div`

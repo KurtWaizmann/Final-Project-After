@@ -20,15 +20,9 @@ const Question1 = () => {
     const [isChosen, setIsChosen] = useState(false);
     console.log(answers)
 
-    const buttons = [];
-    for (let i = 1; i < 11; i++) {
-        buttons.push(<Button key={uuid()} as={motion.button} initial={"start"} whileHover={"end"} variants={buttonHover} onClick={() => setAnswers({ ...answers, q1: i+20 })}>{i}</Button>)
-    }
-
-
     return (
         <>
-            
+
             <Wrapper className="WHEREAREYOU" as={motion.div} initial="out" animate="in" exit="out" variants={quizTransition}>
                 <Container>
                     <InnerWrap>
@@ -36,7 +30,18 @@ const Question1 = () => {
                             <Question>On a scale 1 to 10, how spiritual would you consider yourself?</Question>
                             <QuestionBox />
                             <ChoiceTitle>Select an Option</ChoiceTitle>
-                            <Choices onClick={() => setIsChosen(true)}>{buttons}</Choices>
+                            <Choices onClick={() => setIsChosen(true)}>
+                                <Button onClick={() => setAnswers({ ...answers, q1: 1 + 20 })}>1</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q1: 2 + 20 })}>2</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q1: 3 + 20 })}>3</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q1: 4 + 20 })}>4</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q1: 5 + 20 })}>5</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q1: 6 + 20 })}>6</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q1: 7 + 20 })}>7</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q1: 8 + 20 })}>8</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q1: 9 + 20 })}>9</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q1: 10 + 20 })}>10</Button>
+                            </Choices>
                         </QuestionWrap>
                         <ContinueWrap>
                             {isChosen && <>
@@ -149,16 +154,15 @@ const Button = styled.button`
     letter-spacing: 0em;
     text-align: left;
     cursor: pointer;
-    color:#7D7D7D;
+    color:#b5b4b4;
     &:focus{
-        border-color: green;
         color: black;
+        font-weight: 300;
     }
     &:hover{
-        color: black;    
-        font-weight: 500;
+        background-color: #ffffff;
     }
-`
+    `
 const ContinueWrap = styled.div`
     height: 100%;
     width: 100%;

@@ -4,12 +4,11 @@ import { Link } from "react-router-dom";
 
 const BasicNav = () => {
     return (
-    <Wrapper>
-        <TitleWrap to={"/home"}>
-            <Title>After.</Title>
-            <Trademark>TM</Trademark>
-        </TitleWrap> 
-    </Wrapper>
+        <Wrapper>
+            <TitleWrap to={"/home"}>
+                <Title>After.<Trademark>TM</Trademark></Title>
+            </TitleWrap>
+        </Wrapper>
     )
 }
 
@@ -25,6 +24,9 @@ const Wrapper = styled.div`
 `
 const TitleWrap = styled(Link)`
     display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
     text-decoration: none;
 
 `
@@ -32,11 +34,14 @@ const Title = styled.h1`
     font-size: 40px;
     font-weight: 100;
     color: #232323;
-
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
 `
 const Trademark = styled.div`
     font-size: 8px;
-    position: relative;
+    /* position: relative; */
     top: 45px;
     height: 15px;
     font-weight: 500;

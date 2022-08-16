@@ -28,7 +28,7 @@ const Slogan = styled(Parallax)`
   font-weight: 400;
   line-height: 78px;
   letter-spacing: 0em;
-  width: 100%;
+  /* width: 100%; */
   text-align: center;
   font-family: 'Baskervville', serif;
   text-align: center;

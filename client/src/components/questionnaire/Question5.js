@@ -30,15 +30,18 @@ const Question5 = () => {
                             <QuestionBox />
                             <ChoiceTitle>Select an Option</ChoiceTitle>
                             <Choices onClick={() => setIsChosen(true)}>
-                                    <Button onClick={() =>  setAnswers({ ...answers, q5: "socializing with friends" })}><Letter>A. </Letter> Christmas Trees </Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q5: "making charicatures of deceased actors" })}><Letter>B. </Letter> Sharpies </Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q5: "spending time with family" })}><Letter>C. </Letter> Baby </Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q5: "going on road trips across the country" })}><Letter>D. </Letter> Gasoline</Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q5: "going to raves and staying up late" })}><Letter>D. </Letter> New Car</Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q5: "staying-in and watching tv-shows" })}><Letter>D. </Letter> Fresh paint</Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q5: "going to wineries on weekends" })}><Letter>D. </Letter> Wine</Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q5: "going on hiking expeditions" })}><Letter>D. </Letter> Bacon</Button>
-
+                            <ChoiceRow>
+                                    <Button onClick={() =>  setAnswers({ ...answers, q5: "socializing with friends" })}>Christmas Trees </Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q5: "making charicatures of deceased actors" })}>Sharpies </Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q5: "spending time with family" })}>Baby </Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q5: "going on road trips across the country" })}>Gasoline</Button>
+                                    </ChoiceRow>
+                                    <ChoiceRow>
+                                    <Button onClick={() => setAnswers({ ...answers, q5: "going to raves and staying up late" })}>New Car</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q5: "staying-in and watching tv-shows" })}>Fresh paint</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q5: "going to wineries on weekends" })}>Wine</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q5: "going on hiking expeditions" })}>Bacon</Button>
+                                    </ChoiceRow>
                             </Choices>
                         </QuestionWrap>
                         <ContinueWrap>
@@ -101,7 +104,7 @@ const QuestionWrap = styled.div`
     flex: 2;
 `
 const Question = styled.h1`
-    width: 900px;
+    width: 40%;
     font-size: 50px;
     font-weight: 400;
     line-height: 65px;
@@ -144,9 +147,10 @@ const Letter = styled.h1`
 
 `
 const Button = styled.button`
+    width: 145px;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     height: 38px;
     border: none;
     border-radius: 3px;
@@ -157,8 +161,12 @@ const Button = styled.button`
     text-align: left;
     cursor: pointer;
     color: #9F9F92;
+    border-radius: 30px;
+    &:hover{
+        border: 2px solid #c7c7c7;
+    }
     &:focus{
-        color: #414141;
+        border: 2px solid #7D7D7D;
     }
 `
 const ContinueWrap = styled.div`
@@ -196,4 +204,13 @@ const ArrowWrap = styled.div`
 `
 const StyledLink = styled(Link)`
     text-decoration: none;
+`
+const ChoiceRow = styled.div`
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 0px 0 0px;
+    gap: 20px;
 `

@@ -28,35 +28,39 @@ const Question2 = () => {
                             <QuestionBox />
                             <ChoiceTitle>Select an Option</ChoiceTitle>
                             <Choices onClick={() => setIsChosen(true)}>
-                                <Button onClick={() => setAnswers({ ...answers, q2: "film director" })}><Letter>A. </Letter> Barn Owl</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q2: "fashion designer" })}><Letter>B. </Letter> Bison</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q2: "jingle writer" })}><Letter>C. </Letter> Fire-Bellied Toad</Button>
-                                        <Button onClick = { () => setAnswers({ ...answers, q2: "horticulturalist" }) }>< Letter > D. </Letter> Shrew</Button>
-                        <Button onClick={() => setAnswers({ ...answers, q2: "dermatologist" })}><Letter>D. </Letter> Northern Stargazer</Button>
-                        <Button onClick={() => setAnswers({ ...answers, q2: "psychiatrist" })}><Letter>D. </Letter> Aardvark</Button>
-                        <Button onClick={() => setAnswers({ ...answers, q2: "front-end web developer" })}><Letter>D. </Letter> Hermit Crab</Button>
-                        <Button onClick={() => setAnswers({ ...answers, q2: "real estate agent" })}><Letter>D. </Letter> Gecko</Button>
-                    </Choices>
-                </QuestionWrap>
-                <ContinueWrap>
-                    {isChosen && <>
-                        <StyledLink to="/question/3">
-                            <Continue
-                                as={motion.div}
-                                initial={"start"}
-                                animate={"end"}
-                                variants={animateContinue}
-                            >Continue
-                                <ArrowWrap>
-                                    <BsArrowRight />
-                                </ArrowWrap>
-                            </Continue>
-                        </StyledLink>
-                    </>}
+                                <ChoiceRow>
+                                    <Button onClick={() => setAnswers({ ...answers, q2: "film director" })}> Barn Owl</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q2: "fashion designer" })}>Bison</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q2: "jingle writer" })}>Fire-Bellied Toad</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q2: "horticulturalist" })}>Shrew</Button>
+                                </ChoiceRow>
+                                <ChoiceRow>
+                                    <Button onClick={() => setAnswers({ ...answers, q2: "dermatologist" })}>Northern Stargazer</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q2: "psychiatrist" })}>Aardvark</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q2: "front-end web developer" })}>Hermit Crab</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q2: "real estate agent" })}>Gecko</Button>
+                                </ChoiceRow>
+                            </Choices>
+                        </QuestionWrap>
+                        <ContinueWrap>
+                            {isChosen && <>
+                                <StyledLink to="/question/3">
+                                    <Continue
+                                        as={motion.div}
+                                        initial={"start"}
+                                        animate={"end"}
+                                        variants={animateContinue}
+                                    >Continue
+                                        <ArrowWrap>
+                                            <BsArrowRight />
+                                        </ArrowWrap>
+                                    </Continue>
+                                </StyledLink>
+                            </>}
 
-                </ContinueWrap>
-            </InnerWrap>
-        </Container>
+                        </ContinueWrap>
+                    </InnerWrap>
+                </Container>
             </Wrapper >
         </>
     )
@@ -135,15 +139,12 @@ const Choices = styled.div`
     gap: 10px;
     line-height: 10px;
 `
-const Letter = styled.h1`
-    margin-right: 10px;
-    color: #9F9F92;
 
-`
 const Button = styled.button`
+    width: 145px;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     height: 38px;
     border: none;
     border-radius: 3px;
@@ -154,8 +155,12 @@ const Button = styled.button`
     text-align: left;
     cursor: pointer;
     color: #9F9F92;
+    border-radius: 30px;
+    &:hover{
+        border: 2px solid #c7c7c7;
+    }
     &:focus{
-        color: #414141;
+        border: 2px solid #7D7D7D;
     }
 `
 const ContinueWrap = styled.div`
@@ -193,4 +198,13 @@ const ArrowWrap = styled.div`
 `
 const StyledLink = styled(Link)`
     text-decoration: none;
+`
+const ChoiceRow = styled.div`
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 0px 0 0px;
+    gap: 20px;
 `

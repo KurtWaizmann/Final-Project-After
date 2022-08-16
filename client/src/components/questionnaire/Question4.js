@@ -7,8 +7,9 @@ import { motion } from "framer-motion";
 // component imports
 import { QuestionContext } from "./QuestionContext";
 
-// import icon
+// import icon and pictures
 import { BsArrowRight } from "react-icons/bs";
+import imageRorschach from "../../assets/rorschach.jpeg"
 
 // animation imports
 import { animateText, animateContinue, quizTransition } from "../AnimationHandlers";
@@ -19,14 +20,14 @@ const Question4 = () => {
     const { answers, setAnswers } = useContext(QuestionContext);
     const [isChosen, setIsChosen] = useState(false);
     console.log(answers)
-
+    console.log(imageRorschach)
     return (
         <>
-            <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={quizTransition} style={{textDecoration:"none", padding:"none", margin:"none"}}>
+            <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={quizTransition} style={{ textDecoration: "none", padding: "none", margin: "none" }}>
                 <Container>
                     <InnerWrap>
                         <QuestionWrap>
-                            <Question>Same question. What do you see in this image?</Question>
+                            <Question>What do you see in this image?</Question>
                             <ChoiceTitle>Select an Option</ChoiceTitle>
                             <Choices onClick={() => setIsChosen(true)}>
                                 <ChoiceRow>
@@ -44,7 +45,7 @@ const Question4 = () => {
                         <ContinueWrap>
                             <ImageContainer>
                                 <Image
-                                    src="https://thisartworkdoesnotexist.com/"
+                                    src={imageRorschach}
                                     as={motion.img}
                                     initial={"start"}
                                     animate={"end"}
@@ -109,7 +110,7 @@ const QuestionWrap = styled.div`
     flex: 2;
 `
 const Question = styled.h1`
-    width: 100%;
+    width: 90%;
     font-size: 50px;
     font-weight: 400;
     line-height: 65px;
@@ -117,6 +118,7 @@ const Question = styled.h1`
     text-align: left;
     color: #9F9F92;
     flex:1;
+    
 `
 const ChoiceTitle = styled.div`
     font-size: 18px;
@@ -177,13 +179,12 @@ const ContinueWrap = styled.div`
     position: relative;
 `
 const Image = styled.img`
-    width: 100%;
+    width: 250px;
     top: 10px;
     left:0px;
 `
 const ImageContainer = styled.div`
-    width: 250px;
-    height: 250px;
+    display: flex;
     border: 10px solid white;
     position: absolute;
     background-color: white;

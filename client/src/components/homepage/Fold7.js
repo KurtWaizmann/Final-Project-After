@@ -54,13 +54,14 @@ const ContainerMind = styled.div`
   justify-content: space-between;
   align-items: center;
   background-color: #F1F0EA;
-  padding: 0 15% 0 15%;
+  /* padding: 0 15% 0 15%; */
 `
 const WrapperMind = styled.div`
   width: 490px;
   display: flex;
   flex-direction: column;
   gap:30px;
+  margin-left: 12%;
 `
 const TitleMind = styled.h1`
 font-size: 50px;
@@ -77,8 +78,10 @@ line-height: 28px;
 letter-spacing: 0em;
 text-align: left;
 color: #6D6466;
+
 `
 const ImageEmployees = styled.img`
+  margin-right: 12%;
 `
 const More = styled.div`
   font-size: 16px;

@@ -52,7 +52,7 @@ const Question3 = () => {
                                 />
                             </ImageContainer>
                             {isChosen && <>
-                                <StyledLink to="/interlude/1">
+                                <StyledLink to="/question/4">
                                     <Continue
                                         as={motion.div}
                                         initial={"start"}

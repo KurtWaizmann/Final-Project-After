@@ -204,7 +204,7 @@ const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 88vh;
+    height: 92vh;
 `
 const Container = styled.div`
     display: flex;

@@ -25,14 +25,14 @@ const Question8 = () => {
                 <Container>
                     <InnerWrap>
                         <QuestionWrap>
-                            <Question>If you had an extra hour a day that had to be allocated to one specific purpose, how would you use it?</Question>
+                            <Question>You have an extra hour a day, how would you use it?</Question>
                             <QuestionBox />
                             <ChoiceTitle>Select an Option</ChoiceTitle>
                             <Choices onClick={() => setIsChosen(true)}>
-                                <Button onClick={() => setAnswers({ ...answers, q8: "taking cruises in the Caribbean" })}><Letter>A. </Letter> Spending time with family or friends.</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q8: "being lazy at home" })}><Letter>B. </Letter> Catching up on sleep.</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q8: "playing music in your jam band" })}><Letter>C. </Letter> Learn something new.</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q8: "shopping for new clothes" })}><Letter>D. </Letter> Doing an activity you love.</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q8: "taking cruises in the Caribbean" })}><Letter>a. </Letter> Spending time with family or friends.</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q8: "being lazy at home" })}><Letter>b. </Letter> Catching up on sleep.</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q8: "playing music in your jam band" })}><Letter>c. </Letter> Learn something new.</Button>
+                                <Button onClick={() => setAnswers({ ...answers, q8: "shopping for new clothes" })}><Letter>d. </Letter> Doing an activity you love.</Button>
                             </Choices>
                         </QuestionWrap>
                         <ContinueWrap>
@@ -95,7 +95,7 @@ const QuestionWrap = styled.div`
     flex: 2;
 `
 const Question = styled.h1`
-    width: 900px;
+    width: 40%;
     font-size: 50px;
     font-weight: 400;
     line-height: 65px;
@@ -135,17 +135,16 @@ const Choices = styled.div`
 const Letter = styled.h1`
     margin-right: 10px;
     color: #9F9F92;
-
 `
 const Button = styled.button`
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     height: 38px;
     border: none;
     border-radius: 3px;
-    font-size: 15px;
-    font-weight: 300;
+    font-size: 20px;
+    font-weight: 100;
     line-height: 19px;
     letter-spacing: 0em;
     text-align: left;

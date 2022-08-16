@@ -24,19 +24,19 @@ const Question6 = () => {
                 <Container>
                     <InnerWrap>
                         <QuestionWrap>
-                            <Question>On your way home from work, a man with a knife confronts you and orders you to hand him your wallet...</Question>
+                            <Question>A man with a knife confronts you and demands your wallet.</Question>
                             <QuestionBox />
                             <ChoiceTitle>Select an Option</ChoiceTitle>
                             <Choices onClick={() => setIsChosen(true)}>
-                                    <Button onClick={() =>  setAnswers({ ...answers, q6: "painting your nails" })}><Letter>A. </Letter> Give the man your wallet.</Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q6: "a good game of poker" })}><Letter>B. </Letter> Fight the man and risk your own life.</Button>
-                                    <Button onClick={() => setAnswers({ ...answers, q6: "table-tennis" })}><Letter>C. </Letter> Attempt to run away, screaming for help.</Button>
-                                    <Button style={{width:"550px"}} onClick={() => setAnswers({ ...answers, q6: "travelling the world" })}><Letter>D. </Letter> Submit yourself to the man’s violence in a desperate wish to be released from this cruel world</Button>
+                                    <Button onClick={() =>  setAnswers({ ...answers, q6: "painting your nails" })}><Letter>a. </Letter> Give the man your wallet.</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q6: "a good game of poker" })}><Letter>b. </Letter> Fight the man and risk your own life.</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q6: "table-tennis" })}><Letter>c. </Letter> Attempt to run away, screaming for help.</Button>
+                                    <Button style={{width:"550px"}} onClick={() => setAnswers({ ...answers, q6: "travelling the world" })}><Letter>d. </Letter> Desperately wish to be released from this cruel world</Button>
                             </Choices>
                         </QuestionWrap>
                         <ContinueWrap>
                         {isChosen && <>
-                                <StyledLink to="/interlude/2">
+                                <StyledLink to="/question/7">
                                 <Continue
                                     as={motion.div}
                                     initial={"start"}
@@ -71,7 +71,7 @@ const Wrapper = styled.div`
     `
 const Container = styled.div`
     width: 1195px;
-    height: 626px;
+    height: 726px;
     background-color: #F1F1F1;
     display: flex;
     flex-direction: row;
@@ -134,17 +134,16 @@ const Choices = styled.div`
 const Letter = styled.h1`
     margin-right: 10px;
     color: #9F9F92;
-
 `
 const Button = styled.button`
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     height: 38px;
     border: none;
     border-radius: 3px;
-    font-size: 15px;
-    font-weight: 300;
+    font-size: 20px;
+    font-weight: 100;
     line-height: 19px;
     letter-spacing: 0em;
     text-align: left;

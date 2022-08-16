@@ -16,13 +16,13 @@ const HomeNav = () => {
                 <Subtitle to="/companydetails">who we are</Subtitle>
             </InnerWrap>
             <TitleWrap>
-                <Title>After.</Title>
-                <Trademark>TM</Trademark>
+                {/* <Title>After.</Title>
+                <Trademark>TM</Trademark> */}
             </TitleWrap>
             <InnerWrap as={motion.div} initial="out" animate="in" exit="out" variants={pageTransition}>
                 <Subtitle to="/faq">F.A.Q.</Subtitle>
                 {userId
-                    ? <Subtitle to="/results">profile</Subtitle>
+                    ? <Subtitle to="/profile">profile</Subtitle>
                     : <Subtitle to="/registration">sign up</Subtitle>
                 }
             </InnerWrap>
@@ -34,7 +34,7 @@ export default HomeNav;
 
 const Wrapper = styled.div`
     height: 70px;
-    width: 100%;
+    width: 99%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -54,7 +54,7 @@ const Title = styled.h1`
 const Trademark = styled.div`
     font-size: 8px;
     position: relative;
-    top: 25px;
+    top: 205px;
     font-weight: 300;
     color: #a7a5a5;
 `

@@ -22,7 +22,7 @@ const Question9 = () => {
 
     return (
         <>
-            <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={quizTransition} style={{textDecoration:"none", padding:"none", margin:"none"}}>
+            <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={quizTransition} style={{ textDecoration: "none", padding: "none", margin: "none" }}>
                 <Container>
                     <InnerWrap>
                         <QuestionWrap>
@@ -30,12 +30,16 @@ const Question9 = () => {
                             <QuestionBox />
                             <ChoiceTitle>Select an Option</ChoiceTitle>
                             <Choices onClick={() => setIsChosen(true)}>
-                                <Button onClick={() => setAnswers({ ...answers, q9: "an unfortunatley dumb dog" })}><Letter>A. </Letter> Eyes.</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q9: "a lazy and kinda mean siamese cat" })}><Letter>B. </Letter> Lips.</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q9: "a beautiful love bird" })}><Letter>C. </Letter> Cheek.</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q9: "a robot that looks like a deceased relative" })}><Letter>D. </Letter>Nose.</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q9: "a miniature version of yourself" })}><Letter>D. </Letter>Chin.</Button>
-                                <Button onClick={() => setAnswers({ ...answers, q9: "ghost of a dead confederate solider" })}><Letter>D. </Letter>Forehead.</Button>
+                                <ChoiceRow>
+                                    <Button onClick={() => setAnswers({ ...answers, q9: "an unfortunatley dumb dog" })}>Eyes.</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q9: "a lazy and kinda mean siamese cat" })}>Lips.</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q9: "a beautiful love bird" })}>Cheek.</Button>
+                                </ChoiceRow>
+                                <ChoiceRow>
+                                    <Button onClick={() => setAnswers({ ...answers, q9: "a robot that looks like a deceased relative" })}>Nose.</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q9: "a miniature version of yourself" })}>Chin.</Button>
+                                    <Button onClick={() => setAnswers({ ...answers, q9: "ghost of a dead confederate solider" })}>Forehead.</Button>
+                                </ChoiceRow>
                             </Choices>
                         </QuestionWrap>
                         <ContinueWrap>
@@ -141,9 +145,10 @@ const Letter = styled.h1`
 
 `
 const Button = styled.button`
+    width: 145px;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     height: 38px;
     border: none;
     border-radius: 3px;
@@ -154,8 +159,12 @@ const Button = styled.button`
     text-align: left;
     cursor: pointer;
     color: #9F9F92;
+    border-radius: 30px;
+    &:hover{
+        border: 2px solid #c7c7c7;
+    }
     &:focus{
-        color: #414141;
+        border: 2px solid #7D7D7D;
     }
 `
 const ContinueWrap = styled.div`
@@ -193,4 +202,13 @@ const ArrowWrap = styled.div`
 `
 const StyledLink = styled(Link)`
     text-decoration: none;
+`
+const ChoiceRow = styled.div`
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 0px 0 0px;
+    gap: 80px;
 `

@@ -31,7 +31,6 @@ const Fold1 = () => {
           <SubHeader>INTO A WORLD DESIGNED FOR YOU</SubHeader>
           <Description>Begin your journey towards a new life full of richness and beauty. Shed the toubles of the past and upload yourself into a world designed by the finest minds to be as enriching as ever experienced. Come join us today in our digital paradise.</Description>
         </IntroWrap>
-      </FoldOne>
       <ArrowWrap 
         as={motion.div}
         initial={"start"}
@@ -41,6 +40,7 @@ const Fold1 = () => {
       >
         <StyledArrow />
       </ArrowWrap>
+        </FoldOne>
     </>
   )
 }
@@ -49,12 +49,12 @@ export default Fold1
 
 // Fist Fold CSS 
 const FoldOne = styled.div`
-  width: 100%;
   height: 91vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* border: 2px solid green; */
 `
 const IntroWrap = styled.div`
   display: flex;
@@ -98,7 +98,7 @@ const StyledArrow = styled(AiOutlineDown)`
 
 `
 const ArrowWrap = styled.div`
-  width: 100%;
+  /* width: 100%; */
   height: 90vh;
   display: flex;
   justify-content: center;

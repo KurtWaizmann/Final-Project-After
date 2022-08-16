@@ -15,13 +15,18 @@ export default createGlobalStyle`
   figure, figcaption, footer, header, hgroup,
   menu, nav, output, ruby, section, summary,
   time, mark, audio, video {
-      /* padding: 0;
+      padding: 0;
       border: 0;
-      box-sizing: border-box; */
+      /* margin:0; */
+      box-sizing: border-box;
       font-size: 100%;
       vertical-align: baseline;
+      /* border: 2px solid red; */
   }
-  
+  html {
+    overflow-y: overlay;
+  }
+
   /* HTML5 display-role reset for older browsers */
   article, aside, details, figcaption, figure,
   footer, header, hgroup, menu, nav, section {
@@ -31,6 +36,7 @@ export default createGlobalStyle`
   body {
       line-height: 1;
       /* height: 100vh; */
+      /* overflow: auto; */
   }
 
   ol, ul {
@@ -62,7 +68,7 @@ input,
 div {
   font-family: 'Noto Sans', sans-serif;
   font-size: 14px;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
   /* #root{
     height: 100vh;

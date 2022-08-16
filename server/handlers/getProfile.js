@@ -16,7 +16,7 @@ const getProfile = async (req, res) => {
     const client = new MongoClient(MONGO_URI, options);
     // grab id from params
     const _id = req.params.userId;
-    console.log(_id)
+    console.log("_id", _id)
 
     try {
         // connect to the client
@@ -27,8 +27,8 @@ const getProfile = async (req, res) => {
         console.log("connected!");
 
         // grabbing from the collection
-        const result = (await db.collection("Profile").findOne({_id}));
-        console.log(result)
+        const result = await db.collection("Profile").findOne({_id:_id});
+        console.log("results", result)
         // send result
         result
             ? res.status(200).json({ status: 200, message: "Success!", data: result })

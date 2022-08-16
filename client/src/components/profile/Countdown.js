@@ -1,6 +1,8 @@
+// import package
 import styled from "styled-components"
-import { useEffect } from "react";
 
+//import icon
+import { TbWorldUpload } from "react-icons/tb";
 
 const Countdown = () => {
     // Date until upload
@@ -13,8 +15,8 @@ const Countdown = () => {
 
 
     return (
-        <UploadDate><UploadSpan1>Upload in</UploadSpan1> <UploadSpan2>{days} days</UploadSpan2><UploadSpan3> {hours} hours</UploadSpan3></UploadDate>
-        )
+        <UploadDate><StyledTbWorldUpload /><UploadSpan1>Upload in</UploadSpan1> <UploadSpan2>{days} days</UploadSpan2><UploadSpan3> {hours} hours</UploadSpan3></UploadDate>
+    )
 }
 
 export default Countdown
@@ -35,4 +37,8 @@ const UploadSpan2 = styled.span`
 const UploadSpan3 = styled.span`
     font-weight: 800;
     color: blue;
+`
+const StyledTbWorldUpload = styled(TbWorldUpload)`
+    transform: scale(1.8);
+    margin-right: 5px;
 `

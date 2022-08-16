@@ -77,7 +77,7 @@ const QComplete = () => {
                 <Message>We can't wait for you to see it for yourself!.</Message>
                 <LoadingBox>
                     {redirect
-                        ? <StyledLink to="/results"><Continue as={motion.div} initial={"start"} animate={"end"} variants={animateContinue}>Continue</Continue></StyledLink>
+                        ? <StyledLink to="/profile"><Continue as={motion.div} initial={"start"} animate={"end"} variants={animateContinue}>Continue</Continue></StyledLink>
                         : <Loader />
                     }
                 </LoadingBox>
@@ -95,7 +95,7 @@ const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 91vh;
+    height: 88vh;
     gap: 20px;
     `
 

@@ -62,6 +62,7 @@ input,
 div {
   font-family: 'Noto Sans', sans-serif;
   font-size: 14px;
+  border: 2px solid red;
 }
   /* #root{
     height: 100vh;

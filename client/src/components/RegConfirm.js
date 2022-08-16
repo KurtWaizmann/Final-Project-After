@@ -3,9 +3,6 @@ import styled from "styled-components"
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-// component imports
-import BasicHeader from "./BasicHeader";
-
 // animation import
 import { pageTransition } from "./AnimationHandlers";
 

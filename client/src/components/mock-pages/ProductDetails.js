@@ -1,4 +1,3 @@
-import BasicHeader from "../BasicHeader";
 
 
 const ProductDetails = () => {

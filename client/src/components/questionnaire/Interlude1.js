@@ -3,11 +3,8 @@ import styled from "styled-components"
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-// component imports
-import BasicHeader from "../BasicHeader";
-
 // animation imports
-import { animateContinue, pageTransition } from "../AnimationHandlers";
+import { pageTransition } from "../AnimationHandlers";
 
 const Interlude1 = () => {
     return (
@@ -30,7 +27,7 @@ const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 91vh;
+    height: 88vh;
     gap: 20px;
     `
 

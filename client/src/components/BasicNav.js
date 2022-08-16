@@ -2,7 +2,7 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom";
 
-const BasicHeader = () => {
+const BasicNav = () => {
     return (
     <Wrapper>
         <TitleWrap to={"/home"}>
@@ -13,7 +13,7 @@ const BasicHeader = () => {
     )
 }
 
-export default BasicHeader;
+export default BasicNav;
 
 const Wrapper = styled.div`
     height: 70px;

@@ -6,26 +6,31 @@ import { Link } from "react-router-dom";
 // animation import
 import { pageTransition } from "../AnimationHandlers";
 
-const HomeHeader = () => {
+const HomeNav = () => {
+    const userId = JSON.parse(localStorage.getItem("After-userId"))
+
     return (
-    <Wrapper>
-        <InnerWrap as={motion.div} initial="out" animate="in" exit="out" variants={pageTransition}>
-            <Subtitle to="/productdetails">product</Subtitle>
-            <Subtitle to="/companydetails">who we are</Subtitle>
-        </InnerWrap>
-        <TitleWrap>
-            <Title>After.</Title>
-            <Trademark>TM</Trademark>
-        </TitleWrap> 
-        <InnerWrap as={motion.div} initial="out" animate="in" exit="out" variants={pageTransition}>
-            <Subtitle to="/faq">F.A.Q.</Subtitle>
-            <Subtitle to="/registration">sign up</Subtitle>
-        </InnerWrap>
-    </Wrapper>
+        <Wrapper>
+            <InnerWrap as={motion.div} initial="out" animate="in" exit="out" variants={pageTransition}>
+                <Subtitle to="/productdetails">product</Subtitle>
+                <Subtitle to="/companydetails">who we are</Subtitle>
+            </InnerWrap>
+            <TitleWrap>
+                <Title>After.</Title>
+                <Trademark>TM</Trademark>
+            </TitleWrap>
+            <InnerWrap as={motion.div} initial="out" animate="in" exit="out" variants={pageTransition}>
+                <Subtitle to="/faq">F.A.Q.</Subtitle>
+                {userId
+                    ? <Subtitle to="/results">profile</Subtitle>
+                    : <Subtitle to="/registration">sign up</Subtitle>
+                }
+            </InnerWrap>
+        </Wrapper>
     )
 }
 
-export default HomeHeader;
+export default HomeNav;
 
 const Wrapper = styled.div`
     height: 70px;

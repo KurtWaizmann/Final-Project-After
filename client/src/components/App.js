@@ -5,7 +5,7 @@ import GlobalStyles from "./GlobalStyles";
 import { AnimatePresence, motion } from "framer-motion";
 
 // import components
-import BasicHeader from "./BasicHeader";
+import BasicNav from "./BasicNav";
 import Intro from "./Intro";
 import Homepage from "./homepage/Homepage";
 import CompanyDetails from "./mock-pages/CompanyDetails";
@@ -26,7 +26,7 @@ import Question10 from "./questionnaire/Question10";
 import Interlude1 from "./questionnaire/Interlude1";
 import Interlude2 from "./questionnaire/Interlude2";
 import QComplete from "./questionnaire/QComplete";
-import ResultsPage from "./resultspage/ResultsPage";
+import ProfilePage from "./profile/ProfilePage";
 
 // animation import
 import { pageTransition } from "./AnimationHandlers";
@@ -38,7 +38,7 @@ const App = () => {
     <>
       <GlobalStyles />
       <motion.div initial="out" animate="in" variants={pageTransition}>
-          <BasicHeader />
+          <BasicNav />
       </motion.div>
       <AnimatePresence exitBeforeEnter>
         <Routes location={location} key={location.pathname}>
@@ -63,7 +63,7 @@ const App = () => {
           <Route exact path="/interlude/1" element={<Interlude1 />} />
           <Route exact path="/interlude/2" element={<Interlude2 />} />
           <Route exact path="/question/complete" element={<QComplete />} />
-          <Route exact path="/results" element={<ResultsPage />} />
+          <Route exact path="/profile" element={<ProfilePage />} />
         </Routes>
       </AnimatePresence>
     </>

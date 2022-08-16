@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { motion } from "framer-motion";
 
 // component imports
-import HomeHeader from "./HomeHeader"
+import HomeNav from "./HomeNav";
 import { animateIntro, animateIntro2, animateText } from "../AnimationHandlers";
 
 // import icons
@@ -16,7 +16,7 @@ const Fold1 = () => {
         initial={"start"}
         animate={"end"}
         variants={animateIntro2}>
-        <HomeHeader />
+        <HomeNav />
       </motion.div>
 
       {/* first fold — intro message */}

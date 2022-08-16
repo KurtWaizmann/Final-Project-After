@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 // component imports
 import { QuestionContext } from "../questionnaire/QuestionContext";
 import Summary from "./Summary";
-import { DoNNut } from "./chartdata";
 import Countdown from "./Countdown";
 
 // animation imports
@@ -15,9 +14,9 @@ import { pageTransition, animateText } from "../AnimationHandlers";
 
 
 
-const ResultsPage = () => {
+const ProfilePage = () => {
     const { answers, setAnswers } = useContext(QuestionContext);
-    const userId = localStorage.getItem("After-userId")
+    const userId = JSON.parse(localStorage.getItem("After-userId")) 
 
 
     useEffect(() => {
@@ -60,14 +59,13 @@ const ResultsPage = () => {
                     </Profile>
                     <Stats>
                         <div>Instructions: saddsdasdsdadasdsa</div>
-                        <DoNNut />
                     </Stats>
                 </Wrapper>}
         </>
     )
 }
 
-export default ResultsPage
+export default ProfilePage
 
 const Blank = styled.div`
     width: 100%;
@@ -115,10 +113,13 @@ const Name = styled.h1`
     font-size: 50px;
 `
 const Stats = styled.div`
-    border: 2px solid red;
-    width: 100%;
+    width: 81%;
     flex: 1;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: #F1F1F1;
+    border-radius: 5px;
+    padding: 30px;
 `

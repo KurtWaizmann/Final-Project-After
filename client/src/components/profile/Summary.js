@@ -5,8 +5,11 @@ import { useContext } from "react";
 // component imports
 import { QuestionContext } from "../questionnaire/QuestionContext";
 
-
+// description of the avatar's backstory — essentially a madlib
+// bits of sentences and words come from the user's choices in the questionnaire
 const Summary = () => {
+
+    // getting the answers from the questionnaire
     const { answers } = useContext(QuestionContext);
     return (
             <Text>

@@ -11,24 +11,28 @@ import { animateText, animateImageRight } from "../AnimationHandlers";
 const Fold13 = () => {
   return (
     <FoldThirteen>
-    <WrapTestimonial
-      as={motion.div}
-      initial={"start"}
-      whileInView={"end"}
-      viewport={{ once: true, amount: 0.9 }}
-      variants={animateText}
-    >
-      <Stars>★★★★★</Stars>
-      <Testimonial>Honestly, I was so fortunate to be able leave that so-called “real” world. Let me remind you, a world ravaged by global warming, economic crises, endless wars, and so much more hurt. I remember struggling for simple things like finding fresh fruit when all the groceries stores were empty, or hiding indoors from the yearly pandemic. In the After, it’s been nothing but beautiful weather and happy moments. Truly a paradise! </Testimonial>
-      <Signed> Suzette Aguilar — Uploaded in 2022</Signed>
-    </WrapTestimonial>
-    <motion.img src={imageTestimonail3}
-      initial={"start"}
-      whileInView={"end"}
-      viewport={{ once: true, amount: 0.9 }}
-      variants={animateImageRight}
-    />
-  </FoldThirteen>
+
+      {/* text fade-in aniamation */}
+      <WrapTestimonial
+        as={motion.div}
+        initial={"start"}
+        whileInView={"end"}
+        viewport={{ once: true, amount: 0.9 }}
+        variants={animateText}
+      >
+        <Stars>★★★★★</Stars>
+        <Testimonial>Honestly, I was so fortunate to be able leave that so-called “real” world. Let me remind you, a world ravaged by global warming, economic crises, endless wars, and so much more hurt. I remember struggling for simple things like finding fresh fruit when all the groceries stores were empty, or hiding indoors from the yearly pandemic. In the After, it’s been nothing but beautiful weather and happy moments. Truly a paradise! </Testimonial>
+        <Signed> Suzette Aguilar — Uploaded in 2022</Signed>
+      </WrapTestimonial>
+
+      {/* image from right animation */}
+      <motion.img src={imageTestimonail3}
+        initial={"start"}
+        whileInView={"end"}
+        viewport={{ once: true, amount: 0.9 }}
+        variants={animateImageRight}
+      />
+    </FoldThirteen>
   )
 }
 

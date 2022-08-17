@@ -7,37 +7,41 @@ import { animateText } from "../AnimationHandlers";
 
 const Fold8 = () => {
   return (
-      <FoldEight>
-        <WrapperPillars
+    <FoldEight>
+
+      {/* fade in animation, being given to each "Pillar" div */}
+      <WrapperPillars
+        as={motion.div}
+        initial={"start"}
+        whileInView={"end"}
+        viewport={{ once: true, amount: 0.8 }}
+        transition={{ staggerChildren: 0 }}
+      >
+        
+        {/* I removed the stagger (placed to 0 for now) because I wasn't sure about it */}
+        <Pillar
           as={motion.div}
-          initial={"start"}
-          whileInView={"end"}
-          viewport={{ once: true, amount: 0.8 }}
-          transition={{ staggerChildren: 0 }}
+          variants={animateText}
         >
-          <Pillar
-            as={motion.div}
-            variants={animateText}
-          >
-            <PillarName>Belonging</PillarName>
-            <PillarDescription>Develop profound relationships with other avatars who will value you for you.</PillarDescription>
-          </Pillar>
-          <Pillar
-            as={motion.div}
-            variants={animateText}
-          >
-            <PillarName>Transcendence</PillarName>
-            <PillarDescription>Break apart the old paradigms of what it means to live a life, and follow ever life paths without fear or regret.</PillarDescription>
-          </Pillar>
-          <Pillar
-            as={motion.div}
-            variants={animateText}
-          >
-            <PillarName>Storytelling</PillarName>
-            <PillarDescription>We are the authors of our lives, so create the narrative that brings clarity and reenforces your purpose.</PillarDescription>
-          </Pillar>
-        </WrapperPillars>
-      </FoldEight>
+          <PillarName>Belonging</PillarName>
+          <PillarDescription>Develop profound relationships with other avatars who will value you for you.</PillarDescription>
+        </Pillar>
+        <Pillar
+          as={motion.div}
+          variants={animateText}
+        >
+          <PillarName>Transcendence</PillarName>
+          <PillarDescription>Break apart the old paradigms of what it means to live a life, and follow ever life paths without fear or regret.</PillarDescription>
+        </Pillar>
+        <Pillar
+          as={motion.div}
+          variants={animateText}
+        >
+          <PillarName>Storytelling</PillarName>
+          <PillarDescription>We are the authors of our lives, so create the narrative that brings clarity and reenforces your purpose.</PillarDescription>
+        </Pillar>
+      </WrapperPillars>
+    </FoldEight>
   )
 }
 

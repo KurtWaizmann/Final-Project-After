@@ -1,4 +1,5 @@
 
+// fade in for intro
 export const animateIntro = {
     start: {
         opacity: 0,
@@ -11,6 +12,7 @@ export const animateIntro = {
     }
 }
 
+// fade in for intro
 export const animateIntro2 = {
     start: {
         opacity: 0,
@@ -24,6 +26,7 @@ export const animateIntro2 = {
     }
 }
 
+// image from right animation
 export const animateImageRight = {
     start: {
         x: 100,
@@ -38,6 +41,7 @@ export const animateImageRight = {
     }
 }
 
+// animate text fade in
 export const animateText = {
     start: {
         opacity: 0,
@@ -51,6 +55,8 @@ export const animateText = {
         }
     }
 }
+
+// image from left animation
 export const animateImageLeft = {
     start: {
         x: -100,
@@ -65,6 +71,7 @@ export const animateImageLeft = {
     }
 }
 
+// continue button fade in
 export const animateContinue = {
     start: {
         opacity: 0,
@@ -78,6 +85,7 @@ export const animateContinue = {
     }
 }
 
+// transition between questions
 export const quizTransition = {
     in: {
         opacity: 1,
@@ -99,6 +107,7 @@ export const quizTransition = {
     }
 }
 
+// transition (fade) between pages
 export const pageTransition = {
     in: {
         opacity: 1,
@@ -115,7 +124,7 @@ export const pageTransition = {
     }
 }
 
-
+// unused animation for making text appear
 export const sentenceAnimation = {
     hidden: { opacity: 1 },
     visible: {
@@ -127,6 +136,7 @@ export const sentenceAnimation = {
     }
 }
 
+// unused animation for making text appear
 export const letterAnimation = {
     hidden: { opacity: 0, y:50 },
     visible: {

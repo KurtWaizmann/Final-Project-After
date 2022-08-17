@@ -16,20 +16,26 @@ import { BsArrowRight } from "react-icons/bs";
 import { animateContinue, quizTransition, buttonHover } from "../AnimationHandlers";
 
 const Question1 = () => {
+    // answers state in context
     const { answers, setAnswers } = useContext(QuestionContext);
+
+    // state checks if a button is pressed, then reveals continue button
     const [isChosen, setIsChosen] = useState(false);
 
     return (
         <>
-
-            <Wrapper className="WHEREAREYOU" as={motion.div} initial="out" animate="in" exit="out" variants={quizTransition}>
+            {/* transition animation between questions */}
+            <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={quizTransition}>
                 <Container>
                     <InnerWrap>
                         <QuestionWrap>
                             <Question>On a scale 1 to 10, how spiritual would you consider yourself?</Question>
                             <QuestionBox />
                             <ChoiceTitle>Select an Option</ChoiceTitle>
+
+                            {/* when click, set state, which reveals continue button */}
                             <Choices onClick={() => setIsChosen(true)}>
+                                {/* pressing answer buttons sets state with a value */}
                                 <Button onClick={() => setAnswers({ ...answers, q1: 1 + 20 })}>1</Button>
                                 <Button onClick={() => setAnswers({ ...answers, q1: 2 + 20 })}>2</Button>
                                 <Button onClick={() => setAnswers({ ...answers, q1: 3 + 20 })}>3</Button>
@@ -43,6 +49,7 @@ const Question1 = () => {
                             </Choices>
                         </QuestionWrap>
                         <ContinueWrap>
+                            {/* when state is true, continue is revealed */}
                             {isChosen && <>
                                 <StyledLink to="/question/2">
                                     <Continue

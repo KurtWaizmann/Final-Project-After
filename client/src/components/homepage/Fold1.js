@@ -12,6 +12,7 @@ import { AiOutlineDown } from "react-icons/ai";
 const Fold1 = () => {
   return (
     <>
+      {/* Navbar wrapped in animated div — only for category buttons. "After" is set in App.js */}
       <motion.div
         initial={"start"}
         animate={"end"}
@@ -19,27 +20,32 @@ const Fold1 = () => {
         <HomeNav />
       </motion.div>
 
+      {/* fold wrapper with fade in animation */}
       <FoldOne
         as={motion.div}
         initial={"start"}
         animate={"end"}
         variants={animateIntro}
       >
+
+        {/* Intro text */}
         <IntroWrap>
           <Title>Upload your troubles away</Title>
           <SubHeader>INTO A WORLD DESIGNED FOR YOU</SubHeader>
           <Description>Begin your journey towards a new life full of richness and beauty. Shed the toubles of the past and upload yourself into a world designed by the finest minds to be as enriching as ever experienced. Come join us today in our digital paradise.</Description>
         </IntroWrap>
-      <ArrowWrap 
-        as={motion.div}
-        initial={"start"}
-        whileInView={"end"}
-        viewport={{ once: false, amount: 0.4 }}
-        variants={animateText}
-      >
-        <StyledArrow />
-      </ArrowWrap>
-        </FoldOne>
+
+        {/* Arrow animation wrapping the arrow itself... not sure it's working though */}
+        <ArrowWrap
+          as={motion.div}
+          initial={"start"}
+          whileInView={"end"}
+          viewport={{ once: false, amount: 0.4 }}
+          variants={animateText}
+        >
+          <StyledArrow />
+        </ArrowWrap>
+      </FoldOne>
     </>
   )
 }
@@ -87,12 +93,10 @@ letter-spacing: 0em;
 text-align: center;
 color: #6D6466;
 `
-
 const StyledArrow = styled(AiOutlineDown)`
   font-size: 50px;
   bottom: 20px;
   color: #9F9F92;
-
 `
 const ArrowWrap = styled.div`
   height: 90vh;

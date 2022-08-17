@@ -4,6 +4,7 @@ import styled from "styled-components"
 // image imports
 import imageBeach from "../../assets/man-walking-on-beach.png"
 
+//  Just the image of the dude on the beach
 const Fold2 = () => {
     return (
         <FoldTwo>

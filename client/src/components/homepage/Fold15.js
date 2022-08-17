@@ -15,6 +15,8 @@ const Fold15 = () => {
     <FoldFifteen>
     <ImageBoy style={{ backgroundImage: `url(${imageBoy})` }}>
       <Forever>Preserve the people that are dearest to you, forever</Forever>
+
+      {/* fade-in button */}
         <Button
           to="/registration"
           as={motion(Link)}

@@ -13,6 +13,8 @@ const HomeFooter = () => {
     <Wrapper>
         <Box />
         <InnerWrap>
+
+          {/* Site Map, should eventually be links? */}
           <SiteMap>
             <About>
               <Title>About TrueNeuro</Title>
@@ -52,6 +54,8 @@ const HomeFooter = () => {
               <Link>Legal Offices</Link>
               <Link>Finacial Center</Link>
               <Link>Locate an Institution</Link>
+
+              {/* social media icons. links as well? */}
               <SocialMedia>
                 <BsTwitter />
                 <BsLinkedin />
@@ -62,6 +66,8 @@ const HomeFooter = () => {
             </Contact>
           </SiteMap>
         </InnerWrap>
+
+        {/* Fine print, needs to be changed into actual text */}
         <FinePrint >
           <div style={{fontSize: "10px"}}>* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus sit amet dictum sit amet justo donec enim. Enim lobortis scelerisque fermentum dui faucibus in ornare. Lacus laoreet non curabitur gravida. Sed augue lacus viverra vitae congue eu. Proin libero nunc consequat interdum varius sit. Eu scelerisque felis imperdiet proin fermentum. Praesent tristique magna sit amet purus gravida quis. Pellentesque sit amet porttitor eget dolor morbi non arcu. Tincidunt dui ut ornare lectus. ** Pharetra vel turpis nunc eget lorem dolor sed viverra. Egestas integer eget aliquet nibh. Id aliquet lectus proin nibh nisl condimentum id venenatis. Mattis enim ut tellus elementum. Amet facilisis magna etiam tempor orci. Dolor sit amet consectetur adipiscing elit duis. Placerat vestibulum lectus mauris ultrices. Suscipit adipiscing bibendum est ultricies integer quis auctor elit sed. Pharetra et ultrices neque ornare aenean euismod elementum. Fermentum odio eu feugiat pretium nibh ipsum consequat. Aliquet lectus proin nibh nisl condimentum id venenatis. Ac tincidunt vitae semper quis lectus nulla at. Nec ullamcorper sit amet risus nullam eget felis eget. *** Et netus et malesuada fames. Ut enim blandit volutpat maecenas volutpat blandit. Sed enim ut sem viverra. Elit duis tristique sollicitudin nibh sit amet commodo. Ultricies tristique nulla aliquet enim tortor at auctor. Odio morbi quis commodo odio aenean sed adipiscing diam donec. Vitae auctor eu augue ut lectus arcu bibendum at. Eget nullam non nisi est sit amet facilisis magna. Tellus molestie nunc non blandit. Nisl pretium fusce id velit ut. Gravida neque convallis a cras semper auctor neque. Tortor posuere ac ut consequat semper viverra. Vulputate mi sit amet mauris commodo quis imperdiet massa tincidunt. Aliquet enim tortor at auctor urna nunc id cursus metus.* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus sit amet dictum sit amet justo donec enim. Enim lobortis scelerisque fermentum dui faucibus in ornare. Lacus laoreet non curabitur gravida. Sed augue lacus viverra vitae congue eu. Proin libero nunc consequat interdum varius sit. Eu scelerisque felis imperdiet proin fermentum. Praesent tristique magna sit amet purus gravida quis. Pellentesque sit amet porttitor eget dolor morbi non arcu. Tincidunt dui ut ornare lectus. ** Pharetra vel turpis nunc eget lorem dolor sed viverra. Egestas integer eget aliquet nibh. Id aliquet lectus proin nibh nisl condimentum id venenatis. Mattis enim ut tellus elementum. Amet facilisis magna etiam tempor orci. Dolor sit amet consectetur adipiscing elit duis. Placerat vestibulum lectus mauris ultrices. Suscipit adipiscing bibendum est ultricies integer quis auctor elit sed. Pharetra et ultrices neque ornare aenean euismod elementum. Fermentum odio eu feugiat pretium nibh ipsum consequat. Aliquet lectus proin nibh nisl condimentum id venenatis. Ac tincidunt vitae semper quis lectus nulla at. Nec ullamcorper sit amet risus nullam eget felis eget. *** Et netus et malesuada fames. Ut enim blandit volutpat maecenas volutpat blandit. Sed enim ut sem viverra. Elit duis tristique sollicitudin nibh sit amet commodo. Ultricies tristique nulla aliquet enim tortor at auctor. Odio morbi quis commodo odio aenean sed adipiscing diam donec. Vitae auctor eu augue ut lectus arcu bibendum at. Eget nullam non nisi est sit amet facilisis magna. Tellus molestie nunc non blandit. Nisl pretium fusce id velit ut. Gravida neque convallis a cras semper auctor neque. Tortor posuere ac ut consequat semper viverra. Vulputate mi sit amet mauris commodo quis imperdiet massa tincidunt. Aliquet enim tortor at auctor urna nunc id cursus metus.</div>
           <Copyright>

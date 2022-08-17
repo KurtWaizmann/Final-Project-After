@@ -12,24 +12,28 @@ import { animateText, animateImageLeft } from "../AnimationHandlers";
 const Fold12 = () => {
   return (
     <FoldTwelve>
-    <motion.img src={imageTestimonail2}
-      initial={"start"}
-      whileInView={"end"}
-      viewport={{ once: true, amount: 0.9 }}
-      variants={animateImageLeft}
-    />
-    <WrapTestimonial
-      as={motion.div}
-      initial={"start"}
-      whileInView={"end"}
-      viewport={{ once: true, amount: 0.9 }}
-      variants={animateText}
-    >
-      <Stars>★★★★★</Stars>
-      <Testimonial>I was dying from cancer with only a few months to live when I discovered After. What a miracle. I’ve left my diseased body behind for everlasting vitality. I only wish I could get my loved ones to join me. I guess they will someday :)</Testimonial>
-      <Signed>Jordan Hutchinson — Uploaded in 2020</Signed>
-    </WrapTestimonial>
-  </FoldTwelve>
+
+      {/*  image slife from left animation */}
+      <motion.img src={imageTestimonail2}
+        initial={"start"}
+        whileInView={"end"}
+        viewport={{ once: true, amount: 0.9 }}
+        variants={animateImageLeft}
+      />
+
+      {/* text fade-in aniamation */}
+      <WrapTestimonial
+        as={motion.div}
+        initial={"start"}
+        whileInView={"end"}
+        viewport={{ once: true, amount: 0.9 }}
+        variants={animateText}
+      >
+        <Stars>★★★★★</Stars>
+        <Testimonial>I was dying from cancer with only a few months to live when I discovered After. What a miracle. I’ve left my diseased body behind for everlasting vitality. I only wish I could get my loved ones to join me. I guess they will someday :)</Testimonial>
+        <Signed>Jordan Hutchinson — Uploaded in 2020</Signed>
+      </WrapTestimonial>
+    </FoldTwelve>
   )
 }
 

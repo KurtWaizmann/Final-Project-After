@@ -12,6 +12,8 @@ const Fold7 = () => {
   return (
     <FoldSeven>
     <ContainerMind>
+
+      {/* wrapper with fade in animation */}
       <WrapperMind
         as={motion.div}
         initial={"start"}
@@ -23,6 +25,8 @@ const Fold7 = () => {
         <DescriptionMind>Let us be your guide through the transition into a new life. Our employees, who we consider family, will be with you every step of the process. They will help you settled into the right spiritual mindset before initializing the upload.</DescriptionMind>
         <More>Find out more</More>
       </WrapperMind>
+
+      {/* image with sliding animation */}
       <ImageEmployees src={imageEmployees}
         as={motion.img}
         initial={"start"}

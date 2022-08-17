@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 
 const Loader = () => {
 
+    // animation should likely be sent to animation handler
     const loadingContainer = {
         start: {
             transition: {

@@ -6,16 +6,20 @@ import { Link } from "react-router-dom";
 // animation import
 import { pageTransition } from "../AnimationHandlers";
 
+// Home nav only appears on Homepage. All the links on top, without the "After" logo
 const HomeNav = () => {
     const userId = JSON.parse(localStorage.getItem("After-userId"))
 
     return (
         <Wrapper>
+
+            {/* fade in animation */}
             <InnerWrap as={motion.div} initial="out" animate="in" exit="out" variants={pageTransition}>
                 <Subtitle to="/productdetails">product</Subtitle>
                 <Subtitle to="/companydetails">who we are</Subtitle>
             </InnerWrap>
-       
+
+            {/* fade in animation */}
             <InnerWrap as={motion.div} initial="out" animate="in" exit="out" variants={pageTransition}>
                 <Subtitle to="/faq">F.A.Q.</Subtitle>
                 {userId

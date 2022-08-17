@@ -12,53 +12,67 @@ import { QuestionContext } from "../questionnaire/QuestionContext";
 import { pageTransition, animateContinue } from "../AnimationHandlers";
 
 const QComplete = () => {
+    // originally used to redirect user, but now used to reveal button
+    // should be renamed
     const [redirect, setRedirected] = useState(false)
+
+    // checks if the questionnaire from finished or not
     const [isCompleted, setIsCompleted] = useState(null)
+
+    // context for all the answer to the questionnaire
     const { answers, setAnswers } = useContext(QuestionContext);
 
-    const postProfileInfo = (imageSrc) =>{
+    // POST profile info to Mongo (but it's chained next fetch)
+    const postProfileInfo = (imageSrc) => {
         localStorage.setItem("After-userId", JSON.stringify(answers.userId))
-            fetch("/profile", {
-                method: "POST",
-                body: JSON.stringify({
-                    _id: answers.userId,
-                    profilePic: imageSrc,
-                    name: answers.name,
-                    age: answers.q1,
-                    job: answers.q2,
-                    quality: answers.q3,
-                    quirk: answers.q4,
-                    passion1: answers.q5,
-                    passion2: answers.q6,
-                    passion3: answers.q8,
-                    nickname: answers.q7,
-                    companion: answers.q9,
-                    companionName: answers.q10,
-                }),
-                headers: { "Content-Type": "application/json" },
-            })
-                .then((res) => res.json())
-                .then(() =>
-                    setAnswers({ ...answers, profilePic: imageSrc})
-                )
+        fetch("/profile", {
+            method: "POST",
+            body: JSON.stringify({
+                _id: answers.userId,
+                profilePic: imageSrc,
+                name: answers.name,
+                age: answers.q1,
+                job: answers.q2,
+                quality: answers.q3,
+                quirk: answers.q4,
+                passion1: answers.q5,
+                passion2: answers.q6,
+                passion3: answers.q8,
+                nickname: answers.q7,
+                companion: answers.q9,
+                companionName: answers.q10,
+            }),
+            headers: { "Content-Type": "application/json" },
+        })
+            .then((res) => res.json())
+            .then(() =>
+                // after  POST add picture to answeres 
+                // doesn't service much of purpose now, since I do a GET on the next page for all of this
+                setAnswers({ ...answers, profilePic: imageSrc })
+            )
     }
 
-
-
+    // GET image from API, then trigger the POST profile
     useEffect(() => {
+
+        // check if there's a minimum of 12 answers
         if (answers && (Object.keys(answers).length >= 12)) {
             fetch(`https://fakeface.rest/face/json?minimum_age=${answers.q1}&maximum_age=${answers.q1 + 10}`)
                 .then((res) => res.json())
                 .then((data) => {
+                    // trigger profile POST
                     postProfileInfo(data.image_url)
-                }).then(()=> {
+                }).then(() => {
+                    // set state to completed
                     setIsCompleted(true)
                 })
         } else {
+            // if all fails, set state to incomplete
             setIsCompleted(false)
         }
     }, [])
 
+    // timer for button to appear — just gives the illusion that something's happening behind the scene
     useEffect(() => {
         setTimeout(() => setRedirected(true), 15000)
     }, [])

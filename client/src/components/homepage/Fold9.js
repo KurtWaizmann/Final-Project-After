@@ -11,12 +11,15 @@ import imageSleeper from "../../assets/sleeper.png"
 const Fold9 = () => {
   return (
       <FoldNine>
+        {/* image slide from left animation */}
         <motion.img src={imageSleeper}
           initial={"start"}
           whileInView={"end"}
           viewport={{ once: true, amount: 0.7 }}
           variants={animateImageLeft}
         />
+        
+        {/* fade-in text animation */}
         <SloganDream
           as={motion.h1}
           initial={"start"}

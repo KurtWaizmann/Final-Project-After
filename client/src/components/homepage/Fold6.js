@@ -6,6 +6,7 @@ import { Parallax } from 'react-scroll-parallax';
 import imageSurfing from "../../assets/surfing.png"
 
 const Fold6 = () => {
+  // suface imagine with parallax animation
     return (
         <FoldSix>
             <Image src={imageSurfing} />

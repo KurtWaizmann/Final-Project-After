@@ -5,6 +5,7 @@ import { Parallax } from 'react-scroll-parallax';
 // image imports
 import imageMountains from "../../assets/mountains.png"
 
+// mountain image with parallax animation
 const Fold4 = () => {
     return (
         <FoldFour>

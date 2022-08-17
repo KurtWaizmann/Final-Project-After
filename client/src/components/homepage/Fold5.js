@@ -8,6 +8,8 @@ import { animateText } from "../AnimationHandlers";
 const Fold5 = () => {
     return (
         < FoldFive >
+
+            {/* fade in animation, being given to each "Pillar" div */}
             <WrapperPillars
                 as={motion.div}
                 initial={"start"}
@@ -15,6 +17,8 @@ const Fold5 = () => {
                 viewport={{ once: true, amount: 0.8 }}
                 transition={{ staggerChildren: 0 }}
             >
+                
+                {/* I removed the stagger (placed to 0 for now) because I wasn't sure about it */}
                 <Pillar
                     as={motion.div}
                     variants={animateText}

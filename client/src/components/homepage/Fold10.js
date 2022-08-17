@@ -10,17 +10,18 @@ import imageSleepAssist from "../../assets/sleeper-assist.png"
 
 const Fold10 = () => {
   return (
-      <FoldTen>
-        <Image 
-          src={imageSleepAssist}
-          as={motion.img}
-          initial={"start"}
-          whileInView={"end"}
-          viewport={{ once: true, amount: 0.8 }}
-          variants={animateImageLeft}
-        />
-        <Box />
-      </FoldTen>  )
+    <FoldTen>
+      {/* image slide from left animation */}
+      <Image
+        src={imageSleepAssist}
+        as={motion.img}
+        initial={"start"}
+        whileInView={"end"}
+        viewport={{ once: true, amount: 0.8 }}
+        variants={animateImageLeft}
+      />
+      <Box />
+    </FoldTen>)
 }
 
 export default Fold10

@@ -12,6 +12,8 @@ const Fold3 = () => {
     return (
         <FoldThree>
             <WrapperCeo>
+
+              {/* Text fade-in animation */}
                 <CEOText
                     as={motion.div}
                     initial={"start"}
@@ -34,6 +36,8 @@ const Fold3 = () => {
                         <More>Find out more</More>
                     </InnerWrapCEO>
                 </CEOText>
+
+                {/* image animation slides in from the right */}
                 <ImageTwo
                     src={imageCEO}
                     as={motion.img}

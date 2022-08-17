@@ -12,12 +12,16 @@ import { animateText, animateImageLeft } from "../AnimationHandlers";
 const Fold14 = () => {
   return (
     <FoldFourteen>
+
+      {/* image from left animation */}
       <motion.img src={imageTestimonail4}
         initial={"start"}
         whileInView={"end"}
         viewport={{ once: true, amount: 0.9 }}
         variants={animateImageLeft}
       />
+
+      {/* text fade-in aniamation */}
       <WrapTestimonial
         as={motion.div}
         initial={"start"}

@@ -26,8 +26,10 @@ import { pageTransition } from "../AnimationHandlers";
 
 const Homepage = () => {
 
-
   return (
+    
+    // wrapper containing each "fold" component and footer 
+    // ( HomeNav in contained is in Fold1 )
     <Body
       as={motion.div}
       initial="out"

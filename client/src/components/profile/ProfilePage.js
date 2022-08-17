@@ -11,18 +11,22 @@ import Countdown from "./Countdown";
 // animation imports
 import { pageTransition, animateText } from "../AnimationHandlers";
 
-
-
-
 const ProfilePage = () => {
+
+    // resetting QuestionContext depending on the last Id saved to storage
     const { answers, setAnswers } = useContext(QuestionContext);
+
+    // grabbing Id from local storage
     const userId = JSON.parse(localStorage.getItem("After-userId"))
 
-
+    // Fetching results from MongoDB (based on Id)
     useEffect(() => {
         fetch(`/profile/${userId}`)
             .then((res) => res.json())
             .then((data) => {
+
+                // resetting QuestionContext, and reformatting to orginal format
+                // formating should be transfered to the backend
                 setAnswers({
                     userId: data.data._id,
                     profilePic: data.data.profilePic,
@@ -43,12 +47,15 @@ const ProfilePage = () => {
 
     return (
         <>
+            {/* if answers is empty, page is blank — if answers is designated, render profile */}
             {!answers
                 ? <Blank></Blank>
                 : <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={pageTransition} style={{ textDecoration: "none", padding: "none", margin: "none" }}>
                     <InnerWrap>
+
                         <Profile>
                             <PhotoBox>
+                                {/* photo is slow to load, so I added a fade in animation */}
                                 <Photo src={answers.profilePic} as={motion.img} initial={"start"} animate={"end"} variants={animateText} />
                                 <Circle />
                                 <Name>{answers.name}</Name>
@@ -56,9 +63,11 @@ const ProfilePage = () => {
                             </PhotoBox>
                             <Summary />
                         </Profile>
+
                         <InstructionsBox>
                             <Instructions><Important>IMPORTANT!</Important> You will receive further intructions in both your mail and email for preparing yourself for the transition period, If you have any further questions of concerns, contact the closest TrueNeural information center or contact us by phone (555-0199).</Instructions>
                         </InstructionsBox>
+
                     </InnerWrap>
                 </Wrapper>}
         </>

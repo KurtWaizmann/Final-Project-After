@@ -13,7 +13,7 @@ const Intro = () => {
             </motion.div >
             <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={pageTransition}>
                 <ReactPlayer 
-                url='http://youtube.com/shorts/gbZ4ucfMDs0?feature=share' 
+                url='https://kurtwaizmann.wistia.com/medias/8iwibf7qp1' 
                 style={{borderRadius: "20px"}}
                 />
             </Wrapper>

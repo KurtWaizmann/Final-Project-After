@@ -12,7 +12,8 @@ const Intro = () => {
             <motion.div initial="out" animate="in" variants={pageTransition}>
             </motion.div >
             <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={pageTransition}>
-                <ReactPlayer 
+                <ReactPlayer
+                controls="true"
                 url='https://kurtwaizmann.wistia.com/medias/8iwibf7qp1' 
                 style={{borderRadius: "20px"}}
                 />

@@ -75,7 +75,7 @@ font-size: 16px;
 font-weight: 400;
 line-height: 28px;
 letter-spacing: 0em;
-text-align: left;
+text-align: justify;
 color: #6D6466;
 
 `

@@ -11,7 +11,13 @@ import { animateText, animateImageRight } from "../AnimationHandlers";
 const Fold11 = () => {
   return (
     <>
-      <SectionTitle>Satisfied Customers</SectionTitle>
+      <SectionTitle  
+      as={motion.h1}
+        initial={"start"}
+        whileInView={"end"}
+        viewport={{ once: true, amount: 0.9 }}
+        variants={animateText}
+        >Satisfied Customers</SectionTitle>
     <FoldEleven>
       <WrapTestimonial
         as={motion.div}
@@ -42,7 +48,7 @@ const SectionTitle = styled.h1`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 500px;
+  height: 300px;
   text-align: left;
   padding-left: 40px;
   font-size: 92px;

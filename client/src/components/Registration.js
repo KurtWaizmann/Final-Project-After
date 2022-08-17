@@ -204,7 +204,7 @@ const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 92vh;
+    height: 88vh;
 `
 const Container = styled.div`
     display: flex;
@@ -230,13 +230,6 @@ const Form = styled.form`
     gap: 30px;
     padding: 25px 25px 10px 25px;
     flex-wrap: wrap;
-`
-const Title = styled.h1`
-    font-size: 20px;
-    text-align: left;
-    width: 100%;
-    border-bottom: 2px solid black;
-    opacity: 0.5;
 `
 const Section = styled.div`
     width: 100%;

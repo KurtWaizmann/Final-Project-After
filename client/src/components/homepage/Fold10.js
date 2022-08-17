@@ -19,6 +19,7 @@ const Fold10 = () => {
           viewport={{ once: true, amount: 0.8 }}
           variants={animateImageLeft}
         />
+        <Box />
       </FoldTen>  )
 }
 
@@ -29,9 +30,19 @@ const FoldTen = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
 `
 const Image = styled.img`
   width: 95%;
 `
+const Box = styled.div`
+  width: 100%;
+  height: 700px;
+  position: absolute;
+  z-index: -1;
+  background-color: #F1F0EA;
+  top: 50%;
+  `

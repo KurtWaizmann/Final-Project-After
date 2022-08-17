@@ -70,7 +70,7 @@ const CEOText = styled.div`
   gap: 8%;
 `;
 const Leader = styled.div`
-  padding-top: 12px;
+  padding-top: 10px;
   font-size: 24px;
   font-weight: 600;
   line-height: 33px;
@@ -84,6 +84,8 @@ const InnerWrapCEO = styled.div`
   width: 518px;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 40px;
 `;
 const TitleCEO = styled.h1`
@@ -95,14 +97,16 @@ const TitleCEO = styled.h1`
   line-height: 78px;
   letter-spacing: 0em;
   text-align: left;
+  margin: 0 0 0 0;
 `;
 const DecriptionTwo = styled.div`
   font-size: 16px;
   font-weight: 400;
   line-height: 28px;
   letter-spacing: 0em;
-  text-align: left;
   color: #6d6466;
+  text-align: justify;
+
 `;
 const More = styled.div`
   font-size: 16px;

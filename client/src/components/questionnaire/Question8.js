@@ -93,7 +93,7 @@ const QuestionWrap = styled.div`
     flex: 2;
 `
 const Question = styled.h1`
-    width: 40%;
+    width: 600px;
     font-size: 50px;
     font-weight: 400;
     line-height: 65px;

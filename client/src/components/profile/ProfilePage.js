@@ -57,7 +57,7 @@ const ProfilePage = () => {
                             <Summary />
                         </Profile>
                         <InstructionsBox>
-                            <Instructions>You will receive further intructions in both your mail and email for preparing yourself for the transition period.</Instructions>
+                            <Instructions><Important>IMPORTANT!</Important> You will receive further intructions in both your mail and email for preparing yourself for the transition period, If you have any further questions of concerns, contact the closest TrueNeural information center or contact us by phone (555-0199).</Instructions>
                         </InstructionsBox>
                     </InnerWrap>
                 </Wrapper>}
@@ -121,9 +121,15 @@ const InstructionsBox = styled.div`
     border-radius: 5px;
     padding: 30px;
 `
+const Important = styled.span`
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0em;
+    color: #9F9F92;
+`
 const Instructions = styled.div`
-    font-size: 20px;
-    font-weight: 200;
+    font-size: 16px;
+    font-weight: 300;
     letter-spacing: 0em;
     color: #9F9F92;
 `

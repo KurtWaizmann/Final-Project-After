@@ -140,11 +140,6 @@ const Choices = styled.div`
     gap: 10px;
     line-height: 10px;
 `
-const Letter = styled.h1`
-    margin-right: 10px;
-    color: #9F9F92;
-
-`
 const Button = styled.button`
     width: 145px;
     display: flex;

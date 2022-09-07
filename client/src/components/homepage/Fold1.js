@@ -30,7 +30,7 @@ const Fold1 = () => {
 
         {/* Intro text */}
         <IntroWrap>
-          <Title>Upload your troubles away</Title>
+          <Title>Upload your troubles away.</Title>
           <SubHeader>INTO A WORLD DESIGNED FOR YOU</SubHeader>
           <Description>Begin your journey towards a new life full of richness and beauty. Shed the toubles of the past and upload yourself into a world designed by the finest minds to be as enriching as ever experienced. Come join us today in our digital paradise.</Description>
         </IntroWrap>
@@ -76,6 +76,7 @@ font-weight: 400;
 line-height: 78px;
 letter-spacing: 0em;
 text-align: center;
+margin: 0px;
 `
 const SubHeader = styled.div`
 font-size: 24px;
@@ -92,6 +93,7 @@ line-height: 28px;
 letter-spacing: 0em;
 text-align: center;
 color: #6D6466;
+margin-bottom: 40px;
 `
 const StyledArrow = styled(AiOutlineDown)`
   font-size: 50px;
@@ -99,7 +101,7 @@ const StyledArrow = styled(AiOutlineDown)`
   color: #9F9F92;
 `
 const ArrowWrap = styled.div`
-  height: 90vh;
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: flex-end;

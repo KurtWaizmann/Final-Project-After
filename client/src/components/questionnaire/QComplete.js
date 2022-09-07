@@ -16,40 +16,55 @@ const QComplete = () => {
     // should be renamed
     const [redirect, setRedirected] = useState(false)
 
-    // checks if the questionnaire from finished or not
+    // checks if the questionnaire is finished or not
     const [isCompleted, setIsCompleted] = useState(null)
 
     // context for all the answer to the questionnaire
     const { answers, setAnswers } = useContext(QuestionContext);
 
-    // POST profile info to Mongo (but it's chained next fetch)
+    // Store answers/info to localStorage (chained from the following fetch)
     const postProfileInfo = (imageSrc) => {
-        localStorage.setItem("After-userId", JSON.stringify(answers.userId))
-        fetch("/profile", {
-            method: "POST",
-            body: JSON.stringify({
-                _id: answers.userId,
-                profilePic: imageSrc,
-                name: answers.name,
-                age: answers.q1,
-                job: answers.q2,
-                quality: answers.q3,
-                quirk: answers.q4,
-                passion1: answers.q5,
-                passion2: answers.q6,
-                passion3: answers.q8,
-                nickname: answers.q7,
-                companion: answers.q9,
-                companionName: answers.q10,
-            }),
-            headers: { "Content-Type": "application/json" },
-        })
-            .then((res) => res.json())
-            .then(() =>
+        localStorage.setItem("After-answers", JSON.stringify({
+            _id: answers.userId,
+            profilePic: imageSrc,
+            name: answers.name,
+            age: answers.q1,
+            job: answers.q2,
+            quality: answers.q3,
+            quirk: answers.q4,
+            passion1: answers.q5,
+            passion2: answers.q6,
+            passion3: answers.q8,
+            nickname: answers.q7,
+            companion: answers.q9,
+            companionName: answers.q10,
+        }))
+        
+        // fetch("/profile", {
+        //     method: "POST",
+        //     body: JSON.stringify({
+        //         _id: answers.userId,
+        //         profilePic: imageSrc,
+        //         name: answers.name,
+        //         age: answers.q1,
+        //         job: answers.q2,
+        //         quality: answers.q3,
+        //         quirk: answers.q4,
+        //         passion1: answers.q5,
+        //         passion2: answers.q6,
+        //         passion3: answers.q8,
+        //         nickname: answers.q7,
+        //         companion: answers.q9,
+        //         companionName: answers.q10,
+        //     }),
+        //     headers: { "Content-Type": "application/json" },
+        // })
+        //     .then((res) => res.json())
+        //     .then(() =>
                 // after  POST add picture to answeres 
                 // doesn't service much of purpose now, since I do a GET on the next page for all of this
                 setAnswers({ ...answers, profilePic: imageSrc })
-            )
+            // )
     }
 
     // GET image from API, then trigger the POST profile

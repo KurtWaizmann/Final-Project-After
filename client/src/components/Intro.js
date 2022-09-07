@@ -13,7 +13,6 @@ const Intro = () => {
             </motion.div >
             <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={pageTransition}>
                 <ReactPlayer
-                controls="true"
                 url='https://kurtwaizmann.wistia.com/medias/8iwibf7qp1' 
                 style={{borderRadius: "20px"}}
                 />
@@ -25,8 +24,9 @@ const Intro = () => {
 export default Intro
 
 const Wrapper = styled.div`
-    height: 91vh;
+    height: 87vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid red;
 `

@@ -18,31 +18,32 @@ const ProfilePage = () => {
 
     // grabbing Id from local storage
     const userId = JSON.parse(localStorage.getItem("After-userId"))
+    const data = JSON.parse(localStorage.getItem("After-answers"))
 
     // Fetching results from MongoDB (based on Id)
     useEffect(() => {
-        fetch(`/profile/${userId}`)
-            .then((res) => res.json())
-            .then((data) => {
-
+        // fetch(`/profile/${userId}`)
+        //     .then((res) => res.json())
+        //     .then((data) => {
+        console.log(data)
                 // resetting QuestionContext, and reformatting to orginal format
                 // formating should be transfered to the backend
                 setAnswers({
-                    userId: data.data._id,
-                    profilePic: data.data.profilePic,
-                    name: data.data.name,
-                    q1: data.data.age,
-                    q2: data.data.job,
-                    q3: data.data.quality,
-                    q4: data.data.quirk,
-                    q5: data.data.passion1,
-                    q6: data.data.passion2,
-                    q8: data.data.passion3,
-                    q7: data.data.nickname,
-                    q9: data.data.companion,
-                    q10: data.data.companionName
+                    userId: data._id,
+                    profilePic: data.profilePic,
+                    name: data.name,
+                    q1: data.age,
+                    q2: data.job,
+                    q3: data.quality,
+                    q4: data.quirk,
+                    q5: data.passion1,
+                    q6: data.passion2,
+                    q8: data.passion3,
+                    q7: data.nickname,
+                    q9: data.companion,
+                    q10: data.companionName
                 })
-            })
+            // })
     }, [])
 
     return (

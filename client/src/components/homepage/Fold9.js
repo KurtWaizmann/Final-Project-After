@@ -12,7 +12,9 @@ const Fold9 = () => {
   return (
       <FoldNine>
         {/* image slide from left animation */}
-        <motion.img src={imageSleeper}
+        <motion.img 
+          src={imageSleeper}
+          style={{height:"500px"}}
           initial={"start"}
           whileInView={"end"}
           viewport={{ once: true, amount: 0.7 }}

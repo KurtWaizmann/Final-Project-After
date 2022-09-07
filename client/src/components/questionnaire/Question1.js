@@ -7,13 +7,12 @@ import { v4 as uuid } from 'uuid';
 
 // component imports
 import { QuestionContext } from "./QuestionContext";
-import { names } from "../data";
 
 // import icon
 import { BsArrowRight } from "react-icons/bs";
 
 // animation imports
-import { animateContinue, quizTransition, buttonHover } from "../AnimationHandlers";
+import { animateContinue, quizTransition } from "../AnimationHandlers";
 
 const Question1 = () => {
     // answers state in context

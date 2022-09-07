@@ -37,13 +37,14 @@ const FoldTen = styled.div`
   position: relative;
 `
 const Image = styled.img`
-  width: 95%;
+  height: 500px;
 `
 const Box = styled.div`
   width: 100%;
   height: 700px;
   position: absolute;
   z-index: -1;
-  background-color: #F1F0EA;
+  background: rgb(241,240,234);
+  background: linear-gradient(0deg, rgba(241,240,234,1) 0%, rgba(255,255,255,1) 100%); 
   top: 50%;
   `

@@ -23,6 +23,7 @@ export default createGlobalStyle`
   }
   html {
     overflow-y: overlay;
+    overflow-x: hidden;
   }
 
   /* HTML5 display-role reset for older browsers */

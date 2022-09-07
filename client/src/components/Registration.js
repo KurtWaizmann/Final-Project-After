@@ -33,35 +33,34 @@ const Registration = () => {
         const userId = uuid()
         sessionStorage.setItem("name", `${data.firstName}`)
 
-        fetch("/registration", {
-            method: "POST",
-            body: JSON.stringify({
-                _id: userId,
-                firstName: data.firstName,
-                lastName: data.lastName,
-                dateOfBirth: data.dateOfBirth,
-                gender: data.gender,
-                phoneNumber: data.phoneNumber,
-                email: data.email,
-                address: data.address,
-                city: data.city,
-                stateProvince: data.stateProvince,
-                zipCode: data.zipCode,
-                profession: data.profession,
-                maritalStatus: data.maritalStatus,
-                weight: data.weight,
-                height: data.height,
-                emergContact: data.emergContact,
-                relationship: data.relationship,
-                contactNum: data.contactNum
-            }),
-            headers: { "Content-Type": "application/json" },
-        })
-            .then((res) => res.json())
-            .then(() => {
+        // fetch("/registration", {
+        //     method: "POST",
+        //     body: JSON.stringify({
+        //         _id: userId,
+        //         firstName: data.firstName,
+        //         lastName: data.lastName,
+        //         gender: data.gender,
+        //         phoneNumber: data.phoneNumber,
+        //         email: data.email,
+        //         address: data.address,
+        //         city: data.city,
+        //         stateProvince: data.stateProvince,
+        //         zipCode: data.zipCode,
+        //         profession: data.profession,
+        //         maritalStatus: data.maritalStatus,
+        //         weight: data.weight,
+        //         height: data.height,
+        //         emergContact: data.emergContact,
+        //         relationship: data.relationship,
+        //         contactNum: data.contactNum
+        //     }),
+        //     headers: { "Content-Type": "application/json" },
+        // })
+        //     .then((res) => res.json())
+        //     .then(() => {
                 setAnswers({ ...answers, userId: userId, name: `${names[Math.floor(Math.random() * 60)]}` })
                 navigate("/registration-confirmed");
-            });
+            // });
     }
 
     const errorStyle = { borderBottom: "1px solid #fa0a0aa5" }
@@ -70,7 +69,9 @@ const Registration = () => {
         <>
             <Wrapper as={motion.div} initial="out" animate="in" exit="out" variants={pageTransition}>
                 <Container>
-                    <Image src={imageFamily} />
+                    <ImageWrapper>
+                        <Image src={imageFamily} />
+                    </ImageWrapper>
                     <Form onSubmit={handleSubmit((data) => submitFunc(data))}>
 
                         <InnerWrap>
@@ -83,10 +84,15 @@ const Registration = () => {
                                     style={errors.lastName && errorStyle}
                                     {...register("lastName", { required: true })} placeholder="Last Name"
                                 />
-                                <StyledInput
+                                {/* <StyledInput
                                     type="date"
                                     style={errors.dateOfBirth && errorStyle}
                                     {...register("dateOfBirth", { required: true })} placeholder="Date of Birth"
+                                /> */}
+
+                                <StyledInput
+                                    style={errors.profession && errorStyle}
+                                    {...register("profession", { required: true })} placeholder="Profession"
                                 />
                                 <StyledInput
                                     style={errors.gender && errorStyle}
@@ -102,11 +108,6 @@ const Registration = () => {
                                     style={errors.phoneNumber && errorStyle}
                                     {...register("phoneNumber", { required: true })} placeholder="Phone Number"
                                 />
-                            </Section>
-                        </InnerWrap>
-
-                        <InnerWrap>
-                            <Section>
                                 <StyledInput
                                     style={errors.address && errorStyle}
                                     {...register("address", { required: true })} placeholder="Address"
@@ -123,26 +124,10 @@ const Registration = () => {
                                     style={errors.zipCode && errorStyle}
                                     {...register("zipCode", { required: true })} placeholder="Zip Code"
                                 />
-                            </Section>
-                        </InnerWrap>
-
-                        <InnerWrap>
-                            <Section>
-                                <StyledInput
-                                    style={errors.profession && errorStyle}
-                                    {...register("profession", { required: true })} placeholder="Profession"
-                                />
-
                                 <StyledInput
                                     style={errors.maritalStatus && errorStyle}
                                     {...register("maritalStatus", { required: true })} placeholder="Marital Status"
                                 />
-
-                            </Section>
-                        </InnerWrap>
-
-                        <InnerWrap>
-                            <Section>
                                 <StyledInput
                                     style={errors.weight && errorStyle}
                                     {...register("weight", { required: true })} placeholder="Weight (pounds)"
@@ -151,11 +136,6 @@ const Registration = () => {
                                     style={errors.height && errorStyle}
                                     {...register("height", { required: true })} placeholder="Height (inches)"
                                 />
-                            </Section>
-                        </InnerWrap>
-
-                        <InnerWrap>
-                            <Section>
                                 <StyledInput
                                     style={errors.emergContact && errorStyle}
                                     {...register("emergContact", { required: true })} placeholder="Emergency Contact"
@@ -188,7 +168,7 @@ const Registration = () => {
 
                         <ButtonWrap>
                             <StyledButton type="submit">Continue</StyledButton>
-                            <FinePrint>I have read, understood, and accepted the rules for membership into After(tm). Also, you decree that you are 18 years of age or older, of sound body and mind, and have chosen to upload your conscious of your own free will. Further, by agreeing to our terms, you grant TrueNeural and its subsidiaries a non-transferable option to claim your physical representation ("body") while you are uploaded and do as we wish with said body. Should We wish to exercise this option, and we do, you agree to surrender your "body", and any claim you may have on it, within 5 (five) working days of receiving written notification from TrueNeural.</FinePrint>
+                            <FinePrint>By checking the box, you are stating that you have read, understood, and accepted the following conditions for membership into After(tm). You agree that you are 18 years of age or older, that you are of sound body and mind in your decision to participate in your transition into TrueNeural(tm), and have chosen to upload your conscious completely of your own free will and no one has coherced you to do so. Over the course of the following 18 weeks — of which you will under go treatment at our reclusive comfort facility in preparation for your transfer —  you will not reach out or in anyway communicate with media outlets, public officials, bloggers, police about your experiences with TrueNeural no matter the results. If you happen to do so, you agree to lose all rights upon entering After(tm). Further, by agreeing to our terms, you grant TrueNeural and its many subsidiaries a non-transferable option to claim your physical representation (aka. "body") when you are fully uploaded. What we do with said body is entirely to our discretion and no information will be shared with family or friends. Should we wish to exercise this option — of which their is an 80% we do so — you agree to surrender your "body" and any claim you may have on it.</FinePrint>
                         </ButtonWrap>
                     </Form>
                 </Container>
@@ -211,32 +191,39 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    height: 670px;
-    width: 90%;
+    height: 580px;
+    width: 70%;
     max-width: 950px;
     background-color: #A4BDBA;
+    overflow: hidden;
 `
 const Image = styled.img`
-    height: 100%;
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
+    position: relative;
+    left: -80px;
 `
+const ImageWrapper = styled.div`
+    flex: 1;
+    overflow: hidden;
+    `
 const Form = styled.form`
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
-    padding: 25px 25px 10px 25px;
+    gap: 20px;
+    padding: 25px 25px 2px 25px;
     flex-wrap: wrap;
+    flex: 1;
 `
 const Section = styled.div`
     width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
 `
 const InnerWrap = styled.div`
     width: 100%;
@@ -246,12 +233,13 @@ const InnerWrap = styled.div`
 `
 const StyledInput = styled.input`
     width: 40%;
+    font-size: 12px;
     border: none;
     border-bottom: 1px solid black;
     border-radius: 0%;
     background-color: inherit;
     background: inherit;
-    color: black;
+    color: #4a5655;
     &:-webkit-autofill {
         box-shadow: 0 0 0 30px #A4BDBA inset !important;
     }
@@ -271,12 +259,14 @@ const Terms = styled.div`
     justify-content: center;
     align-items: center;
     gap: 10px;
+    color: #4a5655;
+    font-size: 12px;
 `
 const StyledButton = styled.button`
     background-color: inherit;
     border: 2px solid white;
-    height: 61px;
-    width: 249px;
+    height: 50px;
+    width: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -292,15 +282,20 @@ const StyledButton = styled.button`
     &:active{
         transform: translateY(4px);
     }
+    &:hover{
+        background-color: #b7c4c2;
+    }
 `
 const FinePrint = styled.div`
-    font-size: 5px;
+    font-size: 6px;
     opacity: 0.2;
+    text-align: justify;
+    text-align-last: left;
+    padding-top: 20px;
 `
 const ButtonWrap = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
 `

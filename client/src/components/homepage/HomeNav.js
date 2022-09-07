@@ -8,7 +8,7 @@ import { pageTransition } from "../AnimationHandlers";
 
 // Home nav only appears on Homepage. All the links on top, without the "After" logo
 const HomeNav = () => {
-    const userId = JSON.parse(localStorage.getItem("After-userId"))
+    const answers = JSON.parse(localStorage.getItem("After-answers"))
 
     return (
         <Wrapper>
@@ -22,7 +22,7 @@ const HomeNav = () => {
             {/* fade in animation */}
             <InnerWrap as={motion.div} initial="out" animate="in" exit="out" variants={pageTransition}>
                 <Subtitle to="/faq">F.A.Q.</Subtitle>
-                {userId
+                {answers
                     ? <Subtitle to="/profile">profile</Subtitle>
                     : <Subtitle to="/registration">sign up</Subtitle>
                 }

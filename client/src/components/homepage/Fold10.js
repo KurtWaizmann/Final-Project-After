@@ -9,8 +9,6 @@ import { animateImageLeft } from '../AnimationHandlers';
 import imageSleepAssist from '../../assets/sleeper-assist.png';
 
 const Fold10 = () => {
-  const arr = [...Array(8)];
-
   return (
     <FoldTen>
       {/* image slide from left animation */}
@@ -22,33 +20,6 @@ const Fold10 = () => {
         viewport={{ once: true, amount: 0.8 }}
         variants={animateImageLeft}
       />
-      {arr.map((el, i) => {
-        const delay = i * 0.1;
-        const positionX = Math.ceil(Math.random() * 50);
-        const positionY = Math.ceil(Math.random() * 50);
-
-        return (
-          <Warning
-            as={motion.div}
-            initial={{ opacity: 0 }}
-            whileInView={{
-              opacity: [0, 0, 0, 1, 0, 1, 0, 1, 1, 0],
-              translateX: positionX,
-              translateY: positionY,
-              skewX: positionX,
-              skewY: -positionY,
-              transition: {
-                duration: 1,
-                delay: 2 + delay,
-                // repeat: Infinity,
-                // ease: 'linear',
-              },
-            }}
-          >
-            HeLp mE
-          </Warning>
-        );
-      })}
       <Box />
     </FoldTen>
   );
@@ -81,13 +52,4 @@ const Box = styled.div`
     rgba(255, 255, 255, 1) 100%
   );
   top: 50%;
-`;
-
-const Warning = styled.div`
-  font-size: 1.3rem;
-  color: black;
-  font-family: 'Cutive Mono', monospace;
-  position: absolute;
-  right: 14rem;
-  bottom: 15rem;
 `;
